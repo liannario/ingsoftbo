@@ -15,9 +15,7 @@ namespace Prototipo
         {   
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.AllowQuit(true);
             Application.Run(new Form1());
-            Console.Clear();
         }
     }
 }

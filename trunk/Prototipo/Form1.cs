@@ -11,9 +11,31 @@ namespace Prototipo
 {
     public partial class Form1 : Form
     {
+        RadioButton _selectedRadio = null;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectedRadio = (RadioButton) sender;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectedRadio = (RadioButton) sender;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectedRadio = (RadioButton) sender;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_username.Text + "\n" + _password.Text + "\n" + _selectedRadio.Text);
         }
     }
 }

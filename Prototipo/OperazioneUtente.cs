@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    abstract class Operazione
+    public abstract class OperazioneUtente
     {
         public virtual void Operazione(Guest g)
         {
@@ -16,6 +16,6 @@ namespace Prototipo
             throw new Exception("non puoi fare questa operazione");
         }
         public abstract void Operazione(Amministratore a);
-        
+
     }
 }

@@ -57,7 +57,7 @@ namespace Prototipo
         }
         
 
-        public abstract void EseguiOperazione(Operazione o);
+        public abstract void EseguiOperazione(OperazioneUtente o);
 
     }
 

@@ -10,6 +10,15 @@ namespace Prototipo
         private string _nome;
         private string _indirizzo;
 
+        public Magazzino()
+        {
+        }
+
+        public Magazzino(string nome, string indirizzo)
+        {
+ 
+        }
+
         public string Nome
         {
             get { return _nome; }

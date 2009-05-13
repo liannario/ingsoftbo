@@ -7,15 +7,26 @@ namespace Prototipo
 {
     public abstract class OperazioneUtente
     {
-        public virtual void Operazione(Guest g)
+        public virtual bool Operazione(Guest g)
         {
-            throw new Exception("non puoi fare questa operazione");
+            return false;
         }
-        public virtual void Operazione(Operatore o)
+        public virtual bool Operazione(Operatore o)
         {
-            throw new Exception("non puoi fare questa operazione");
+            return false;
         }
-        public abstract void Operazione(Amministratore a);
+        public abstract bool Operazione(Amministratore a);
 
     }
+
+    public class RicercaUtente : OperazioneUtente
+    {
+        public override bool Operazione(Amministratore a)
+        {
+            return true;
+        }
+    }
+
 }
+
+

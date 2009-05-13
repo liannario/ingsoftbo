@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    class Vettura
+    public class Vettura
     {
         private String _targa;
 

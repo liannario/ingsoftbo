@@ -38,7 +38,11 @@ namespace Prototipo
             MessageBox.Show(_username.Text + "\n" + _password.Text + "\n" + _selectedRadio.Text);
             Utente current = UtenteFactory.GetUtente(_username.Text, _password.Text, _selectedRadio.Text);
             Negozio.GetInstance().UtenteCorrente = current;
-            current.EseguiOperazione(new RicercaUtente());
+            bool result = current.EseguiOperazione(new RicercaUtente());
+            if (result == true)
+                MessageBox.Show("Operazione eseguita");
+            else
+                MessageBox.Show("Operazione non possibile");
         }
     }
 }

@@ -9,13 +9,21 @@ namespace Prototipo
     {
         private Cliente() { }
         private Vetture _vetture;
-        private WheelCard _wheelCard;
 
-        public Vetture Vetture
+        internal Vetture Vetture
         {
             get { return _vetture; }
             set { _vetture = value; }
         }
+        private WheelCard _wheelCard;
+
+        internal WheelCard WheelCard
+        {
+            get { return _wheelCard; }
+            set { _wheelCard = value; }
+        }
+
+       
 
         private String _indirizzo;
 

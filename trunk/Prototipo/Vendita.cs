@@ -8,6 +8,9 @@ namespace Prototipo
     public enum TipoDocumentoVendita { Scontrino, Fattura };
     public class Vendita
     {
+        public Vendita()
+        {
+        }
         public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Boolean daNotificare)
         {
             _data = dt;

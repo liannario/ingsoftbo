@@ -9,8 +9,10 @@ namespace Prototipo
     {
         private string _nome;
         private string _indirizzo;
+        private Prodotti _prodotti;
 
         public Magazzino()
+            : this("","")
         {
         }
 
@@ -18,6 +20,7 @@ namespace Prototipo
         {
             Nome = nome;
             Indirizzo = indirizzo;
+            _prodotti = new Prodotti();
         }
 
         public string Nome

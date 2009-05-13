@@ -8,36 +8,54 @@ namespace Prototipo
     public abstract class Utente
     {
 
+        private String _nome;
+
         public String Nome
         {
-             get { return Nome; }
-             set { Nome = value; }
+            get { return _nome; }
+            set { _nome = value; }
         }
+
+        private String _cognome;
+
         public String Cognome
         {
-            get { return Cognome; }
-            set { cognome = value; }
+            get { return _cognome; }
+            set { _cognome = value; }
         }
-        public DateTime dataNascita
+
+        private DateTime _dataNascita;
+
+        public DateTime DataNascita
         {
-            get { return dataNascita; }
-            set { dataNascita = value; }
+            get { return _dataNascita; }
+            set { _dataNascita = value; }
         }
-        public String indirizzo
+
+        private String _indirizzo;
+
+        public String Indirizzo
         {
-            get { return indirizzo; }
-            set { indirizzo = value; }
+            get { return _indirizzo; }
+            set { _indirizzo = value; }
         }
-        public String username
+
+        private String _username;
+
+        public String Username
         {
-            get { return username; }
-            set { username = value; }
+            get { return _username; }
+            set { _username = value; }
         }
-        public String password
+
+        private String _password;
+
+        public String Password
         {
-            get { return password; }
-            set { password = value; }
+            get { return _password; }
+            set { _password = value; }
         }
+        
 
         public abstract void EseguiOperazione(IOperazione o);
 

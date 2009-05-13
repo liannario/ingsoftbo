@@ -35,7 +35,6 @@ namespace Prototipo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_username.Text + "\n" + _password.Text + "\n" + _selectedRadio.Text);
             Utente current = UtenteFactory.GetUtente(_username.Text, _password.Text, _selectedRadio.Text);
             Negozio.GetInstance().UtenteCorrente = current;
             bool result = current.EseguiOperazione(new RicercaUtente());

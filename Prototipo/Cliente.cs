@@ -63,6 +63,15 @@ namespace Prototipo
             return false;
 
         }
+
+        private String _cf;
+
+        public String Cf
+        {
+            get { return _cf; }
+            set { _cf = value; }
+        }
+
     }
 
     public class ClientePrivato : Cliente

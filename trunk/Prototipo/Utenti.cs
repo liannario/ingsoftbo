@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    class Utenti
+    class Utenti : List<Utente>
     {
     }
 }

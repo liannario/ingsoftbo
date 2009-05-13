@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    enum TipoDocumentoVendita { Scontrino, Fattura };
+    public enum TipoDocumentoVendita { Scontrino, Fattura };
     public class Vendita
     {
         public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Boolean daNotificare)

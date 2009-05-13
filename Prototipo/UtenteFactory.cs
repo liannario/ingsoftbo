@@ -10,6 +10,7 @@ namespace Prototipo
         private UtenteFactory()
         {
         }
+
         public static Utente GetUtente(String nome, String pw, String type)
         {
             switch (type)

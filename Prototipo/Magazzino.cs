@@ -16,7 +16,8 @@ namespace Prototipo
 
         public Magazzino(string nome, string indirizzo)
         {
- 
+            Nome = nome;
+            Indirizzo = indirizzo;
         }
 
         public string Nome

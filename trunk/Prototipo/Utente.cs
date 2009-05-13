@@ -7,32 +7,33 @@ namespace Prototipo
 {
     public abstract class Utente
     {
-        protected String nome
+
+        public String Nome
         {
-            get { return nome; }
-            set { nome = value; }
+             get { return Nome; }
+             set { Nome = value; }
         }
-        protected String cognome
+        public String Cognome
         {
-            get { return cognome; }
+            get { return Cognome; }
             set { cognome = value; }
         }
-        protected DateTime dataNascita
+        public DateTime dataNascita
         {
             get { return dataNascita; }
             set { dataNascita = value; }
         }
-        protected String indirizzo
+        public String indirizzo
         {
             get { return indirizzo; }
             set { indirizzo = value; }
         }
-        protected String username
+        public String username
         {
             get { return username; }
             set { username = value; }
         }
-        protected String password
+        public String password
         {
             get { return password; }
             set { password = value; }

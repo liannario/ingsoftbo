@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    class Vetture : List<Vettura>
+    public class Vetture : List<Vettura>
     {
     }
 }

@@ -10,14 +10,14 @@ namespace Prototipo
         protected Cliente() { }
         private Vetture _vetture;
 
-        internal Vetture Vetture
+        public Vetture Vetture
         {
             get { return _vetture; }
             set { _vetture = value; }
         }
         private WheelCard _wheelCard;
 
-        internal WheelCard WheelCard
+        public WheelCard WheelCard
         {
             get { return _wheelCard; }
             set { _wheelCard = value; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    class WheelCard
+    public class WheelCard
     {
         private string _codice;
 

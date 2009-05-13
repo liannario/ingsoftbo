@@ -57,7 +57,7 @@ namespace Prototipo
         }
         
 
-        public abstract void EseguiOperazione(OperazioneUtente o);
+        public abstract bool EseguiOperazione(OperazioneUtente o);
 
     }
 
@@ -72,9 +72,9 @@ namespace Prototipo
             Password = pw;
 
         }
-        public override void EseguiOperazione(OperazioneUtente o)
+        public override bool EseguiOperazione(OperazioneUtente o)
         {
-            o.Operazione(this);
+            return o.Operazione(this);
         }
     }
 
@@ -89,9 +89,9 @@ namespace Prototipo
             Password = pw;
 
         }
-        public override void EseguiOperazione(OperazioneUtente o)
+        public override bool EseguiOperazione(OperazioneUtente o)
         {
-            o.Operazione(this);
+           return o.Operazione(this);
         }
     }
 
@@ -106,9 +106,9 @@ namespace Prototipo
             Password = pw;
 
         }
-        public override void EseguiOperazione(OperazioneUtente o)
+        public override bool EseguiOperazione(OperazioneUtente o)
         {
-            o.Operazione(this);
+            return o.Operazione(this);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Prototipo
         {
             throw new Exception("non puoi fare questa operazione");
         }
-        public abstract Operazione(Amministratore a);
+        public abstract void Operazione(Amministratore a);
         
     }
 }

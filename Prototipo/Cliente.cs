@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prototipo
 {
-    abstract class Cliente
+    public abstract class Cliente
     {
         private Cliente() { }
         private Vetture _vetture;

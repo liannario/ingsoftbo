@@ -7,7 +7,9 @@ namespace Prototipo
 {
     abstract class Cliente
     {
+        private Cliente() { }
         private Vetture _vetture;
+        private WheelCard _wheelCard;
 
         public Vetture Vetture
         {

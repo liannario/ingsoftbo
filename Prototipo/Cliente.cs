@@ -36,16 +36,9 @@ namespace Prototipo
 
     public class ClientePrivato : Cliente
     {
-        public String Nome
-        {
-            get { return Nome; }
-            set { Nome = value; }
-        }
-        public String Nome
-        {
-            get { return Nome; }
-            set { Nome = value; }
-        }
+        private String Nome;
+        private String 
+       
         public String Nome
         {
             get { return Nome; }

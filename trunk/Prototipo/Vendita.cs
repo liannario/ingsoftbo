@@ -5,9 +5,18 @@ using System.Text;
 
 namespace Prototipo
 {
+    enum TipoDocumentoVendita { Scontrino, Fattura };
     public class Vendita
     {
-        enum TipoDocumentoVendita {Scontrino, Fattura};
+        public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Boolean daNotificare)
+        {
+            _data = dt;
+            _documentoVendita = tdv;
+            _prodotti = p;
+            _notifiche = n;
+            _daNotificare = daNotificare;
+
+        }
         private DateTime _data;
 
         public DateTime Data
@@ -53,5 +62,30 @@ namespace Prototipo
         }
 
 
+
     }
+
+    public class Preventivo : Vendita
+    {
+        private string _codice;
+
+        public string Codice
+        {
+            get { return _codice; }
+            set { _codice = value; }
+        }
+        private DateTime _dataValidita;
+
+        public DateTime DataValidita
+        {
+            get { return _dataValidita; }
+            set { _dataValidita = value; }
+        }
+        public Vendita ConvertiInVendita() {
+            return (Vendita)this;
+        }
+
+    }
+
+
 }

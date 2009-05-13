@@ -7,44 +7,98 @@ namespace Prototipo
 {
     abstract class Cliente
     {
-        public Vetture _vetture
+        private Vetture _vetture;
+
+        public Vetture Vetture
         {
             get { return _vetture; }
             set { _vetture = value; }
         }
+
+        private String _indirizzo;
+
         public String Indirizzo
         {
-            get { return Indirizzo; }
-            set { Indirizzo = value; }
+            get { return _indirizzo; }
+            set { _indirizzo = value; }
         }
+
+        private String _email;
+
         public String Email
         {
-            get { return Email; }
-            set { Email = value; }
+            get { return _email; }
+            set { _email = value; }
         }
+
+        private String _telefono;
+
         public String Telefono
         {
-            get { return Telefono; }
-            set { Telefono = value; }
+            get { return _telefono; }
+            set { _telefono = value; }
         }
+
+        private Boolean _privacy;
+
         public Boolean Privacy
         {
-            get { return Privacy; }
-            set { Privacy = value; }
+            get { return _privacy; }
+            set { _privacy = value; }
+        }
+        public Boolean PossiedeVettura()
+        {
+            if (_vetture != null)
+                return true;
+            return false;
+
         }
     }
 
     public class ClientePrivato : Cliente
     {
-        private String Nome;
-        private String 
-       
+        private String _nome;
+
         public String Nome
         {
-            get { return Nome; }
-            set { Nome = value; }
+            get { return _nome; }
+            set { _nome = value; }
         }
-        public DateTime
+
+        private String _cognome;
+
+        public String Cognome
+        {
+            get { return _cognome; }
+            set { _cognome = value; }
+        }
+
+        private DateTime _dataNascita;
+
+        public DateTime DataNascita
+        {
+            get { return _dataNascita; }
+            set { _dataNascita = value; }
+        }
     }
-        
+
+    public class ClienteAzienda : Cliente
+    {
+        private String _partitaIva;
+
+        public String PartitaIva
+        {
+            get { return _partitaIva; }
+            set { _partitaIva = value; }
+        }
+        private String _ragioneSociale;
+
+        public String RagioneSociale
+        {
+            get { return _ragioneSociale; }
+            set { _ragioneSociale = value; }
+        }
+
+
+    }
 }

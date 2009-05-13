@@ -18,7 +18,7 @@ namespace Prototipo
                 case "Guest": return new Guest(nome, pw); break;
                 case "Operatore": return new Operatore(nome, pw); break;
                 case "Amministratore": return new Amministratore(nome, pw); break;
-                default: break;
+                default: return null;  break;
             }
         }
 

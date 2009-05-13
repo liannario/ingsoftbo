@@ -65,11 +65,11 @@ namespace Prototipo
     {
         public Guest(String user, String pw)
         {
-            this.nome = "Guest";
-            this.indirizzo = "Via del guest 1";
-            this.dataNascita = new DateTime(2009, 5, 4);
-            this.username = user;
-            this.password = pw;
+            Nome = "Guest";
+            Indirizzo = "Via del guest 1";
+            DataNascita = new DateTime(2009, 5, 4);
+            Username = user;
+            Password = pw;
 
         }
         public override void EseguiOperazione(OperazioneUtente o)
@@ -82,14 +82,14 @@ namespace Prototipo
     {
         public Operatore(String user, String pw)
         {
-            this.nome = "Operatore";
-            this.indirizzo = "Via dell'operatore 1";
-            this.dataNascita = new DateTime(2009, 5, 5);
-            this.username = user;
-            this.password = pw;
+            Nome = "Operatore";
+            Indirizzo = "Via dell'operatore 1";
+            DataNascita = new DateTime(2009, 5, 5);
+            Username = user;
+            Password = pw;
 
         }
-        public void EseguiOperazione(OperazioneUtente o)
+        public override void EseguiOperazione(OperazioneUtente o)
         {
             o.Operazione(this);
         }
@@ -99,14 +99,14 @@ namespace Prototipo
     {
         public Amministratore(String user, String pw)
         {
-            this.nome = "Amministratore";
-            this.indirizzo = "Via dell'amministratore 1";
-            this.dataNascita = new DateTime(2009, 5, 3);
-            this.username = user;
-            this.password = pw;
+            Nome = "Amministratore";
+            Indirizzo = "Via dell'amministratore 1";
+            DataNascita = new DateTime(2009, 5, 3);
+            Username = user;
+            Password = pw;
 
         }
-        public void EseguiOperazione(OperazioneUtente o)
+        public override void EseguiOperazione(OperazioneUtente o)
         {
             o.Operazione(this);
         }

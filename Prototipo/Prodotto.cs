@@ -90,7 +90,12 @@ namespace Prototipo
 
         public bool AggiornaGiacenza(int quantita)
         {
-            Giacenza -= quantita;
+            if (quantita > 0)
+            {
+                Giacenza -= quantita;
+                return true;
+            }
+            return false;
         }
     }
 }

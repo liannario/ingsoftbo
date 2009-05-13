@@ -16,7 +16,7 @@ namespace Prototipo
         public LoginForm()
         {
             InitializeComponent();
-            _selectedRadio = radioButton1;
+            _selectedRadio = _radioButtonGuest;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this._loginBox = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this._radioButtonAmministratore = new System.Windows.Forms.RadioButton();
+            this._radioButtonOperatore = new System.Windows.Forms.RadioButton();
+            this._radioButtonGuest = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this._passwordLabel = new System.Windows.Forms.Label();
             this._usernameLabel = new System.Windows.Forms.Label();
@@ -45,9 +45,9 @@
             this._loginBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this._loginBox.Controls.Add(this.radioButton3);
-            this._loginBox.Controls.Add(this.radioButton2);
-            this._loginBox.Controls.Add(this.radioButton1);
+            this._loginBox.Controls.Add(this._radioButtonAmministratore);
+            this._loginBox.Controls.Add(this._radioButtonOperatore);
+            this._loginBox.Controls.Add(this._radioButtonGuest);
             this._loginBox.Controls.Add(this.button1);
             this._loginBox.Controls.Add(this._passwordLabel);
             this._loginBox.Controls.Add(this._usernameLabel);
@@ -60,40 +60,40 @@
             this._loginBox.TabStop = false;
             this._loginBox.Text = "Login";
             // 
-            // radioButton3
+            // _radioButtonAmministratore
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(61, 145);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(93, 17);
-            this.radioButton3.TabIndex = 8;
-            this.radioButton3.Text = "Amministratore";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this._radioButtonAmministratore.AutoSize = true;
+            this._radioButtonAmministratore.Location = new System.Drawing.Point(61, 145);
+            this._radioButtonAmministratore.Name = "_radioButtonAmministratore";
+            this._radioButtonAmministratore.Size = new System.Drawing.Size(93, 17);
+            this._radioButtonAmministratore.TabIndex = 8;
+            this._radioButtonAmministratore.Text = "Amministratore";
+            this._radioButtonAmministratore.UseVisualStyleBackColor = true;
+            this._radioButtonAmministratore.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // radioButton2
+            // _radioButtonOperatore
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(61, 122);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(72, 17);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.Text = "Operatore";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this._radioButtonOperatore.AutoSize = true;
+            this._radioButtonOperatore.Location = new System.Drawing.Point(61, 122);
+            this._radioButtonOperatore.Name = "_radioButtonOperatore";
+            this._radioButtonOperatore.Size = new System.Drawing.Size(72, 17);
+            this._radioButtonOperatore.TabIndex = 7;
+            this._radioButtonOperatore.Text = "Operatore";
+            this._radioButtonOperatore.UseVisualStyleBackColor = true;
+            this._radioButtonOperatore.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // _radioButtonGuest
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(61, 99);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 17);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Guest";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this._radioButtonGuest.AutoSize = true;
+            this._radioButtonGuest.Checked = true;
+            this._radioButtonGuest.Location = new System.Drawing.Point(61, 99);
+            this._radioButtonGuest.Name = "_radioButtonGuest";
+            this._radioButtonGuest.Size = new System.Drawing.Size(53, 17);
+            this._radioButtonGuest.TabIndex = 6;
+            this._radioButtonGuest.TabStop = true;
+            this._radioButtonGuest.Text = "Guest";
+            this._radioButtonGuest.UseVisualStyleBackColor = true;
+            this._radioButtonGuest.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button1
             // 
@@ -164,9 +164,9 @@
         private System.Windows.Forms.TextBox _username;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label _passwordLabel;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton _radioButtonGuest;
+        private System.Windows.Forms.RadioButton _radioButtonAmministratore;
+        private System.Windows.Forms.RadioButton _radioButtonOperatore;
 
 
     }

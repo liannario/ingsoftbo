@@ -34,5 +34,11 @@ namespace Prototipo
             get { return _indirizzo; }
             set { _indirizzo = value; }
         }
+
+        public Prodotti Prodotti
+        {
+            get { return _prodotti; }
+            set { _prodotti = value; }
+        }
     }
 }

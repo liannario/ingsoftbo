@@ -65,14 +65,19 @@ namespace Prototipo
         {
         }
 
-        public double CalcolaTotale()
+        public int CalcolaTotale()
         {
             double totale = 0;
             foreach (Prodotto p in _prodotti)
             {
-                totale += p.PrezzoVendita * (1 + p.Sconto) * p.Quantita;
+                double prezzoScontato;
+                if (p.Sconto != 0)
+                    prezzoScontato = p.PrezzoVendita * 1 / (1 + (p.Sconto / 100));
+                else
+                    prezzoScontato = p.PrezzoVendita;
+                totale += prezzoScontato * p.Quantita;
             }
-            return totale;
+            return Convert.ToInt32(totale);
         }
 
 

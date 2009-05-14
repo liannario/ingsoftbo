@@ -66,7 +66,7 @@
             this._prodottiBox.Controls.Add(this._prodottiGridView);
             this._prodottiBox.Location = new System.Drawing.Point(13, 186);
             this._prodottiBox.Name = "_prodottiBox";
-            this._prodottiBox.Size = new System.Drawing.Size(901, 188);
+            this._prodottiBox.Size = new System.Drawing.Size(901, 210);
             this._prodottiBox.TabIndex = 1;
             this._prodottiBox.TabStop = false;
             this._prodottiBox.Text = "Prodotti";
@@ -91,14 +91,14 @@
             this._prodottiGridView.MultiSelect = false;
             this._prodottiGridView.Name = "_prodottiGridView";
             this._prodottiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._prodottiGridView.Size = new System.Drawing.Size(898, 166);
+            this._prodottiGridView.Size = new System.Drawing.Size(898, 185);
             this._prodottiGridView.TabIndex = 0;
             this._prodottiGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this._prodottiGridView_CellEndEdit);
             // 
             // _aggiungiProdottoButton
             // 
-            this._aggiungiProdottoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiProdottoButton.Location = new System.Drawing.Point(786, 157);
+            this._aggiungiProdottoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._aggiungiProdottoButton.Location = new System.Drawing.Point(13, 402);
             this._aggiungiProdottoButton.Name = "_aggiungiProdottoButton";
             this._aggiungiProdottoButton.Size = new System.Drawing.Size(128, 23);
             this._aggiungiProdottoButton.TabIndex = 2;
@@ -108,17 +108,21 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(778, 384);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(778, 408);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Totale";
             // 
             // _totTextBox
             // 
-            this._totTextBox.Location = new System.Drawing.Point(821, 381);
+            this._totTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._totTextBox.Location = new System.Drawing.Point(821, 405);
             this._totTextBox.Name = "_totTextBox";
+            this._totTextBox.ReadOnly = true;
             this._totTextBox.Size = new System.Drawing.Size(93, 20);
             this._totTextBox.TabIndex = 4;
             this._totTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -171,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 580);
+            this.ClientSize = new System.Drawing.Size(930, 621);
             this.Controls.Add(this._totTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._aggiungiProdottoButton);

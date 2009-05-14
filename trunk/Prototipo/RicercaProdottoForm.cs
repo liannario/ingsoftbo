@@ -21,6 +21,8 @@ namespace Prototipo
         {
             InitializeComponent();
             _venditaForm = venditaForm;
+            //Se si vuole far apparire tutti i prodotti appena si apre la finestra
+            dataGridView1.DataSource = Negozio.GetInstance().Magazzini.CercaProdottoByDescrizione("");
         }
 
         private void _okButton_Click(object sender, EventArgs e)

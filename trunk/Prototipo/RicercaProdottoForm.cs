@@ -11,14 +11,24 @@ namespace Prototipo
 {
     public partial class RicercaProdottoForm : Form
     {
+        private VenditaForm _venditaForm;
         public RicercaProdottoForm()
         {
             InitializeComponent();
         }
 
+        public RicercaProdottoForm(VenditaForm venditaForm)
+        {
+            InitializeComponent();
+            _venditaForm = venditaForm;
+        }
+
         private void _okButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            //MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            _venditaForm.Vendita.Prodotti.Add(Negozio.GetInstance().Magazzini[0].Prodotti.
+                CercaProdottoByCodice(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            this.Close();
         }
 
         private void _cercaButton_Click(object sender, EventArgs e)

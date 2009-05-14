@@ -18,15 +18,14 @@ namespace Prototipo
             return result;
         }
 
-        public IList<Prodotto> CercaProdottoByCodice(string codice)
+        public Prodotto CercaProdottoByCodice(string codice)
         {
-            List<Prodotto> result = new List<Prodotto>();
             foreach (Prodotto p in this)
             {
-                if (p.Descrizione.Contains(codice))
-                    result.Add(p);
+                if (p.Codice == codice)
+                    return p;
             }
-            return result;
+            return null;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Prototipo
             Negozio.GetInstance().Magazzini.Add(m1);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RicercaProdottoForm());
+            Application.Run(new VenditaForm());
         }
     }
 }

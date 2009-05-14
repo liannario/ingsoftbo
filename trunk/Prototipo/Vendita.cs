@@ -9,6 +9,7 @@ namespace Prototipo
     public class Vendita
     {
         public Vendita()
+            :this(DateTime.Now, TipoDocumentoVendita.Fattura, new Prodotti(), new Notifiche(), true)
         {
         }
         public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Boolean daNotificare)
@@ -62,6 +63,16 @@ namespace Prototipo
 
         public void SalvaPreventivo()
         {
+        }
+
+        public double CalcolaTotale()
+        {
+            double totale = 0;
+            foreach (Prodotto p in _prodotti)
+            {
+                totale += p.PrezzoVendita * (1 + p.Sconto) * p.Quantita;
+            }
+            return totale;
         }
 
 

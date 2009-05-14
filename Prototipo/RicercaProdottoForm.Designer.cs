@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._okButton = new System.Windows.Forms.Button();
+            this._annullaButton = new System.Windows.Forms.Button();
+            this._cercaTextBox = new System.Windows.Forms.TextBox();
+            this._cercaButton = new System.Windows.Forms.Button();
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoAcquistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giacenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._okButton = new System.Windows.Forms.Button();
-            this._annullaButton = new System.Windows.Forms.Button();
-            this._cercaTextBox = new System.Windows.Forms.TextBox();
-            this._cercaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,10 +56,50 @@
             this.giacenzaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.prodottiBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(28, 42);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(742, 319);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // _okButton
+            // 
+            this._okButton.Location = new System.Drawing.Point(610, 382);
+            this._okButton.Name = "_okButton";
+            this._okButton.Size = new System.Drawing.Size(75, 23);
+            this._okButton.TabIndex = 1;
+            this._okButton.Text = "Ok";
+            this._okButton.UseVisualStyleBackColor = true;
+            this._okButton.Click += new System.EventHandler(this._okButton_Click);
+            // 
+            // _annullaButton
+            // 
+            this._annullaButton.Location = new System.Drawing.Point(696, 381);
+            this._annullaButton.Name = "_annullaButton";
+            this._annullaButton.Size = new System.Drawing.Size(75, 23);
+            this._annullaButton.TabIndex = 2;
+            this._annullaButton.Text = "Annulla";
+            this._annullaButton.UseVisualStyleBackColor = true;
+            this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
+            // 
+            // _cercaTextBox
+            // 
+            this._cercaTextBox.Location = new System.Drawing.Point(28, 13);
+            this._cercaTextBox.Name = "_cercaTextBox";
+            this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
+            this._cercaTextBox.TabIndex = 3;
+            this._cercaTextBox.Text = "Inserisci la descrizione per la ricerca";
+            this._cercaTextBox.Click += new System.EventHandler(this._cercaTextBox_Click);
+            // 
+            // _cercaButton
+            // 
+            this._cercaButton.Location = new System.Drawing.Point(695, 13);
+            this._cercaButton.Name = "_cercaButton";
+            this._cercaButton.Size = new System.Drawing.Size(75, 23);
+            this._cercaButton.TabIndex = 4;
+            this._cercaButton.Text = "Cerca";
+            this._cercaButton.UseVisualStyleBackColor = true;
+            this._cercaButton.Click += new System.EventHandler(this._cercaButton_Click);
             // 
             // codiceDataGridViewTextBoxColumn
             // 
@@ -102,45 +142,6 @@
             // prodottiBindingSource
             // 
             this.prodottiBindingSource.DataSource = typeof(Prototipo.Prodotti);
-            // 
-            // _okButton
-            // 
-            this._okButton.Location = new System.Drawing.Point(610, 382);
-            this._okButton.Name = "_okButton";
-            this._okButton.Size = new System.Drawing.Size(75, 23);
-            this._okButton.TabIndex = 1;
-            this._okButton.Text = "Ok";
-            this._okButton.UseVisualStyleBackColor = true;
-            this._okButton.Click += new System.EventHandler(this._okButton_Click);
-            // 
-            // _annullaButton
-            // 
-            this._annullaButton.Location = new System.Drawing.Point(696, 381);
-            this._annullaButton.Name = "_annullaButton";
-            this._annullaButton.Size = new System.Drawing.Size(75, 23);
-            this._annullaButton.TabIndex = 2;
-            this._annullaButton.Text = "Annulla";
-            this._annullaButton.UseVisualStyleBackColor = true;
-            this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
-            // 
-            // _cercaTextBox
-            // 
-            this._cercaTextBox.Location = new System.Drawing.Point(28, 13);
-            this._cercaTextBox.Name = "_cercaTextBox";
-            this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
-            this._cercaTextBox.TabIndex = 3;
-            this._cercaTextBox.Text = "Inserisci la descrizione per la ricerca";
-            this._cercaTextBox.Click += new System.EventHandler(this._cercaTextBox_Click);
-            // 
-            // _cercaButton
-            // 
-            this._cercaButton.Location = new System.Drawing.Point(695, 13);
-            this._cercaButton.Name = "_cercaButton";
-            this._cercaButton.Size = new System.Drawing.Size(75, 23);
-            this._cercaButton.TabIndex = 4;
-            this._cercaButton.Text = "Cerca...";
-            this._cercaButton.UseVisualStyleBackColor = true;
-            this._cercaButton.Click += new System.EventHandler(this._cercaButton_Click);
             // 
             // RicercaProdottoForm
             // 

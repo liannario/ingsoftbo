@@ -47,7 +47,7 @@ namespace Prototipo
 
         private void AggiornaTotale()
         {
-            double totale = _vendita.CalcolaTotale();
+            int totale = _vendita.CalcolaTotale();
             _totTextBox.Text = totale.ToString();
         }
     }

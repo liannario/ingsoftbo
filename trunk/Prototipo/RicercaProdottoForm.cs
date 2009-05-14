@@ -23,7 +23,7 @@ namespace Prototipo
 
         private void _cercaButton_Click(object sender, EventArgs e)
         {
-            IList<Prodotto> result = Negozio.GetInstance().Magazzini[0].Prodotti.CercaProdottoByDescrizione(_cercaTextBox.Text);
+            IList<Prodotto> result = Negozio.GetInstance().Magazzini.CercaProdottoByDescrizione(_cercaTextBox.Text);
             if (result.Count == 0)
                 MessageBox.Show("Nessun prodotto trovato");
             else

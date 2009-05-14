@@ -8,12 +8,12 @@ namespace Prototipo
     public class Negozio
     {
         private static Negozio _instance = null;
-        private Utenti _utenti;
-        private Utente _utenteCorrente;
-        private Magazzini _magazzini;
-        private Vendite _vendite;
-        private Clienti _clienti;
-        private Categoria _categoriaRoot;
+        private static Utenti _utenti;
+        private static Utente _utenteCorrente;
+        private static Magazzini _magazzini;
+        private static Vendite _vendite;
+        private static Clienti _clienti;
+        private static Categoria _categoriaRoot;
 
         protected Negozio()
         {
@@ -27,7 +27,10 @@ namespace Prototipo
         public static Negozio GetInstance()
         {
             if (_instance == null)
-                return new Negozio();
+            {
+                _instance = new Negozio();
+                return _instance;
+            }
             return _instance;
         }
 

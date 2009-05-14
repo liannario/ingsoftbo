@@ -11,22 +11,27 @@ namespace Prototipo
         private const int soglia = 2;
         private string _codice;
         private string _descrizione;
-        private float _prezzoAcquisto;
-        private float _prezzoVendita;
+        private double _prezzoAcquisto;
+        private double _prezzoVendita;
         private int _giacenza;
         private int _quantita;
-        private float _sconto;
+        private double _sconto;
 
         public Prodotto()
         { 
         }
 
-        public Prodotto(string codice, string descrizione, float prezzoAcquisto, float prezzoVendita)
+        public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita)
             : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenzaDefault, 0, 0)
         { 
         }
 
-        public Prodotto(string codice, string descrizione, float prezzoAcquisto, float prezzoVendita, int giacenza, int quantita, float sconto)
+        public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita, int giacenza)
+            : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenza, 0, 0)
+        {
+        }
+
+        public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita, int giacenza, int quantita, double sconto)
         {
             Codice = codice;
             Descrizione = descrizione;
@@ -49,13 +54,13 @@ namespace Prototipo
             set { _descrizione = value; }
         }
 
-        public float PrezzoAcquisto
+        public double PrezzoAcquisto
         {
             get { return _prezzoAcquisto; }
             set { _prezzoAcquisto = value; }
         }
 
-        public float PrezzoVendita
+        public double PrezzoVendita
         {
             get { return _prezzoVendita; }
             set { _prezzoVendita = value; }
@@ -73,7 +78,7 @@ namespace Prototipo
             set { _quantita = value; }
         }
 
-        public float Sconto
+        public double Sconto
         {
             get { return _sconto; }
             set { _sconto = value; }

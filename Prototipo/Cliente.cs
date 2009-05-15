@@ -8,6 +8,15 @@ namespace Prototipo
     public abstract class Cliente
     {
         protected Cliente() { }
+        protected void setData(String indirizzo, String email, String telefono, Boolean privacy, String cf)
+        {
+            _indirizzo = indirizzo;
+            _email = email;
+            _telefono = telefono;
+            _privacy = privacy;
+            _cf = cf;
+        }
+
         private Vetture _vetture;
 
         public Vetture Vetture
@@ -22,8 +31,6 @@ namespace Prototipo
             get { return _wheelCard; }
             set { _wheelCard = value; }
         }
-
-       
 
         private String _indirizzo;
 
@@ -76,6 +83,15 @@ namespace Prototipo
 
     public class ClientePrivato : Cliente
     {
+        public ClientePrivato(String nome, String cognome, DateTime data, String indirizzo, String email,
+            Boolean privacy, String cf, String telefono)
+        {
+            this.setData(indirizzo, email, telefono, privacy, cf);
+            _nome = nome;
+            _cognome = cognome;
+            _dataNascita = data;
+        }
+        
         private String _nome;
 
         public String Nome
@@ -103,6 +119,15 @@ namespace Prototipo
 
     public class ClienteAzienda : Cliente
     {
+        public ClienteAzienda(String iva, String rs, String indirizzo, String email,
+            Boolean privacy, String cf, String telefono)
+        {
+            this.setData(indirizzo, email, telefono, privacy, cf);
+            _partitaIva = iva;
+            _ragioneSociale = rs;
+        }
+
+
         private String _partitaIva;
 
         public String PartitaIva

@@ -50,5 +50,28 @@ namespace Prototipo
             int totale = _vendita.CalcolaTotale();
             _totTextBox.Text = totale.ToString();
         }
+
+        private void _prodottiGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void _clienteBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RicercaClienteForm _ricercaCliente = new RicercaClienteForm(this);
+            _ricercaCliente.ShowDialog();
+            
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
     }
 }

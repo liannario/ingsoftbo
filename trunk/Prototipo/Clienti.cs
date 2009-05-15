@@ -9,10 +9,11 @@ namespace Prototipo
     {
         public IList<Cliente> CercaClienteByCF(string cf)
         {
+           
             List<Cliente> result = new List<Cliente>();
             foreach (Cliente c in this)
             {
-                if (c.Cf.Contains(cf))
+                if (c.Cf.Contains(cf) || cf.Equals(""))
                     result.Add(c);
             }
             return result;

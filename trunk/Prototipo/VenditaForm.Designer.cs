@@ -35,6 +35,8 @@
             this._aggiungiProdottoButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this._totTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +44,7 @@
             this.quantitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scontoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._clienteBox.SuspendLayout();
             this._prodottiBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._prodottiGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
@@ -50,12 +53,14 @@
             // _clienteBox
             // 
             this._clienteBox.AutoSize = true;
+            this._clienteBox.Controls.Add(this.button1);
             this._clienteBox.Location = new System.Drawing.Point(12, 12);
             this._clienteBox.Name = "_clienteBox";
             this._clienteBox.Size = new System.Drawing.Size(438, 156);
             this._clienteBox.TabIndex = 0;
             this._clienteBox.TabStop = false;
             this._clienteBox.Text = "Cliente";
+            this._clienteBox.Enter += new System.EventHandler(this._clienteBox_Enter);
             // 
             // _prodottiBox
             // 
@@ -94,6 +99,7 @@
             this._prodottiGridView.Size = new System.Drawing.Size(898, 185);
             this._prodottiGridView.TabIndex = 0;
             this._prodottiGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this._prodottiGridView_CellEndEdit);
+            this._prodottiGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._prodottiGridView_CellContentClick);
             // 
             // _aggiungiProdottoButton
             // 
@@ -126,6 +132,27 @@
             this._totTextBox.Size = new System.Drawing.Size(93, 20);
             this._totTextBox.TabIndex = 4;
             this._totTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Ricerca Cliente";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(25, 484);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(59, 17);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "Fattura";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // codiceDataGridViewTextBoxColumn
             // 
@@ -176,6 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 621);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this._totTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._aggiungiProdottoButton);
@@ -184,6 +212,7 @@
             this.Name = "VenditaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendita";
+            this._clienteBox.ResumeLayout(false);
             this._prodottiBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._prodottiGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).EndInit();
@@ -207,5 +236,7 @@
         private System.Windows.Forms.Button _aggiungiProdottoButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _totTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

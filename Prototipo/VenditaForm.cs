@@ -65,6 +65,7 @@ namespace Prototipo
         {
             RicercaClienteForm _ricercaCliente = new RicercaClienteForm(this);
             _ricercaCliente.ShowDialog();
+            _clienteScelto.DataSource = _vendita.Clienti.ElementAt(0);
             
         }
 
@@ -72,6 +73,16 @@ namespace Prototipo
         {
             
             
+        }
+
+        private void VenditaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

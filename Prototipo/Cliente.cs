@@ -83,6 +83,7 @@ namespace Prototipo
 
     public class ClientePrivato : Cliente
     {
+        public ClientePrivato() { }
         public ClientePrivato(String nome, String cognome, DateTime data, String indirizzo, String email,
             Boolean privacy, String cf, String telefono)
         {
@@ -127,7 +128,7 @@ namespace Prototipo
             _ragioneSociale = rs;
         }
 
-
+        public ClienteAzienda() { }
         private String _partitaIva;
 
         public String PartitaIva

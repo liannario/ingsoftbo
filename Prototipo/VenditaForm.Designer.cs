@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this._clienteBox = new System.Windows.Forms.GroupBox();
+            this._ricercaClientiButton = new System.Windows.Forms.Button();
             this._prodottiBox = new System.Windows.Forms.GroupBox();
             this._prodottiGridView = new System.Windows.Forms.DataGridView();
             this._aggiungiProdottoButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this._totTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,16 +44,18 @@
             this.quantitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scontoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._clienteScelto = new System.Windows.Forms.DataGridView();
             this._clienteBox.SuspendLayout();
             this._prodottiBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._prodottiGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._clienteScelto)).BeginInit();
             this.SuspendLayout();
             // 
             // _clienteBox
             // 
             this._clienteBox.AutoSize = true;
-            this._clienteBox.Controls.Add(this.button1);
+            this._clienteBox.Controls.Add(this._clienteScelto);
             this._clienteBox.Location = new System.Drawing.Point(12, 12);
             this._clienteBox.Name = "_clienteBox";
             this._clienteBox.Size = new System.Drawing.Size(438, 156);
@@ -61,6 +63,16 @@
             this._clienteBox.TabStop = false;
             this._clienteBox.Text = "Cliente";
             this._clienteBox.Enter += new System.EventHandler(this._clienteBox_Enter);
+            // 
+            // _ricercaClientiButton
+            // 
+            this._ricercaClientiButton.Location = new System.Drawing.Point(465, 23);
+            this._ricercaClientiButton.Name = "_ricercaClientiButton";
+            this._ricercaClientiButton.Size = new System.Drawing.Size(132, 23);
+            this._ricercaClientiButton.TabIndex = 0;
+            this._ricercaClientiButton.Text = "Ricerca Cliente";
+            this._ricercaClientiButton.UseVisualStyleBackColor = true;
+            this._ricercaClientiButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // _prodottiBox
             // 
@@ -133,16 +145,6 @@
             this._totTextBox.TabIndex = 4;
             this._totTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(22, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ricerca Cliente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -198,11 +200,21 @@
             // 
             this.prodottiBindingSource.DataSource = typeof(Prototipo.Prodotti);
             // 
+            // _clienteScelto
+            // 
+            this._clienteScelto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._clienteScelto.Location = new System.Drawing.Point(0, 19);
+            this._clienteScelto.Name = "_clienteScelto";
+            this._clienteScelto.Size = new System.Drawing.Size(378, 85);
+            this._clienteScelto.TabIndex = 0;
+            this._clienteScelto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // VenditaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 621);
+            this.Controls.Add(this._ricercaClientiButton);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this._totTextBox);
             this.Controls.Add(this.label1);
@@ -212,10 +224,12 @@
             this.Name = "VenditaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendita";
+            this.Load += new System.EventHandler(this.VenditaForm_Load);
             this._clienteBox.ResumeLayout(false);
             this._prodottiBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._prodottiGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._clienteScelto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +250,8 @@
         private System.Windows.Forms.Button _aggiungiProdottoButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _totTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button _ricercaClientiButton;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.DataGridView _clienteScelto;
     }
 }

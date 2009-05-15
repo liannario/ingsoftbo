@@ -32,5 +32,26 @@ namespace Prototipo
         {
 
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            _venditaForm.Vendita.Clienti.Add( (Negozio.GetInstance().Clienti.CercaClienteByCF(dataGridView1.SelectedRows[0].Cells[5].Value.ToString() ) )[0] );
+            //Cliente l = new ClientePrivato();
+            //l = Negozio.GetInstance().Clienti.CercaClienteByCF("").ElementAt(0);
+            //String s = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            //_venditaForm.Vendita.Clienti.Add(Negozio.GetInstance().Clienti.
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

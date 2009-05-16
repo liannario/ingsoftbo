@@ -61,13 +61,23 @@
             this._aggiungiProdottoButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this._totTextBox = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this._tipoDocumentoGroupBox = new System.Windows.Forms.GroupBox();
+            this._scontrinoRadioButton = new System.Windows.Forms.RadioButton();
+            this._fatturaRadioButton = new System.Windows.Forms.RadioButton();
+            this._notificaGroupBox = new System.Windows.Forms.GroupBox();
+            this._eliminaNotificaButton = new System.Windows.Forms.Button();
+            this._aggiungiNotificaButton = new System.Windows.Forms.Button();
+            this._emailRadioButton = new System.Windows.Forms.RadioButton();
+            this._smsRadioButton = new System.Windows.Forms.RadioButton();
+            this._calendar = new System.Windows.Forms.MonthCalendar();
             this._clienteBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vettureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this._prodottiBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._prodottiGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
+            this._tipoDocumentoGroupBox.SuspendLayout();
+            this._notificaGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // _clienteBox
@@ -263,7 +273,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._prodottiBox.AutoSize = true;
             this._prodottiBox.Controls.Add(this._prodottiGridView);
-            this._prodottiBox.Location = new System.Drawing.Point(13, 186);
+            this._prodottiBox.Location = new System.Drawing.Point(12, 189);
             this._prodottiBox.Name = "_prodottiBox";
             this._prodottiBox.Size = new System.Drawing.Size(901, 210);
             this._prodottiBox.TabIndex = 1;
@@ -342,7 +352,7 @@
             // _aggiungiProdottoButton
             // 
             this._aggiungiProdottoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._aggiungiProdottoButton.Location = new System.Drawing.Point(13, 402);
+            this._aggiungiProdottoButton.Location = new System.Drawing.Point(12, 405);
             this._aggiungiProdottoButton.Name = "_aggiungiProdottoButton";
             this._aggiungiProdottoButton.Size = new System.Drawing.Size(128, 23);
             this._aggiungiProdottoButton.TabIndex = 2;
@@ -355,7 +365,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(778, 408);
+            this.label1.Location = new System.Drawing.Point(771, 411);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
@@ -364,29 +374,116 @@
             // _totTextBox
             // 
             this._totTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._totTextBox.Location = new System.Drawing.Point(821, 405);
+            this._totTextBox.Location = new System.Drawing.Point(820, 408);
             this._totTextBox.Name = "_totTextBox";
             this._totTextBox.ReadOnly = true;
             this._totTextBox.Size = new System.Drawing.Size(93, 20);
             this._totTextBox.TabIndex = 4;
             this._totTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox2
+            // _tipoDocumentoGroupBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(500, 133);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(59, 17);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Fattura";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this._tipoDocumentoGroupBox.Controls.Add(this._scontrinoRadioButton);
+            this._tipoDocumentoGroupBox.Controls.Add(this._fatturaRadioButton);
+            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(482, 12);
+            this._tipoDocumentoGroupBox.Name = "_tipoDocumentoGroupBox";
+            this._tipoDocumentoGroupBox.Size = new System.Drawing.Size(191, 171);
+            this._tipoDocumentoGroupBox.TabIndex = 7;
+            this._tipoDocumentoGroupBox.TabStop = false;
+            this._tipoDocumentoGroupBox.Text = "Tipo Documento";
+            // 
+            // _scontrinoRadioButton
+            // 
+            this._scontrinoRadioButton.AutoSize = true;
+            this._scontrinoRadioButton.Checked = true;
+            this._scontrinoRadioButton.Location = new System.Drawing.Point(57, 92);
+            this._scontrinoRadioButton.Name = "_scontrinoRadioButton";
+            this._scontrinoRadioButton.Size = new System.Drawing.Size(70, 17);
+            this._scontrinoRadioButton.TabIndex = 1;
+            this._scontrinoRadioButton.TabStop = true;
+            this._scontrinoRadioButton.Text = "Scontrino";
+            this._scontrinoRadioButton.UseVisualStyleBackColor = true;
+            this._scontrinoRadioButton.CheckedChanged += new System.EventHandler(this._scontrinoRadioButton_CheckedChanged);
+            // 
+            // _fatturaRadioButton
+            // 
+            this._fatturaRadioButton.AutoSize = true;
+            this._fatturaRadioButton.Location = new System.Drawing.Point(57, 61);
+            this._fatturaRadioButton.Name = "_fatturaRadioButton";
+            this._fatturaRadioButton.Size = new System.Drawing.Size(58, 17);
+            this._fatturaRadioButton.TabIndex = 0;
+            this._fatturaRadioButton.Text = "Fattura";
+            this._fatturaRadioButton.UseVisualStyleBackColor = true;
+            this._fatturaRadioButton.CheckedChanged += new System.EventHandler(this._fatturaRadioButton_CheckedChanged);
+            // 
+            // _notificaGroupBox
+            // 
+            this._notificaGroupBox.Controls.Add(this._eliminaNotificaButton);
+            this._notificaGroupBox.Controls.Add(this._aggiungiNotificaButton);
+            this._notificaGroupBox.Controls.Add(this._emailRadioButton);
+            this._notificaGroupBox.Controls.Add(this._smsRadioButton);
+            this._notificaGroupBox.Controls.Add(this._calendar);
+            this._notificaGroupBox.Location = new System.Drawing.Point(12, 434);
+            this._notificaGroupBox.Name = "_notificaGroupBox";
+            this._notificaGroupBox.Size = new System.Drawing.Size(438, 175);
+            this._notificaGroupBox.TabIndex = 8;
+            this._notificaGroupBox.TabStop = false;
+            this._notificaGroupBox.Text = "Notifiche";
+            // 
+            // _eliminaNotificaButton
+            // 
+            this._eliminaNotificaButton.Location = new System.Drawing.Point(250, 120);
+            this._eliminaNotificaButton.Name = "_eliminaNotificaButton";
+            this._eliminaNotificaButton.Size = new System.Drawing.Size(144, 23);
+            this._eliminaNotificaButton.TabIndex = 4;
+            this._eliminaNotificaButton.Text = "Elimina Notifica";
+            this._eliminaNotificaButton.UseVisualStyleBackColor = true;
+            // 
+            // _aggiungiNotificaButton
+            // 
+            this._aggiungiNotificaButton.Location = new System.Drawing.Point(250, 74);
+            this._aggiungiNotificaButton.Name = "_aggiungiNotificaButton";
+            this._aggiungiNotificaButton.Size = new System.Drawing.Size(144, 23);
+            this._aggiungiNotificaButton.TabIndex = 3;
+            this._aggiungiNotificaButton.Text = "Aggiungi Notifica";
+            this._aggiungiNotificaButton.UseVisualStyleBackColor = true;
+            // 
+            // _emailRadioButton
+            // 
+            this._emailRadioButton.AutoSize = true;
+            this._emailRadioButton.Checked = true;
+            this._emailRadioButton.Location = new System.Drawing.Point(328, 37);
+            this._emailRadioButton.Name = "_emailRadioButton";
+            this._emailRadioButton.Size = new System.Drawing.Size(50, 17);
+            this._emailRadioButton.TabIndex = 2;
+            this._emailRadioButton.TabStop = true;
+            this._emailRadioButton.Text = "Email";
+            this._emailRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // _smsRadioButton
+            // 
+            this._smsRadioButton.AutoSize = true;
+            this._smsRadioButton.Location = new System.Drawing.Point(269, 37);
+            this._smsRadioButton.Name = "_smsRadioButton";
+            this._smsRadioButton.Size = new System.Drawing.Size(45, 17);
+            this._smsRadioButton.TabIndex = 1;
+            this._smsRadioButton.TabStop = true;
+            this._smsRadioButton.Text = "Sms";
+            this._smsRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // _calendar
+            // 
+            this._calendar.Location = new System.Drawing.Point(50, 14);
+            this._calendar.Name = "_calendar";
+            this._calendar.TabIndex = 0;
             // 
             // VenditaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 621);
-            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this._notificaGroupBox);
+            this.Controls.Add(this._tipoDocumentoGroupBox);
             this.Controls.Add(this._totTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._aggiungiProdottoButton);
@@ -402,6 +499,10 @@
             this._prodottiBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._prodottiGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).EndInit();
+            this._tipoDocumentoGroupBox.ResumeLayout(false);
+            this._tipoDocumentoGroupBox.PerformLayout();
+            this._notificaGroupBox.ResumeLayout(false);
+            this._notificaGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +518,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox _totTextBox;
         private System.Windows.Forms.Button _ricercaClientiButton;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox _cognomeTextBox;
         private System.Windows.Forms.Label _cognomeLabel;
         private System.Windows.Forms.TextBox _nomeTextBox;
@@ -442,5 +542,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn scontoDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox _puntiTextBox;
         private System.Windows.Forms.Label _puntiLabel;
+        private System.Windows.Forms.GroupBox _tipoDocumentoGroupBox;
+        private System.Windows.Forms.RadioButton _scontrinoRadioButton;
+        private System.Windows.Forms.RadioButton _fatturaRadioButton;
+        private System.Windows.Forms.GroupBox _notificaGroupBox;
+        private System.Windows.Forms.RadioButton _emailRadioButton;
+        private System.Windows.Forms.RadioButton _smsRadioButton;
+        private System.Windows.Forms.MonthCalendar _calendar;
+        private System.Windows.Forms.Button _eliminaNotificaButton;
+        private System.Windows.Forms.Button _aggiungiNotificaButton;
     }
 }

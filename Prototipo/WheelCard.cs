@@ -21,5 +21,10 @@ namespace Prototipo
             get { return _punti; }
             set { _punti = value; }
         }
+
+        public override string ToString()
+        {
+            return Codice;
+        }
     }
 }

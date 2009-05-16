@@ -21,5 +21,15 @@ namespace Prototipo
             get { return _modello; }
             set { _modello = value; }
         }
+
+        public Vettura()
+        { 
+        }
+
+        public Vettura(string targa, string modello)
+        {
+            Targa = targa;
+            Modello = modello;
+        }
     }
 }

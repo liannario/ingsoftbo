@@ -13,7 +13,7 @@ namespace Prototipo
             List<Cliente> result = new List<Cliente>();
             foreach (Cliente c in this)
             {
-                if (c.Cf.Contains(cf) || cf.Equals(""))
+                if (c.Cf.Contains(cf))
                     result.Add(c);
             }
             return result;

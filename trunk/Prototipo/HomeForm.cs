@@ -38,7 +38,7 @@ namespace Prototipo
 
         private void _giacenzaButton_Click(object sender, EventArgs e)
         {
-            RicercaProdottoForm form = new RicercaProdottoForm(null);
+            RicercaProdottoForm form = new RicercaProdottoForm();
             ControlloGiacenza operazione = new ControlloGiacenza();
             IsUtenteAuthorized(form, operazione);
         }

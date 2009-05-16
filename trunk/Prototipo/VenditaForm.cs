@@ -61,7 +61,7 @@ namespace Prototipo
         {
             RicercaClienteForm _ricercaCliente = new RicercaClienteForm(this);
             _ricercaCliente.ShowDialog();
-            if (_vendita.Clienti.Count > 0)
+            try
             {
                 Cliente _clienteCorrente = _vendita.Clienti[0];
                 if (_clienteCorrente.GetType() == typeof(ClientePrivato))
@@ -89,6 +89,8 @@ namespace Prototipo
                 }
                 _vettureComboBox.DataSource = _clienteCorrente.Vetture;
             }
+            catch (ArgumentOutOfRangeException exception)
+            { }
         }
     }
 }

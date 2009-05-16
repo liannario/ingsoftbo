@@ -34,11 +34,13 @@
             this._annullaButton = new System.Windows.Forms.Button();
             this._cercaTextBox = new System.Windows.Forms.TextBox();
             this._cercaButton = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoAcquistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giacenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
@@ -47,13 +49,15 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceDataGridViewTextBoxColumn,
             this.descrizioneDataGridViewTextBoxColumn,
             this.prezzoAcquistoDataGridViewTextBoxColumn,
             this.prezzoVenditaDataGridViewTextBoxColumn,
-            this.giacenzaDataGridViewTextBoxColumn});
+            this.giacenzaDataGridViewTextBoxColumn,
+            this.Categoria});
             this.dataGridView1.DataSource = this.prodottiBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(28, 42);
             this.dataGridView1.MultiSelect = false;
@@ -101,6 +105,13 @@
             this._cercaButton.UseVisualStyleBackColor = true;
             this._cercaButton.Click += new System.EventHandler(this._cercaButton_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 699;
+            // 
             // codiceDataGridViewTextBoxColumn
             // 
             this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
@@ -108,7 +119,6 @@
             this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
             this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
             this.codiceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codiceDataGridViewTextBoxColumn.Width = 97;
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
@@ -116,7 +126,6 @@
             this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
             this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descrizioneDataGridViewTextBoxColumn.Width = 300;
             // 
             // prezzoAcquistoDataGridViewTextBoxColumn
             // 
@@ -138,6 +147,12 @@
             this.giacenzaDataGridViewTextBoxColumn.HeaderText = "Giacenza";
             this.giacenzaDataGridViewTextBoxColumn.Name = "giacenzaDataGridViewTextBoxColumn";
             this.giacenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "Categoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
             // 
             // prodottiBindingSource
             // 
@@ -176,6 +191,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoAcquistoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoVenditaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 
     }
 }

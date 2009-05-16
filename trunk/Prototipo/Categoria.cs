@@ -33,8 +33,18 @@ namespace Prototipo
 
         public CategoriaCollection CategoriaCollection
         {
-            get { return _categoriaCollection; }
+            get
+            {
+                if (_categoriaCollection == null)
+                    return new CategoriaCollection();
+                return _categoriaCollection;
+            }
             set { _categoriaCollection = value; }
+        }
+
+        public override string ToString()
+        {
+            return Nome;
         }
     }
 }

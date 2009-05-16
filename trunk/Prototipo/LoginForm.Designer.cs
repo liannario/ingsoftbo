@@ -37,6 +37,7 @@
             this._usernameLabel = new System.Windows.Forms.Label();
             this._password = new System.Windows.Forms.TextBox();
             this._username = new System.Windows.Forms.TextBox();
+            this._exitButton = new System.Windows.Forms.Button();
             this._loginBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this._loginBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this._loginBox.Controls.Add(this._exitButton);
             this._loginBox.Controls.Add(this._radioButtonAmministratore);
             this._loginBox.Controls.Add(this._radioButtonOperatore);
             this._loginBox.Controls.Add(this._radioButtonGuest);
@@ -53,15 +55,18 @@
             this._loginBox.Controls.Add(this._usernameLabel);
             this._loginBox.Controls.Add(this._password);
             this._loginBox.Controls.Add(this._username);
-            this._loginBox.Location = new System.Drawing.Point(149, 123);
+            this._loginBox.Location = new System.Drawing.Point(142, 110);
             this._loginBox.Name = "_loginBox";
-            this._loginBox.Size = new System.Drawing.Size(200, 220);
+            this._loginBox.Size = new System.Drawing.Size(200, 242);
             this._loginBox.TabIndex = 0;
             this._loginBox.TabStop = false;
             this._loginBox.Text = "Login";
             // 
             // _radioButtonAmministratore
             // 
+            this._radioButtonAmministratore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._radioButtonAmministratore.AutoSize = true;
             this._radioButtonAmministratore.Location = new System.Drawing.Point(61, 145);
             this._radioButtonAmministratore.Name = "_radioButtonAmministratore";
@@ -73,6 +78,9 @@
             // 
             // _radioButtonOperatore
             // 
+            this._radioButtonOperatore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._radioButtonOperatore.AutoSize = true;
             this._radioButtonOperatore.Location = new System.Drawing.Point(61, 122);
             this._radioButtonOperatore.Name = "_radioButtonOperatore";
@@ -84,6 +92,9 @@
             // 
             // _radioButtonGuest
             // 
+            this._radioButtonGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._radioButtonGuest.AutoSize = true;
             this._radioButtonGuest.Checked = true;
             this._radioButtonGuest.Location = new System.Drawing.Point(61, 99);
@@ -97,6 +108,9 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(61, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -107,6 +121,9 @@
             // 
             // _passwordLabel
             // 
+            this._passwordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._passwordLabel.AutoSize = true;
             this._passwordLabel.Location = new System.Drawing.Point(6, 62);
             this._passwordLabel.Name = "_passwordLabel";
@@ -127,6 +144,9 @@
             // 
             // _password
             // 
+            this._password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._password.Location = new System.Drawing.Point(70, 59);
             this._password.Name = "_password";
             this._password.Size = new System.Drawing.Size(122, 20);
@@ -135,10 +155,26 @@
             // 
             // _username
             // 
+            this._username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._username.Location = new System.Drawing.Point(70, 20);
             this._username.Name = "_username";
             this._username.Size = new System.Drawing.Size(122, 20);
             this._username.TabIndex = 0;
+            // 
+            // _exitButton
+            // 
+            this._exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._exitButton.Location = new System.Drawing.Point(61, 208);
+            this._exitButton.Name = "_exitButton";
+            this._exitButton.Size = new System.Drawing.Size(75, 23);
+            this._exitButton.TabIndex = 9;
+            this._exitButton.Text = "Esci";
+            this._exitButton.UseVisualStyleBackColor = true;
+            this._exitButton.Click += new System.EventHandler(this._exitButton_Click);
             // 
             // LoginForm
             // 
@@ -167,6 +203,7 @@
         private System.Windows.Forms.RadioButton _radioButtonGuest;
         private System.Windows.Forms.RadioButton _radioButtonAmministratore;
         private System.Windows.Forms.RadioButton _radioButtonOperatore;
+        private System.Windows.Forms.Button _exitButton;
 
 
     }

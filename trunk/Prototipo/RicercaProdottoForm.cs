@@ -27,9 +27,9 @@ namespace Prototipo
 
         private void _okButton_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-            _venditaForm.Vendita.Prodotti.Add(Negozio.GetInstance().Magazzini[0].Prodotti.
-                CercaProdottoByCodice(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+            if(_venditaForm != null)
+                _venditaForm.Vendita.Prodotti.Add(Negozio.GetInstance().Magazzini[0].Prodotti.
+                    CercaProdottoByCodice(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             this.Close();
         }
 

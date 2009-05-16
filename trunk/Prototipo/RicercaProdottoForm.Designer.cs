@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._ricercaGridView = new System.Windows.Forms.DataGridView();
             this._okButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
             this._cercaTextBox = new System.Windows.Forms.TextBox();
             this._cercaButton = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoAcquistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giacenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // _ricercaGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._ricercaGridView.AutoGenerateColumns = false;
+            this._ricercaGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._ricercaGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._ricercaGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceDataGridViewTextBoxColumn,
             this.descrizioneDataGridViewTextBoxColumn,
             this.prezzoAcquistoDataGridViewTextBoxColumn,
             this.prezzoVenditaDataGridViewTextBoxColumn,
             this.giacenzaDataGridViewTextBoxColumn,
             this.Categoria});
-            this.dataGridView1.DataSource = this.prodottiBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 42);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 319);
-            this.dataGridView1.TabIndex = 0;
+            this._ricercaGridView.DataSource = this.prodottiBindingSource;
+            this._ricercaGridView.Location = new System.Drawing.Point(28, 42);
+            this._ricercaGridView.MultiSelect = false;
+            this._ricercaGridView.Name = "_ricercaGridView";
+            this._ricercaGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._ricercaGridView.Size = new System.Drawing.Size(742, 319);
+            this._ricercaGridView.TabIndex = 0;
             // 
             // _okButton
             // 
@@ -112,6 +112,10 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 699;
             // 
+            // prodottiBindingSource
+            // 
+            this.prodottiBindingSource.DataSource = typeof(Prototipo.Prodotti);
+            // 
             // codiceDataGridViewTextBoxColumn
             // 
             this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
@@ -122,6 +126,7 @@
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
+            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
@@ -154,10 +159,6 @@
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             // 
-            // prodottiBindingSource
-            // 
-            this.prodottiBindingSource.DataSource = typeof(Prototipo.Prodotti);
-            // 
             // RicercaProdottoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,11 +168,11 @@
             this.Controls.Add(this._cercaTextBox);
             this.Controls.Add(this._annullaButton);
             this.Controls.Add(this._okButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this._ricercaGridView);
             this.Name = "RicercaProdottoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RicercaProdotto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,19 +181,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView _ricercaGridView;
         private System.Windows.Forms.BindingSource prodottiBindingSource;
         private System.Windows.Forms.Button _okButton;
         private System.Windows.Forms.Button _annullaButton;
         private System.Windows.Forms.TextBox _cercaTextBox;
         private System.Windows.Forms.Button _cercaButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoAcquistoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoVenditaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 
     }
 }

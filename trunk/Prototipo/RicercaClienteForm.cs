@@ -15,43 +15,36 @@ namespace Prototipo
         public RicercaClienteForm(VenditaForm venditaForm)
         {
             InitializeComponent();
-            
-           
             _venditaForm = venditaForm;
             //Se si vuole far apparire tutti i clienti appena si apre la finestra
-            dataGridView1.DataSource = Negozio.GetInstance().Clienti.CercaClienteByCF("");
+            _ricercaGridView.DataSource = Negozio.GetInstance().Clienti.CercaClienteByCF("");
         
         }
 
-        private void RicercaCliente_Load(object sender, EventArgs e)
+        private void _okButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-            _venditaForm.Vendita.Clienti.Add( (Negozio.GetInstance().Clienti.CercaClienteByCF(dataGridView1.SelectedRows[0].Cells[5].Value.ToString() ) )[0] );
-            //Cliente l = new ClientePrivato();
-            //l = Negozio.GetInstance().Clienti.CercaClienteByCF("").ElementAt(0);
-            //String s = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            //_venditaForm.Vendita.Clienti.Add(Negozio.GetInstance().Clienti.
+            _venditaForm.Vendita.Clienti.Insert(0, (Negozio.GetInstance().Clienti
+                .CercaClienteByCF(_ricercaGridView.SelectedRows[0].Cells[4].Value.ToString() ) )[0]);
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void _annullaButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void _cercaButton_Click(object sender, EventArgs e)
+        {
+            IList<Cliente> result = Negozio.GetInstance().Clienti.FindAll((Cliente c) => { return c.Nome.Contains(_cercaTextBox.Text); });
+            if (result.Count == 0)
+                MessageBox.Show("Nessun cliente trovato");
+            else
+                _ricercaGridView.DataSource = result;
+        }
+
+        private void _cercaTextBox_Click(object sender, EventArgs e)
+        {
+            _cercaTextBox.Text = "";
         }
     }
 }

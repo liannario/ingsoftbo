@@ -43,10 +43,19 @@ namespace Prototipo
             IsUtenteAuthorized(form, operazione);
         }
 
+        private void _venditaButton_Click(object sender, EventArgs e)
+        {
+            VenditaForm form = new VenditaForm();
+            EffettuaVendita operazione = new EffettuaVendita();
+            IsUtenteAuthorized(form, operazione);
+        }
+
         private void _logoutButton_Click(object sender, EventArgs e)
         {
             this.Close();
             _loginForm.Show();
         }
+
+        
     }
 }

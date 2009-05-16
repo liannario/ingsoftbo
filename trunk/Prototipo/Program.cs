@@ -30,12 +30,20 @@ namespace Prototipo
             m1.Prodotti.Add(new Prodotto("012347", "Pneumatico Bridgestone", 244.24, 270, 12, pneumaticiNormali));
 
             //Aggiunta magazzino al negozio
-            
-            Negozio.GetInstance().Clienti.Add(new ClienteAzienda("01234567890", "Progetto s.r.l.", "via saragozza 1", "info@azienda.it", true, "01234567890", "020202020"));
-            Negozio.GetInstance().Clienti.Add(new ClientePrivato("cliente", "privato", new DateTime(1970, 1, 1), "via saragozza 2", "cliente@privato.it", true, "cltprv70a1g732", "020202020"));
-            
-
             Negozio.GetInstance().Magazzini.Add(m1);
+            
+            //Aggiunta Clienti al negozio
+            ClienteAzienda clienteAzienda1 = new ClienteAzienda("01234567890", "Progetto s.r.l.", "via saragozza 1", "info@azienda.it", true, "01234567890", "020202020");
+            clienteAzienda1.Vetture.Add(new Vettura("CZ373KS", "Lancia Y"));
+            clienteAzienda1.Vetture.Add(new Vettura("CZ474SW", "Alfa Mito"));
+            clienteAzienda1.WheelCard.Punti = 1250;
+            Negozio.GetInstance().Clienti.Add(clienteAzienda1);
+
+            ClientePrivato clientePrivato1 = new ClientePrivato("cliente", "privato", new DateTime(1970, 1, 1), "via saragozza 2", "cliente@privato.it", true, "cltprv70a1g732", "020202020");
+            clientePrivato1.Vetture.Add(new Vettura("DA263GS", "Ferrari F430"));
+            clientePrivato1.Vetture.Add(new Vettura("DC878EW","Lamborghini Murcielago"));
+            clientePrivato1.WheelCard.Punti = 500;
+            Negozio.GetInstance().Clienti.Add(clientePrivato1);
 
             //Run del login
             Application.EnableVisualStyles();

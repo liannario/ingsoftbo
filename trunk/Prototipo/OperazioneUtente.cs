@@ -37,6 +37,20 @@ namespace Prototipo
         }
     }
 
+    public class EffettuaVendita : OperazioneUtente
+    {
+        public override bool Operazione(Operatore a)
+        {
+            return true;
+        }
+
+        public override bool Operazione(Amministratore a)
+        {
+            return true;
+        }
+    }
+
+
 }
 
 

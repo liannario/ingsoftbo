@@ -8,8 +8,9 @@ namespace Prototipo
     public abstract class Cliente
     {
         protected Cliente() { }
-        protected void setData(String indirizzo, String email, String telefono, Boolean privacy, String cf)
+        protected void setData(String nome, String indirizzo, String email, String telefono, Boolean privacy, String cf)
         {
+            _nome = nome;
             _indirizzo = indirizzo;
             _email = email;
             _telefono = telefono;
@@ -17,18 +18,42 @@ namespace Prototipo
             _cf = cf;
         }
 
+        private string _nome;
+
+        public string Nome
+        {
+            get { return _nome; }
+            set { _nome = value; }
+        }
+
         private Vetture _vetture;
 
         public Vetture Vetture
         {
-            get { return _vetture; }
+            get
+            {
+                if (_vetture == null)
+                {
+                    _vetture = new Vetture();
+                }
+                return _vetture; 
+            }
             set { _vetture = value; }
         }
         private WheelCard _wheelCard;
 
         public WheelCard WheelCard
         {
-            get { return _wheelCard; }
+            get
+            {
+                if (_wheelCard == null)
+                {
+                    _wheelCard = new WheelCard();
+                    _wheelCard.Codice = "CL" + Cf;
+                    _wheelCard.Punti = 0;
+                }
+                return _wheelCard;
+            }
             set { _wheelCard = value; }
         }
 
@@ -87,20 +112,11 @@ namespace Prototipo
         public ClientePrivato(String nome, String cognome, DateTime data, String indirizzo, String email,
             Boolean privacy, String cf, String telefono)
         {
-            this.setData(indirizzo, email, telefono, privacy, cf);
-            _nome = nome;
+            this.setData(nome, indirizzo, email, telefono, privacy, cf);
             _cognome = cognome;
             _dataNascita = data;
         }
         
-        private String _nome;
-
-        public String Nome
-        {
-            get { return _nome; }
-            set { _nome = value; }
-        }
-
         private String _cognome;
 
         public String Cognome
@@ -123,9 +139,8 @@ namespace Prototipo
         public ClienteAzienda(String iva, String rs, String indirizzo, String email,
             Boolean privacy, String cf, String telefono)
         {
-            this.setData(indirizzo, email, telefono, privacy, cf);
+            this.setData(rs, indirizzo, email, telefono, privacy, cf);
             _partitaIva = iva;
-            _ragioneSociale = rs;
         }
 
         public ClienteAzienda() { }
@@ -136,14 +151,5 @@ namespace Prototipo
             get { return _partitaIva; }
             set { _partitaIva = value; }
         }
-        private String _ragioneSociale;
-
-        public String RagioneSociale
-        {
-            get { return _ragioneSociale; }
-            set { _ragioneSociale = value; }
-        }
-
-
     }
 }

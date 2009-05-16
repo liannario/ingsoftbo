@@ -13,8 +13,9 @@ namespace Prototipo
     {
         private VenditaForm _venditaForm;
         public RicercaProdottoForm()
-            : this(null)
+
         {
+            InitializeComponent();
         }
 
         public RicercaProdottoForm(VenditaForm venditaForm)

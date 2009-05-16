@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this._loginBox = new System.Windows.Forms.GroupBox();
+            this._exitButton = new System.Windows.Forms.Button();
             this._radioButtonAmministratore = new System.Windows.Forms.RadioButton();
             this._radioButtonOperatore = new System.Windows.Forms.RadioButton();
             this._radioButtonGuest = new System.Windows.Forms.RadioButton();
@@ -37,7 +38,6 @@
             this._usernameLabel = new System.Windows.Forms.Label();
             this._password = new System.Windows.Forms.TextBox();
             this._username = new System.Windows.Forms.TextBox();
-            this._exitButton = new System.Windows.Forms.Button();
             this._loginBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,19 @@
             this._loginBox.TabIndex = 0;
             this._loginBox.TabStop = false;
             this._loginBox.Text = "Login";
+            // 
+            // _exitButton
+            // 
+            this._exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._exitButton.Location = new System.Drawing.Point(61, 208);
+            this._exitButton.Name = "_exitButton";
+            this._exitButton.Size = new System.Drawing.Size(75, 23);
+            this._exitButton.TabIndex = 9;
+            this._exitButton.Text = "Esci";
+            this._exitButton.UseVisualStyleBackColor = true;
+            this._exitButton.Click += new System.EventHandler(this._exitButton_Click);
             // 
             // _radioButtonAmministratore
             // 
@@ -163,23 +176,11 @@
             this._username.Size = new System.Drawing.Size(122, 20);
             this._username.TabIndex = 0;
             // 
-            // _exitButton
-            // 
-            this._exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this._exitButton.Location = new System.Drawing.Point(61, 208);
-            this._exitButton.Name = "_exitButton";
-            this._exitButton.Size = new System.Drawing.Size(75, 23);
-            this._exitButton.TabIndex = 9;
-            this._exitButton.Text = "Esci";
-            this._exitButton.UseVisualStyleBackColor = true;
-            this._exitButton.Click += new System.EventHandler(this._exitButton_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(494, 468);
             this.Controls.Add(this._loginBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

@@ -109,6 +109,7 @@
             // 
             // _puntiTextBox
             // 
+            this._puntiTextBox.BackColor = System.Drawing.Color.Yellow;
             this._puntiTextBox.Location = new System.Drawing.Point(278, 101);
             this._puntiTextBox.Name = "_puntiTextBox";
             this._puntiTextBox.ReadOnly = true;
@@ -135,6 +136,7 @@
             // 
             // _vettureComboBox
             // 
+            this._vettureComboBox.BackColor = System.Drawing.Color.Yellow;
             this._vettureComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vettureBindingSource, "Targa", true));
             this._vettureComboBox.DataSource = this.vettureBindingSource;
             this._vettureComboBox.DisplayMember = "Modello";
@@ -156,6 +158,7 @@
             // 
             // _cfTextBox
             // 
+            this._cfTextBox.BackColor = System.Drawing.Color.Yellow;
             this._cfTextBox.Location = new System.Drawing.Point(75, 101);
             this._cfTextBox.Name = "_cfTextBox";
             this._cfTextBox.ReadOnly = true;
@@ -183,9 +186,9 @@
             // 
             // _telTextBox
             // 
+            this._telTextBox.BackColor = System.Drawing.Color.PaleGreen;
             this._telTextBox.Location = new System.Drawing.Point(278, 73);
             this._telTextBox.Name = "_telTextBox";
-            this._telTextBox.ReadOnly = true;
             this._telTextBox.Size = new System.Drawing.Size(153, 20);
             this._telTextBox.TabIndex = 9;
             // 
@@ -200,9 +203,9 @@
             // 
             // _emailTextBox
             // 
+            this._emailTextBox.BackColor = System.Drawing.Color.PaleGreen;
             this._emailTextBox.Location = new System.Drawing.Point(75, 73);
             this._emailTextBox.Name = "_emailTextBox";
-            this._emailTextBox.ReadOnly = true;
             this._emailTextBox.Size = new System.Drawing.Size(139, 20);
             this._emailTextBox.TabIndex = 7;
             // 
@@ -217,6 +220,7 @@
             // 
             // _indirizzoTextBox
             // 
+            this._indirizzoTextBox.BackColor = System.Drawing.Color.Yellow;
             this._indirizzoTextBox.Location = new System.Drawing.Point(75, 44);
             this._indirizzoTextBox.Name = "_indirizzoTextBox";
             this._indirizzoTextBox.ReadOnly = true;
@@ -234,6 +238,7 @@
             // 
             // _cognomeTextBox
             // 
+            this._cognomeTextBox.BackColor = System.Drawing.Color.Yellow;
             this._cognomeTextBox.Location = new System.Drawing.Point(278, 17);
             this._cognomeTextBox.Name = "_cognomeTextBox";
             this._cognomeTextBox.ReadOnly = true;
@@ -251,6 +256,7 @@
             // 
             // _nomeTextBox
             // 
+            this._nomeTextBox.BackColor = System.Drawing.Color.Yellow;
             this._nomeTextBox.Location = new System.Drawing.Point(75, 17);
             this._nomeTextBox.Name = "_nomeTextBox";
             this._nomeTextBox.ReadOnly = true;
@@ -418,6 +424,7 @@
             // 
             // _notificaGroupBox
             // 
+            this._notificaGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._notificaGroupBox.Controls.Add(this._eliminaNotificaButton);
             this._notificaGroupBox.Controls.Add(this._aggiungiNotificaButton);
             this._notificaGroupBox.Controls.Add(this._emailRadioButton);
@@ -432,24 +439,35 @@
             // 
             // _eliminaNotificaButton
             // 
+            this._eliminaNotificaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._eliminaNotificaButton.Location = new System.Drawing.Point(250, 120);
             this._eliminaNotificaButton.Name = "_eliminaNotificaButton";
             this._eliminaNotificaButton.Size = new System.Drawing.Size(144, 23);
             this._eliminaNotificaButton.TabIndex = 4;
             this._eliminaNotificaButton.Text = "Elimina Notifica";
             this._eliminaNotificaButton.UseVisualStyleBackColor = true;
+            this._eliminaNotificaButton.Click += new System.EventHandler(this._eliminaNotificaButton_Click);
             // 
             // _aggiungiNotificaButton
             // 
+            this._aggiungiNotificaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._aggiungiNotificaButton.Location = new System.Drawing.Point(250, 74);
             this._aggiungiNotificaButton.Name = "_aggiungiNotificaButton";
             this._aggiungiNotificaButton.Size = new System.Drawing.Size(144, 23);
             this._aggiungiNotificaButton.TabIndex = 3;
             this._aggiungiNotificaButton.Text = "Aggiungi Notifica";
             this._aggiungiNotificaButton.UseVisualStyleBackColor = true;
+            this._aggiungiNotificaButton.Click += new System.EventHandler(this._aggiungiNotificaButton_Click);
             // 
             // _emailRadioButton
             // 
+            this._emailRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._emailRadioButton.AutoSize = true;
             this._emailRadioButton.Checked = true;
             this._emailRadioButton.Location = new System.Drawing.Point(328, 37);
@@ -462,6 +480,9 @@
             // 
             // _smsRadioButton
             // 
+            this._smsRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._smsRadioButton.AutoSize = true;
             this._smsRadioButton.Location = new System.Drawing.Point(269, 37);
             this._smsRadioButton.Name = "_smsRadioButton";
@@ -473,9 +494,13 @@
             // 
             // _calendar
             // 
+            this._calendar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._calendar.Location = new System.Drawing.Point(50, 14);
             this._calendar.Name = "_calendar";
             this._calendar.TabIndex = 0;
+            this._calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this._calendar_DateChanged);
             // 
             // VenditaForm
             // 

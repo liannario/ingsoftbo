@@ -41,8 +41,8 @@ namespace Prototipo
         }
         public Boolean AccadeOggi()
         {
-            DateTime oggi = new DateTime();
-            if (oggi.Equals(_dataNotifica))
+            DateTime oggi = DateTime.Now;
+            if (oggi.ToShortDateString() == _dataNotifica.ToShortDateString())
             {
                 return InviaNotifica();
             }

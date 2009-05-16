@@ -12,6 +12,7 @@ namespace Prototipo
     public partial class VenditaForm : Form
     {
         private Vendita _vendita;
+        private DateTime _dataNotifica;
 
         public Vendita Vendita
         {
@@ -23,6 +24,7 @@ namespace Prototipo
         {
             InitializeComponent();
             _vendita = new Vendita();
+            _dataNotifica = _calendar.TodayDate;
             AggiornaTotale();
         }
 
@@ -105,5 +107,51 @@ namespace Prototipo
         {
             _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
         }
+
+        private void _aggiungiNotificaButton_Click(object sender, EventArgs e)
+        {
+            TipoNotifica tipoNotifica = (_emailRadioButton.Checked) ? TipoNotifica.email : TipoNotifica.sms;
+            String destinatario = (_emailRadioButton.Checked) ? _emailTextBox.Text : _telTextBox.Text;
+            if (destinatario == "" || destinatario == null)
+            {
+                MessageBox.Show("Inserire numero di cellulare o email per mandare la notifica", "Errore destinatario");
+                return;
+            }
+
+            _vendita.Notifiche.Add(new Notifica(tipoNotifica, destinatario, _dataNotifica));
+            StringBuilder message = new StringBuilder();
+            message.AppendFormat("Notifica aggiunta: {0} a {1} in data {2}", tipoNotifica.ToString(), destinatario, _dataNotifica.ToShortDateString());
+            MessageBox.Show(message.ToString(), "Notifica aggiunta correttamente");
+
+        }
+
+        private void _calendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            _dataNotifica = e.Start;
+        }
+
+        private void _eliminaNotificaButton_Click(object sender, EventArgs e)
+        {
+            TipoNotifica tipoNotifica = (_emailRadioButton.Checked) ? TipoNotifica.email : TipoNotifica.sms;
+            String destinatario = (_emailRadioButton.Checked) ? _emailTextBox.Text : _telTextBox.Text;
+            List<Notifica> daEliminare = _vendita.Notifiche.
+                FindAll((Notifica n) =>
+                {
+                    if (n.DataNotifica.ToShortDateString() == _dataNotifica.ToShortDateString() &&
+                        n.Destinatario == destinatario && n.Tipo == tipoNotifica) return true;
+                    else
+                        return false;
+                });
+            foreach (Notifica n in daEliminare)
+            {
+                bool result = _vendita.Notifiche.Remove(n);
+                StringBuilder message = new StringBuilder();
+                message.AppendFormat("Notifica: {0} a {1} in data {2}", tipoNotifica.ToString(), destinatario, _dataNotifica.ToShortDateString());
+                if(result)
+                    MessageBox.Show(message.ToString(), "Notifica rimossa correttamente");
+                else
+                    MessageBox.Show(message.ToString(), "Notifica non rimossa");
+            }
+        }        
     }
 }

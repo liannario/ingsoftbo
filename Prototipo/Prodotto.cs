@@ -16,22 +16,28 @@ namespace Prototipo
         private int _giacenza;
         private int _quantita;
         private double _sconto;
+        private Categoria _categoria;
 
         public Prodotto()
         { 
         }
 
         public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita)
-            : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenzaDefault, 0, 0)
+            : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenzaDefault, 0, 0, new Categoria(""))
         { 
         }
 
         public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita, int giacenza)
-            : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenza, 0, 0)
+            : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenza, 0, 0, new Categoria(""))
         {
         }
 
-        public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita, int giacenza, int quantita, double sconto)
+        public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita, int giacenza, Categoria categoria)
+            : this(codice, descrizione, prezzoAcquisto, prezzoVendita, giacenza, 0, 0, categoria)
+        {
+        }
+
+        public Prodotto(string codice, string descrizione, double prezzoAcquisto, double prezzoVendita, int giacenza, int quantita, double sconto, Categoria categoria)
         {
             Codice = codice;
             Descrizione = descrizione;
@@ -40,6 +46,7 @@ namespace Prototipo
             Giacenza = giacenza;
             Quantita = quantita;
             Sconto = sconto;
+            Categoria = categoria;
         }
 
         public string Codice
@@ -82,6 +89,12 @@ namespace Prototipo
         {
             get { return _sconto; }
             set { _sconto = value; }
+        }
+
+        public Categoria Categoria
+        {
+            get { return _categoria; }
+            set { _categoria = value; }
         }
 
         //Restituisce false se la giacenza è inferiore alla soglia

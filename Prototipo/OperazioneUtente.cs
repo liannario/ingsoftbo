@@ -19,8 +19,18 @@ namespace Prototipo
 
     }
 
-    public class RicercaUtente : OperazioneUtente
+    public class ControlloGiacenza : OperazioneUtente
     {
+        public override bool Operazione(Guest a)
+        {
+            return true;
+        }
+
+        public override bool Operazione(Operatore a)
+        {
+            return true;
+        }
+        
         public override bool Operazione(Amministratore a)
         {
             return true;

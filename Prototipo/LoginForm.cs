@@ -38,18 +38,21 @@ namespace Prototipo
         {
             if (_username.Text == "" || _password.Text == "")
             {
-                MessageBox.Show("Nome utente e/o password errati");
+                MessageBox.Show("Nome utente e/o password errati", "Autenticazione fallita");
                 return;
             }
             Utente current = UtenteFactory.GetUtente(_username.Text, _password.Text, _selectedRadio.Text);
             Negozio.GetInstance().UtenteCorrente = current;
             this.Hide();
-            bool result = current.EseguiOperazione(new RicercaUtente());
-            if (result == true)
-                MessageBox.Show("Operazione eseguita");
-            else
-                MessageBox.Show("Operazione non possibile");
-            this.Show();            
+            using(HomeForm home = new HomeForm(this))
+            {
+                home.ShowDialog();
+            }
+        }
+
+        private void _exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

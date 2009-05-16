@@ -92,7 +92,18 @@ namespace Prototipo
             catch (ArgumentOutOfRangeException exception)
             {
                 //Eccezione catturata se si entra nella finestra di scelta del cliente e poi non viene scelto nessun cliente
+                string help = exception.HelpLink;
             }
+        }
+
+        private void _scontrinoRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _vendita.DocumentoVendita = TipoDocumentoVendita.Scontrino;
+        }
+
+        private void _fatturaRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
         }
     }
 }

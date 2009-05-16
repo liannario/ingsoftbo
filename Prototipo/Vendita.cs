@@ -9,7 +9,7 @@ namespace Prototipo
     public class Vendita
     {
         public Vendita()
-            :this(DateTime.Now, TipoDocumentoVendita.Fattura, new Prodotti(), new Notifiche(), true, new Clienti())
+            :this(DateTime.Now, TipoDocumentoVendita.Scontrino, new Prodotti(), new Notifiche(), true, new Clienti())
         {
         }
         public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Boolean daNotificare, Clienti c)
@@ -31,7 +31,7 @@ namespace Prototipo
         }
         private TipoDocumentoVendita _documentoVendita;
 
-        private TipoDocumentoVendita DocumentoVendita
+        public TipoDocumentoVendita DocumentoVendita
         {
             get { return _documentoVendita; }
             set { _documentoVendita = value; }

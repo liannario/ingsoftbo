@@ -90,7 +90,9 @@ namespace Prototipo
                 _vettureComboBox.DataSource = _clienteCorrente.Vetture;
             }
             catch (ArgumentOutOfRangeException exception)
-            { }
+            {
+                //Eccezione catturata se si entra nella finestra di scelta del cliente e poi non viene scelto nessun cliente
+            }
         }
     }
 }

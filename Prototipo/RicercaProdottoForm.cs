@@ -13,8 +13,8 @@ namespace Prototipo
     {
         private VenditaForm _venditaForm;
         public RicercaProdottoForm()
+            : this(null)
         {
-            InitializeComponent();
         }
 
         public RicercaProdottoForm(VenditaForm venditaForm)
@@ -37,7 +37,7 @@ namespace Prototipo
         {
             IList<Prodotto> result = Negozio.GetInstance().Magazzini.CercaProdottoByDescrizione(_cercaTextBox.Text);
             if (result.Count == 0)
-                MessageBox.Show("Nessun prodotto trovato");
+                MessageBox.Show("Nessun prodotto trovato", "Nessun Risulato");
             else
                 _ricercaGridView.DataSource = result;      
         }

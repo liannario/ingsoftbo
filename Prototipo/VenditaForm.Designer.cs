@@ -101,6 +101,7 @@
             // 
             this._puntiTextBox.Location = new System.Drawing.Point(278, 101);
             this._puntiTextBox.Name = "_puntiTextBox";
+            this._puntiTextBox.ReadOnly = true;
             this._puntiTextBox.Size = new System.Drawing.Size(153, 20);
             this._puntiTextBox.TabIndex = 15;
             // 
@@ -147,6 +148,7 @@
             // 
             this._cfTextBox.Location = new System.Drawing.Point(75, 101);
             this._cfTextBox.Name = "_cfTextBox";
+            this._cfTextBox.ReadOnly = true;
             this._cfTextBox.Size = new System.Drawing.Size(139, 20);
             this._cfTextBox.TabIndex = 11;
             // 
@@ -173,6 +175,7 @@
             // 
             this._telTextBox.Location = new System.Drawing.Point(278, 73);
             this._telTextBox.Name = "_telTextBox";
+            this._telTextBox.ReadOnly = true;
             this._telTextBox.Size = new System.Drawing.Size(153, 20);
             this._telTextBox.TabIndex = 9;
             // 
@@ -189,6 +192,7 @@
             // 
             this._emailTextBox.Location = new System.Drawing.Point(75, 73);
             this._emailTextBox.Name = "_emailTextBox";
+            this._emailTextBox.ReadOnly = true;
             this._emailTextBox.Size = new System.Drawing.Size(139, 20);
             this._emailTextBox.TabIndex = 7;
             // 
@@ -205,6 +209,7 @@
             // 
             this._indirizzoTextBox.Location = new System.Drawing.Point(75, 44);
             this._indirizzoTextBox.Name = "_indirizzoTextBox";
+            this._indirizzoTextBox.ReadOnly = true;
             this._indirizzoTextBox.Size = new System.Drawing.Size(356, 20);
             this._indirizzoTextBox.TabIndex = 5;
             // 
@@ -221,6 +226,7 @@
             // 
             this._cognomeTextBox.Location = new System.Drawing.Point(278, 17);
             this._cognomeTextBox.Name = "_cognomeTextBox";
+            this._cognomeTextBox.ReadOnly = true;
             this._cognomeTextBox.Size = new System.Drawing.Size(153, 20);
             this._cognomeTextBox.TabIndex = 3;
             // 
@@ -237,6 +243,7 @@
             // 
             this._nomeTextBox.Location = new System.Drawing.Point(75, 17);
             this._nomeTextBox.Name = "_nomeTextBox";
+            this._nomeTextBox.ReadOnly = true;
             this._nomeTextBox.Size = new System.Drawing.Size(139, 20);
             this._nomeTextBox.TabIndex = 1;
             // 

@@ -151,6 +151,7 @@
             this.wheelCardDataGridViewTextBoxColumn.DataPropertyName = "WheelCard";
             this.wheelCardDataGridViewTextBoxColumn.HeaderText = "WheelCard";
             this.wheelCardDataGridViewTextBoxColumn.Name = "wheelCardDataGridViewTextBoxColumn";
+            this.wheelCardDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // RicercaClienteForm
             // 
@@ -164,7 +165,7 @@
             this.Controls.Add(this._ricercaGridView);
             this.Name = "RicercaClienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RicercaCliente";
+            this.Text = "Clienti";
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
             this.ResumeLayout(false);

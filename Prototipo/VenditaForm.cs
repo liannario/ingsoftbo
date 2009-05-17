@@ -105,7 +105,10 @@ namespace Prototipo
 
         private void _fatturaRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
+            if (Vendita.Clienti.ElementAt(0) == typeof(ClienteAzienda))
+                _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
+            else
+                MessageBox.Show("Per stampare una fattura il cliente deve avere una partita iva");
         }
 
         private void _aggiungiNotificaButton_Click(object sender, EventArgs e)

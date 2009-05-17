@@ -38,7 +38,7 @@ namespace Prototipo
         {
             IList<Prodotto> result = Negozio.GetInstance().Magazzini.CercaProdottoByDescrizione(_cercaTextBox.Text);
             if (result.Count == 0)
-                MessageBox.Show("Nessun prodotto trovato", "Nessun Risulato");
+                MessageBox.Show("Nessun prodotto trovato", "Nessun Risultato");
             else
                 _ricercaGridView.DataSource = result;      
         }

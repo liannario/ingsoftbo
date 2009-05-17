@@ -80,7 +80,7 @@ namespace Prototipo
             {
                 double prezzoScontato;
                 if (p.Sconto != 0)
-                    prezzoScontato = p.PrezzoVendita * 1 / (1 + (p.Sconto / 100));
+                    prezzoScontato = p.PrezzoVendita - (p.PrezzoVendita * (p.Sconto/100));
                 else
                     prezzoScontato = p.PrezzoVendita;
                 totale += prezzoScontato * p.Quantita;

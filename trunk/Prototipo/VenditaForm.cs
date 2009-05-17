@@ -24,7 +24,7 @@ namespace Prototipo
         {
             InitializeComponent();
             _vendita = new Vendita();
-            _dataNotifica = _calendar.TodayDate;
+            _dataNotifica = _calendar.TodayDate; //Default nel caso non venga specificata una data diversa
             AggiornaTotale();
         }
 
@@ -108,7 +108,7 @@ namespace Prototipo
             try
             {
 
-                if (Vendita.Clienti.ElementAt(0).GetType() == typeof(ClienteAzienda) )
+                if (Vendita.Clienti[0].GetType() == typeof(ClienteAzienda) )
                 {
                     _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
 

@@ -498,6 +498,8 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._calendar.Location = new System.Drawing.Point(50, 14);
+            this._calendar.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this._calendar.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this._calendar.Name = "_calendar";
             this._calendar.TabIndex = 0;
             this._calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this._calendar_DateChanged);

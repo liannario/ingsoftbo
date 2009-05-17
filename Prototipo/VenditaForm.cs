@@ -105,10 +105,23 @@ namespace Prototipo
 
         private void _fatturaRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (Vendita.Clienti.ElementAt(0).GetType() == typeof(ClienteAzienda))
-                _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
-            else
-                MessageBox.Show("Per stampare una fattura il cliente deve avere una partita iva");
+            try
+            {
+
+                if (Vendita.Clienti.ElementAt(0).GetType() == typeof(ClienteAzienda) )
+                {
+                    _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
+
+                }
+                else if ( _scontrinoRadioButton.Checked == false )
+                {
+                    MessageBox.Show("Per stampare una fattura il cliente deve avere una partita iva");
+                    _scontrinoRadioButton.Checked = true;
+                }
+            }
+            catch (ArgumentOutOfRangeException exception) {
+                _scontrinoRadioButton.Checked = true;
+            }
         }
 
         private void _aggiungiNotificaButton_Click(object sender, EventArgs e)

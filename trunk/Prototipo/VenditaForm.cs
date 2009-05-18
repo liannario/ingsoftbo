@@ -121,6 +121,7 @@ namespace Prototipo
             }
             catch (ArgumentOutOfRangeException exception) {
                 _scontrinoRadioButton.Checked = true;
+                string help = exception.HelpLink;
             }
         }
 

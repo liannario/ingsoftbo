@@ -13,13 +13,10 @@ namespace Prototipo
 
         public static Utente GetUtente(String nome, String pw, String type)
         {
-            switch (type)
-            {
-                case "Guest": return new Guest(nome, pw);
-                case "Operatore": return new Operatore(nome, pw);
-                case "Amministratore": return new Amministratore(nome, pw);
-                default: return null;
-            }
+            StringBuilder stringType = new StringBuilder("Prototipo.");
+            stringType.Append(type);
+            Type tipoUtente = Type.GetType(stringType.ToString());
+            return (Utente) Activator.CreateInstance(tipoUtente, new object[] { nome, pw });
         }
 
     }

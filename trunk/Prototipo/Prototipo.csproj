@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8814B7B-7DF8-4508-8402-993B4ECF0895}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prototipo</RootNamespace>
+    <AssemblyName>Prototipo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categoria.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CategoriaCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clienti.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magazzini.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Magazzino.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Negozio.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Notifica.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Notifiche.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OperazioneUtente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Prodotti.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Prodotto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\Prototipo.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RicercaClienteForm.resx">
+      <DependentUpon>RicercaClienteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RicercaProdottoForm.resx">
+      <DependentUpon>RicercaProdottoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VenditaForm.resx">
+      <DependentUpon>VenditaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="bin\Debug\Prototipo.vshost.exe.manifest" />
+    <None Include="obj\Debug\Prototipo.csproj.GenerateResource.Cache" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RicercaClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RicercaClienteForm.Designer.cs">
+      <DependentUpon>RicercaClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RicercaProdottoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RicercaProdottoForm.Designer.cs">
+      <DependentUpon>RicercaProdottoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utente.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtenteFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utenti.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vendita.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VenditaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenditaForm.Designer.cs">
+      <DependentUpon>VenditaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vettura.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vetture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WheelCard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Prototipo.exe" />
+    <Content Include="bin\Debug\Prototipo.pdb" />
+    <Content Include="bin\Debug\Prototipo.vshost.exe" />
+    <Content Include="obj\Debug\Prototipo.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Prototipo.exe" />
+    <Content Include="obj\Debug\Prototipo.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\Refactor\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

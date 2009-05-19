@@ -1,0 +1,6 @@
+C:\Documents and Settings\Administrator\Desktop\ingsoftbo\Prototipo\GmailHelper\bin\Debug\GmailHelper.dll
+C:\Documents and Settings\Administrator\Desktop\ingsoftbo\Prototipo\GmailHelper\bin\Debug\GmailHelper.pdb
+C:\Documents and Settings\Administrator\Desktop\ingsoftbo\Prototipo\GmailHelper\bin\Debug\GmailHelper.xml
+C:\Documents and Settings\Administrator\Desktop\ingsoftbo\Prototipo\GmailHelper\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\ingsoftbo\Prototipo\GmailHelper\obj\Debug\GmailHelper.dll
+C:\Documents and Settings\Administrator\Desktop\ingsoftbo\Prototipo\GmailHelper\obj\Debug\GmailHelper.pdb

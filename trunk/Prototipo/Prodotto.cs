@@ -8,7 +8,6 @@ namespace Prototipo
     public class Prodotto
     {
         private const int giacenzaDefault = 10;
-        private const int soglia = 2;
         private string _codice;
         private string _descrizione;
         private double _prezzoAcquisto;
@@ -100,17 +99,17 @@ namespace Prototipo
         //Restituisce false se la giacenza è inferiore alla soglia
         public bool ControllaGiacenza()
         {
-            if (Giacenza < soglia)
+            if (Giacenza < Program.Soglia)
                 return false;
             else
                 return true;
         }
 
-        public bool AggiornaGiacenza(int quantita)
+        public bool AggiornaGiacenza()
         {
-            if (quantita > 0)
+            if (Quantita > 0)
             {
-                Giacenza -= quantita;
+                Giacenza -= Quantita;
                 return true;
             }
             return false;

@@ -59,23 +59,34 @@ namespace Prototipo
         {
             if (_tipo == TipoNotifica.email)
             {
-                GmailMessage.SendFromGmail(Program.EmailAdmin, Program.EmailPasswd, Destinatario, "Avviso giacenza", Messaggio);
+                GmailMessage.SendFromGmail(Program.EmailAdmin, Program.EmailPasswd, Destinatario, "Avviso da ViaggiateSicuri S.R.L.", Messaggio);
+                _daNotificare = false;
                 return true;
             }
-            _daNotificare = false;
-            return true;
+            else if (_tipo == TipoNotifica.sms)
+            {
+                _daNotificare = false;
+                return true;
+            }
+            return false;
         }
+
         public Boolean AccadeOggi()
         {
-            DateTime oggi = DateTime.Now;
-            if (_dataNotifica.ToShortDateString() == oggi.ToShortDateString() || _dataNotifica.CompareTo(oggi) < 0)
-            {//La seconda condizione è per evitare che il sistema non venga avviato per niente un determinato giorno e non vengano mai inviate le relative notifiche
-                return InviaNotifica();
+            if (DaNotificare)
+            {
+                DateTime oggi = DateTime.Now;
+                if (_dataNotifica.ToShortDateString() == oggi.ToShortDateString() || _dataNotifica.CompareTo(oggi) < 0)
+                {//La seconda condizione è per evitare che il sistema non venga avviato per niente un determinato giorno e non vengano mai inviate le relative notifiche
+                    return InviaNotifica();
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

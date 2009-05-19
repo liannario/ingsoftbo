@@ -9,16 +9,15 @@ namespace Prototipo
     public class Vendita
     {
         public Vendita()
-            :this(DateTime.Now, TipoDocumentoVendita.Scontrino, new Prodotti(), new Notifiche(), true, new Clienti())
+            :this(DateTime.Now, TipoDocumentoVendita.Scontrino, new Prodotti(), new Notifiche(), new Clienti())
         {
         }
-        public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Boolean daNotificare, Clienti c)
+        public Vendita(DateTime dt, TipoDocumentoVendita tdv, Prodotti p, Notifiche n, Clienti c)
         {
             _data = dt;
             _documentoVendita = tdv;
             _prodotti = p;
             _notifiche = n;
-            _daNotificare = daNotificare;
             _clienti = c;
 
         }
@@ -59,14 +58,7 @@ namespace Prototipo
             get { return _notifiche; }
             set { _notifiche = value; }
         }
-        private Boolean _daNotificare;
-
-        public Boolean DaNotificare
-        {
-            get { return _daNotificare; }
-            set { _daNotificare = value; }
-        }
-
+    
         private Clienti _clienti;
 
         public Clienti Clienti

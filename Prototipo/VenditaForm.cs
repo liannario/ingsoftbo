@@ -25,6 +25,7 @@ namespace Prototipo
             InitializeComponent();
             //Inizializzo la vendita e associo l'operatore che la effettua
             _vendita = new Vendita();
+            _vendita.DocumentoVendita = TipoDocumentoVendita.Scontrino;
             _vendita.UtenteCheEffettuaLaVendita = Negozio.GetInstance().UtenteCorrente;
             _dataNotifica = _calendar.TodayDate; //Default nel caso non venga specificata una data diversa
             AggiornaTotale();
@@ -128,6 +129,14 @@ namespace Prototipo
 
         private void _aggiungiNotificaButton_Click(object sender, EventArgs e)
         {
+            int res = _dataNotifica.CompareTo(DateTime.Now);
+            if (_dataNotifica.ToShortDateString() == DateTime.Now.ToShortDateString())
+                res = 0;
+            if ( res < 0)
+            {
+                MessageBox.Show("Impossibile aggiungere notifiche prima della data odierna", "Errore notifica");
+                return;
+            }
             TipoNotifica tipoNotifica = (_emailRadioButton.Checked) ? TipoNotifica.email : TipoNotifica.sms;
             String destinatario = (_emailRadioButton.Checked) ? _emailTextBox.Text : _telTextBox.Text;
             if (String.IsNullOrEmpty(destinatario))
@@ -137,8 +146,21 @@ namespace Prototipo
             }
             StringBuilder messaggio = new StringBuilder("Gentile cliente ");
             messaggio
-                .AppendFormat("{0}, la invitiamo ad effettuare un controllo dei prodotti venduti in data {1}. Distinti saluti, ViaggiareSicuri S.R.L.",
+                .AppendFormat("{0}, la invitiamo ad effettuare un controllo dei prodotti venduti in data {1}. Distinti saluti, ViaggiateSicuri S.R.L.",
                 _vendita.Clienti[0].Nome, _vendita.Data);
+            if (_vendita.Notifiche.
+                FindAll((Notifica n) =>
+                    {
+                        if (n.DataNotifica.ToShortDateString() == _dataNotifica.ToShortDateString() &&
+                        n.Destinatario == destinatario && n.Tipo == tipoNotifica) return true;
+                        else
+                            return false;
+                    }).Count > 0)
+            {
+                //Questa notifica esiste già: non la aggiungo
+                MessageBox.Show("La notifica è stata già aggiunta", "Notifica già presente");
+                return;
+            }
             _vendita.Notifiche.Add(new Notifica(tipoNotifica, messaggio.ToString(), destinatario, _dataNotifica));
             StringBuilder message = new StringBuilder();
             message.AppendFormat("Notifica aggiunta: {0} a {1} in data {2}", tipoNotifica.ToString(), destinatario, _dataNotifica.ToShortDateString());
@@ -177,7 +199,7 @@ namespace Prototipo
 
         private void _concludiVenditaButton_Click(object sender, EventArgs e)
         {
-            if (_vendita.Prodotti.Count == 0)
+            if (_vendita.Prodotti.Count == 0 || (Convert.ToInt32(_totTextBox.Text)) == 0)
             {
                 MessageBox.Show("Aggiungere almeno un prodotto alla vendita", "Impossibile concludere la vendita");
                 return;
@@ -188,20 +210,52 @@ namespace Prototipo
 
             //Aggiorno la giacenza dei prodotti venduti ed eventualmente invio le notifiche
             StringBuilder messaggio = new StringBuilder();
+            bool someToSend = false;
             foreach (Prodotto p in _vendita.Prodotti)
             {
+                //Aggiorno la giacenza
                 p.AggiornaGiacenza();
+                //Azzero la quantita
+                p.Quantita = 0;
                 //Invio via email le notifiche per i prodotti che sono sotto la soglia
                 if (!p.ControllaGiacenza())
                 {//Se il prodotto ha una giacenza inferiore alla soglia
+                    someToSend = true;
                     messaggio.AppendFormat("Il prodotto \"{0} - {1}\" ha una giacenza inferiore alla soglia\n", p.Codice, p.Descrizione);
                 }
             }
-            StringBuilder message = new StringBuilder();
-            message.AppendFormat("Notifica aggiunta: {0} a {1} in data {2}", TipoNotifica.email, "lucaiannario@gmail.com", DateTime.Now.ToShortDateString());
-            MessageBox.Show(message.ToString(), "Notifica inviata all'admin");
-            Notifica notifica = new Notifica(TipoNotifica.email, messaggio.ToString(), "lucaiannario@gmail.com", DateTime.Now);
-            notifica.InviaNotifica();
-        }        
+            if (someToSend)
+            {
+                StringBuilder message = new StringBuilder();
+                message.AppendFormat("Notifica aggiunta: {0} a {1} in data {2}", TipoNotifica.email, "lucaiannario@gmail.com", DateTime.Now.ToShortDateString());
+                MessageBox.Show(message.ToString(), "Notifica inviata all'admin");
+                Notifica notifica = new Notifica(TipoNotifica.email, messaggio.ToString(), "lucaiannario@gmail.com", DateTime.Now);
+                notifica.InviaNotifica();
+            }
+            //Lo metto perchè altrimenti non avrei mai notifiche da inviare dato che non salvo le vendite su un supporto
+            HomeForm.InviaNotifiche();
+            messaggio = new StringBuilder(); //Resetto la stringa
+            messaggio.Append("Stampa ");
+            messaggio.AppendFormat("{0} in corso...", (_vendita.DocumentoVendita == TipoDocumentoVendita.Scontrino ? "dello scontrino" : "della fattura"));
+            MessageBox.Show(messaggio.ToString(), "Stampa documento di vendita");
+            this.Close();
+        }
+
+        private void _annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void _cancellaProdottoButton_Click(object sender, EventArgs e)
+        {
+            if (_prodottiGridView.RowCount == 0)
+                return;
+            Prodotto daRimuovere = _vendita.Prodotti.Find((Prodotto p) => { return p.Codice == _prodottiGridView.SelectedRows[0].Cells[0].Value.ToString(); });
+            daRimuovere.Quantita = 0;
+            _vendita.Prodotti.Remove(daRimuovere);
+            _prodottiGridView.DataSource = null;
+            _prodottiGridView.DataSource = _vendita.Prodotti;
+            AggiornaTotale();
+        }
     }
 }

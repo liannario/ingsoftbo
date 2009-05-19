@@ -71,8 +71,10 @@
             this._smsRadioButton = new System.Windows.Forms.RadioButton();
             this._calendar = new System.Windows.Forms.MonthCalendar();
             this._operazioniGroupBox = new System.Windows.Forms.GroupBox();
+            this._annullaButton = new System.Windows.Forms.Button();
             this._salvaPreventivoButton = new System.Windows.Forms.Button();
             this._concludiVenditaButton = new System.Windows.Forms.Button();
+            this._cancellaProdottoButton = new System.Windows.Forms.Button();
             this._clienteBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vettureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
@@ -511,6 +513,7 @@
             // _operazioniGroupBox
             // 
             this._operazioniGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._operazioniGroupBox.Controls.Add(this._annullaButton);
             this._operazioniGroupBox.Controls.Add(this._salvaPreventivoButton);
             this._operazioniGroupBox.Controls.Add(this._concludiVenditaButton);
             this._operazioniGroupBox.Location = new System.Drawing.Point(468, 434);
@@ -520,9 +523,19 @@
             this._operazioniGroupBox.TabStop = false;
             this._operazioniGroupBox.Text = "Operazioni";
             // 
+            // _annullaButton
+            // 
+            this._annullaButton.Location = new System.Drawing.Point(108, 129);
+            this._annullaButton.Name = "_annullaButton";
+            this._annullaButton.Size = new System.Drawing.Size(226, 23);
+            this._annullaButton.TabIndex = 2;
+            this._annullaButton.Text = "Annulla";
+            this._annullaButton.UseVisualStyleBackColor = true;
+            this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
+            // 
             // _salvaPreventivoButton
             // 
-            this._salvaPreventivoButton.Location = new System.Drawing.Point(108, 100);
+            this._salvaPreventivoButton.Location = new System.Drawing.Point(108, 74);
             this._salvaPreventivoButton.Name = "_salvaPreventivoButton";
             this._salvaPreventivoButton.Size = new System.Drawing.Size(226, 23);
             this._salvaPreventivoButton.TabIndex = 1;
@@ -531,7 +544,7 @@
             // 
             // _concludiVenditaButton
             // 
-            this._concludiVenditaButton.Location = new System.Drawing.Point(108, 58);
+            this._concludiVenditaButton.Location = new System.Drawing.Point(108, 34);
             this._concludiVenditaButton.Name = "_concludiVenditaButton";
             this._concludiVenditaButton.Size = new System.Drawing.Size(226, 23);
             this._concludiVenditaButton.TabIndex = 0;
@@ -539,11 +552,23 @@
             this._concludiVenditaButton.UseVisualStyleBackColor = true;
             this._concludiVenditaButton.Click += new System.EventHandler(this._concludiVenditaButton_Click);
             // 
+            // _cancellaProdottoButton
+            // 
+            this._cancellaProdottoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._cancellaProdottoButton.Location = new System.Drawing.Point(156, 405);
+            this._cancellaProdottoButton.Name = "_cancellaProdottoButton";
+            this._cancellaProdottoButton.Size = new System.Drawing.Size(128, 23);
+            this._cancellaProdottoButton.TabIndex = 10;
+            this._cancellaProdottoButton.Text = "Elimina Prodotto Selezionato";
+            this._cancellaProdottoButton.UseVisualStyleBackColor = true;
+            this._cancellaProdottoButton.Click += new System.EventHandler(this._cancellaProdottoButton_Click);
+            // 
             // VenditaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 621);
+            this.Controls.Add(this._cancellaProdottoButton);
             this.Controls.Add(this._operazioniGroupBox);
             this.Controls.Add(this._notificaGroupBox);
             this.Controls.Add(this._tipoDocumentoGroupBox);
@@ -618,5 +643,7 @@
         private System.Windows.Forms.GroupBox _operazioniGroupBox;
         private System.Windows.Forms.Button _salvaPreventivoButton;
         private System.Windows.Forms.Button _concludiVenditaButton;
+        private System.Windows.Forms.Button _annullaButton;
+        private System.Windows.Forms.Button _cancellaProdottoButton;
     }
 }

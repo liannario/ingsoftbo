@@ -10,7 +10,7 @@ namespace Prototipo
         public IList<Prodotto> CercaProdottoByDescrizione(string descrizione) 
         {
             List<Prodotto> result = new List<Prodotto>();
-            Prodotto[] prodotti = new Prodotto[12];
+            Prodotto[] prodotti = new Prodotto[50];
             int counter = 0;
             foreach (Magazzino m in this) 
             {

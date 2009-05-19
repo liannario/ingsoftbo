@@ -22,6 +22,19 @@ namespace Prototipo
         {
             InitializeComponent();
             _loginForm = loginForm;
+            //Invio tutte le notifiche programmate per oggi e i giorni precedenti
+            InviaNotifiche();
+        }
+
+        public static void InviaNotifiche()
+        {
+            foreach (Vendita v in Negozio.GetInstance().Vendite)
+            {
+                foreach (Notifica n in v.Notifiche)
+                {
+                    bool result = n.AccadeOggi();
+                }
+            }
         }
 
         private void IsUtenteAuthorized(Form form, OperazioneUtente operazione)

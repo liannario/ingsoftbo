@@ -13,6 +13,7 @@ namespace Prototipo
     {
         private VenditaForm _venditaForm;
         public RicercaProdottoForm()
+            : this(null)
 
         {
             InitializeComponent();

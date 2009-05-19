@@ -23,7 +23,9 @@ namespace Prototipo
         public VenditaForm()
         {
             InitializeComponent();
+            //Inizializzo la vendita e associo l'operatore che la effettua
             _vendita = new Vendita();
+            _vendita.UtenteCheEffettuaLaVendita = Negozio.GetInstance().UtenteCorrente;
             _dataNotifica = _calendar.TodayDate; //Default nel caso non venga specificata una data diversa
             AggiornaTotale();
         }
@@ -90,11 +92,11 @@ namespace Prototipo
                     _puntiTextBox.Text = ((ClienteAzienda)_clienteCorrente).WheelCard.Punti.ToString();
                 }
                 _vettureComboBox.DataSource = _clienteCorrente.Vetture;
+                _fatturaRadioButton_CheckedChanged(this._ricercaClientiButton, EventArgs.Empty);
             }
-            catch (ArgumentOutOfRangeException exception)
+            catch (ArgumentOutOfRangeException)
             {
                 //Eccezione catturata se si entra nella finestra di scelta del cliente e poi non viene scelto nessun cliente
-                string help = exception.HelpLink;
             }
         }
 
@@ -119,9 +121,8 @@ namespace Prototipo
                     _scontrinoRadioButton.Checked = true;
                 }
             }
-            catch (ArgumentOutOfRangeException exception) {
+            catch (ArgumentOutOfRangeException) {
                 _scontrinoRadioButton.Checked = true;
-                string help = exception.HelpLink;
             }
         }
 
@@ -129,13 +130,16 @@ namespace Prototipo
         {
             TipoNotifica tipoNotifica = (_emailRadioButton.Checked) ? TipoNotifica.email : TipoNotifica.sms;
             String destinatario = (_emailRadioButton.Checked) ? _emailTextBox.Text : _telTextBox.Text;
-            if (destinatario == "" || destinatario == null)
+            if (String.IsNullOrEmpty(destinatario))
             {
                 MessageBox.Show("Inserire numero di cellulare o email per mandare la notifica", "Errore destinatario");
                 return;
             }
-
-            _vendita.Notifiche.Add(new Notifica(tipoNotifica, destinatario, _dataNotifica));
+            StringBuilder messaggio = new StringBuilder("Gentile cliente ");
+            messaggio
+                .AppendFormat("{0}, la invitiamo ad effettuare un controllo dei prodotti venduti in data {1}. Distinti saluti, ViaggiareSicuri S.R.L.",
+                _vendita.Clienti[0].Nome, _vendita.Data);
+            _vendita.Notifiche.Add(new Notifica(tipoNotifica, messaggio.ToString(), destinatario, _dataNotifica));
             StringBuilder message = new StringBuilder();
             message.AppendFormat("Notifica aggiunta: {0} a {1} in data {2}", tipoNotifica.ToString(), destinatario, _dataNotifica.ToShortDateString());
             MessageBox.Show(message.ToString(), "Notifica aggiunta correttamente");
@@ -169,6 +173,35 @@ namespace Prototipo
                 else
                     MessageBox.Show(message.ToString(), "Notifica non rimossa");
             }
+        }
+
+        private void _concludiVenditaButton_Click(object sender, EventArgs e)
+        {
+            if (_vendita.Prodotti.Count == 0)
+            {
+                MessageBox.Show("Aggiungere almeno un prodotto alla vendita", "Impossibile concludere la vendita");
+                return;
+            }
+
+            //Aggiungo la vendita alle vendite del negozio
+            Negozio.GetInstance().Vendite.Add(_vendita);
+
+            //Aggiorno la giacenza dei prodotti venduti ed eventualmente invio le notifiche
+            StringBuilder messaggio = new StringBuilder();
+            foreach (Prodotto p in _vendita.Prodotti)
+            {
+                p.AggiornaGiacenza();
+                //Invio via email le notifiche per i prodotti che sono sotto la soglia
+                if (!p.ControllaGiacenza())
+                {//Se il prodotto ha una giacenza inferiore alla soglia
+                    messaggio.AppendFormat("Il prodotto \"{0} - {1}\" ha una giacenza inferiore alla soglia\n", p.Codice, p.Descrizione);
+                }
+            }
+            StringBuilder message = new StringBuilder();
+            message.AppendFormat("Notifica aggiunta: {0} a {1} in data {2}", TipoNotifica.email, "lucaiannario@gmail.com", DateTime.Now.ToShortDateString());
+            MessageBox.Show(message.ToString(), "Notifica inviata all'admin");
+            Notifica notifica = new Notifica(TipoNotifica.email, messaggio.ToString(), "lucaiannario@gmail.com", DateTime.Now);
+            notifica.InviaNotifica();
         }        
     }
 }

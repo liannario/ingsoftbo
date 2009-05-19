@@ -5,8 +5,15 @@ using System.Windows.Forms;
 
 namespace Prototipo
 {
-    static class Program
+    public static class Program
     {
+        //Parametri per inviare le mail
+        public static readonly string EmailAdmin = "";
+        public static readonly string EmailPasswd = "";
+
+        //Soglia limite per la giacenza
+        public const int Soglia = 2;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

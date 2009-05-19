@@ -18,6 +18,5 @@ namespace Prototipo
             Type tipoUtente = Type.GetType(stringType.ToString());
             return (Utente) Activator.CreateInstance(tipoUtente, new object[] { nome, pw });
         }
-
     }
 }

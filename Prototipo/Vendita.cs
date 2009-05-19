@@ -22,6 +22,15 @@ namespace Prototipo
             _clienti = c;
 
         }
+
+        private Utente _utenteCheEffettuaLaVendita;
+
+        public Utente UtenteCheEffettuaLaVendita
+        {
+            get { return _utenteCheEffettuaLaVendita; }
+            set { _utenteCheEffettuaLaVendita = value; }
+        }
+
         private DateTime _data;
 
         public DateTime Data

@@ -70,6 +70,9 @@
             this._emailRadioButton = new System.Windows.Forms.RadioButton();
             this._smsRadioButton = new System.Windows.Forms.RadioButton();
             this._calendar = new System.Windows.Forms.MonthCalendar();
+            this._operazioniGroupBox = new System.Windows.Forms.GroupBox();
+            this._salvaPreventivoButton = new System.Windows.Forms.Button();
+            this._concludiVenditaButton = new System.Windows.Forms.Button();
             this._clienteBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vettureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
@@ -78,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             this._tipoDocumentoGroupBox.SuspendLayout();
             this._notificaGroupBox.SuspendLayout();
+            this._operazioniGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // _clienteBox
@@ -504,11 +508,43 @@
             this._calendar.TabIndex = 0;
             this._calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this._calendar_DateChanged);
             // 
+            // _operazioniGroupBox
+            // 
+            this._operazioniGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._operazioniGroupBox.Controls.Add(this._salvaPreventivoButton);
+            this._operazioniGroupBox.Controls.Add(this._concludiVenditaButton);
+            this._operazioniGroupBox.Location = new System.Drawing.Point(468, 434);
+            this._operazioniGroupBox.Name = "_operazioniGroupBox";
+            this._operazioniGroupBox.Size = new System.Drawing.Size(445, 175);
+            this._operazioniGroupBox.TabIndex = 9;
+            this._operazioniGroupBox.TabStop = false;
+            this._operazioniGroupBox.Text = "Operazioni";
+            // 
+            // _salvaPreventivoButton
+            // 
+            this._salvaPreventivoButton.Location = new System.Drawing.Point(108, 100);
+            this._salvaPreventivoButton.Name = "_salvaPreventivoButton";
+            this._salvaPreventivoButton.Size = new System.Drawing.Size(226, 23);
+            this._salvaPreventivoButton.TabIndex = 1;
+            this._salvaPreventivoButton.Text = "Salva come preventivo";
+            this._salvaPreventivoButton.UseVisualStyleBackColor = true;
+            // 
+            // _concludiVenditaButton
+            // 
+            this._concludiVenditaButton.Location = new System.Drawing.Point(108, 58);
+            this._concludiVenditaButton.Name = "_concludiVenditaButton";
+            this._concludiVenditaButton.Size = new System.Drawing.Size(226, 23);
+            this._concludiVenditaButton.TabIndex = 0;
+            this._concludiVenditaButton.Text = "Concludi Vendita";
+            this._concludiVenditaButton.UseVisualStyleBackColor = true;
+            this._concludiVenditaButton.Click += new System.EventHandler(this._concludiVenditaButton_Click);
+            // 
             // VenditaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 621);
+            this.Controls.Add(this._operazioniGroupBox);
             this.Controls.Add(this._notificaGroupBox);
             this.Controls.Add(this._tipoDocumentoGroupBox);
             this.Controls.Add(this._totTextBox);
@@ -530,6 +566,7 @@
             this._tipoDocumentoGroupBox.PerformLayout();
             this._notificaGroupBox.ResumeLayout(false);
             this._notificaGroupBox.PerformLayout();
+            this._operazioniGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,5 +615,8 @@
         private System.Windows.Forms.MonthCalendar _calendar;
         private System.Windows.Forms.Button _eliminaNotificaButton;
         private System.Windows.Forms.Button _aggiungiNotificaButton;
+        private System.Windows.Forms.GroupBox _operazioniGroupBox;
+        private System.Windows.Forms.Button _salvaPreventivoButton;
+        private System.Windows.Forms.Button _concludiVenditaButton;
     }
 }

@@ -9,7 +9,7 @@ namespace Prototipo
     {
         //Parametri per inviare le mail
         public static readonly string EmailAdmin = "lucaiannario@gmail.com";
-        public static readonly string EmailPasswd = "?!c4ss4ndr4?!";
+        public static readonly string EmailPasswd = "";
 
         //Soglia limite per la giacenza
         public const int Soglia = 2;

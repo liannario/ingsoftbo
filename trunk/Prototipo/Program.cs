@@ -24,7 +24,7 @@ namespace Prototipo
             Categoria pneumatici = new Categoria("Pneumatici");
             Categoria pneumaticiTermici = new Categoria("Pneumatici Termici");
             Categoria pneumaticiNormali = new Categoria("Pneumatici Normali");
-            Negozio.GetInstance().CategoriaRoot.CategoriaCollection.Add(pneumatici);
+            Negozio.GetInstance().CategoriaRoot = pneumatici;
             pneumatici.CategoriaCollection.Add(pneumaticiTermici);
             pneumatici.CategoriaCollection.Add(pneumaticiNormali);
 

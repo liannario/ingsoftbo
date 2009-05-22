@@ -15,7 +15,7 @@ namespace Prototipo
         }
 
         public Categoria(string nome)
-               : this(nome, null)
+               : this(nome, new CategoriaCollection())
         {
         }
 

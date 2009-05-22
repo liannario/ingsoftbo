@@ -37,13 +37,14 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoAcquistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giacenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -129,21 +130,37 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 699;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 77;
+            // 
+            // prodottiBindingSource
+            // 
+            this.prodottiBindingSource.DataSource = typeof(Prototipo.Prodotti);
+            // 
             // codiceDataGridViewTextBoxColumn
             // 
+            this.codiceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
             this.codiceDataGridViewTextBoxColumn.FillWeight = 97F;
             this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
             this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
             this.codiceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codiceDataGridViewTextBoxColumn.Width = 65;
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
-            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
             this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descrizioneDataGridViewTextBoxColumn.Width = 87;
             // 
             // prezzoAcquistoDataGridViewTextBoxColumn
             // 
@@ -168,14 +185,12 @@
             // 
             // Categoria
             // 
+            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Categoria.DataPropertyName = "Categoria";
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
-            // 
-            // prodottiBindingSource
-            // 
-            this.prodottiBindingSource.DataSource = typeof(Prototipo.Prodotti);
+            this.Categoria.Width = 77;
             // 
             // RicercaProdottoForm
             // 
@@ -206,14 +221,15 @@
         private System.Windows.Forms.TextBox _cercaTextBox;
         private System.Windows.Forms.Button _cercaButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoAcquistoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoVenditaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 
     }
 }

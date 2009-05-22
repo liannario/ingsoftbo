@@ -27,6 +27,10 @@ namespace Prototipo
             _vendita = new Vendita();
             _vendita.DocumentoVendita = TipoDocumentoVendita.Scontrino;
             _vendita.UtenteCheEffettuaLaVendita = Negozio.GetInstance().UtenteCorrente;
+            //Riempio la groupBox Operatore
+            _usernameTextBox.Text = _vendita.UtenteCheEffettuaLaVendita.Username;
+            _nomeOptextBox.Text = _vendita.UtenteCheEffettuaLaVendita.Nome;
+            _cognomeOpTextBox.Text = _vendita.UtenteCheEffettuaLaVendita.Cognome;
             _dataNotifica = _calendar.TodayDate; //Default nel caso non venga specificata una data diversa
             AggiornaTotale();
         }
@@ -111,14 +115,14 @@ namespace Prototipo
             try
             {
 
-                if (Vendita.Clienti[0].GetType() == typeof(ClienteAzienda) )
+                if (Vendita.Clienti[0].GetType() == typeof(ClienteAzienda) && !_scontrinoRadioButton.Checked)
                 {
                     _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
 
                 }
                 else if ( _scontrinoRadioButton.Checked == false )
                 {
-                    MessageBox.Show("Per stampare una fattura il cliente deve avere una partita iva");
+                    MessageBox.Show("Per stampare una fattura il cliente deve avere una partita iva", "Impossibile stampare una fattura");
                     _scontrinoRadioButton.Checked = true;
                 }
             }
@@ -251,11 +255,32 @@ namespace Prototipo
             if (_prodottiGridView.RowCount == 0)
                 return;
             Prodotto daRimuovere = _vendita.Prodotti.Find((Prodotto p) => { return p.Codice == _prodottiGridView.SelectedRows[0].Cells[0].Value.ToString(); });
+            if (daRimuovere == null)
+                return;
             daRimuovere.Quantita = 0;
             _vendita.Prodotti.Remove(daRimuovere);
             _prodottiGridView.DataSource = null;
             _prodottiGridView.DataSource = _vendita.Prodotti;
             AggiornaTotale();
+        }
+
+        private void _salvaPreventivoButton_Click(object sender, EventArgs e)
+        {
+            if (_vendita.Prodotti.Count == 0 || (Convert.ToInt32(_totTextBox.Text)) == 0)
+            {
+                MessageBox.Show("Aggiungere almeno un prodotto", "Impossibile salvare il preventivo");
+                return;
+            }    
+            DateTime scadenza = DateTime.Today.AddMonths(1);
+
+            MessageBox.Show("Preventivo salvato con scadenza " + scadenza.ToShortDateString(), "Preventivo salvato");
+            if (MessageBox.Show("Si desidera stampare il preventivo?", "Stampa preventivo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using (PrintDialog printer = new PrintDialog())
+                {
+                    printer.ShowDialog();
+                }
+            }
         }
     }
 }

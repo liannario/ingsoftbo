@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VenditaForm));
             this._clienteBox = new System.Windows.Forms.GroupBox();
             this._puntiTextBox = new System.Windows.Forms.TextBox();
             this._puntiLabel = new System.Windows.Forms.Label();
@@ -75,6 +76,15 @@
             this._salvaPreventivoButton = new System.Windows.Forms.Button();
             this._concludiVenditaButton = new System.Windows.Forms.Button();
             this._cancellaProdottoButton = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this._utenteGroupBox = new System.Windows.Forms.GroupBox();
+            this._usernameLabel = new System.Windows.Forms.Label();
+            this._usernameTextBox = new System.Windows.Forms.TextBox();
+            this._nomeOperatoreLabel = new System.Windows.Forms.Label();
+            this._nomeOptextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this._cognomeOpTextBox = new System.Windows.Forms.TextBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this._clienteBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vettureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
@@ -84,6 +94,7 @@
             this._tipoDocumentoGroupBox.SuspendLayout();
             this._notificaGroupBox.SuspendLayout();
             this._operazioniGroupBox.SuspendLayout();
+            this._utenteGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // _clienteBox
@@ -397,7 +408,7 @@
             // 
             this._tipoDocumentoGroupBox.Controls.Add(this._scontrinoRadioButton);
             this._tipoDocumentoGroupBox.Controls.Add(this._fatturaRadioButton);
-            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(482, 12);
+            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(491, 12);
             this._tipoDocumentoGroupBox.Name = "_tipoDocumentoGroupBox";
             this._tipoDocumentoGroupBox.Size = new System.Drawing.Size(191, 171);
             this._tipoDocumentoGroupBox.TabIndex = 7;
@@ -541,6 +552,7 @@
             this._salvaPreventivoButton.TabIndex = 1;
             this._salvaPreventivoButton.Text = "Salva come preventivo";
             this._salvaPreventivoButton.UseVisualStyleBackColor = true;
+            this._salvaPreventivoButton.Click += new System.EventHandler(this._salvaPreventivoButton_Click);
             // 
             // _concludiVenditaButton
             // 
@@ -563,11 +575,94 @@
             this._cancellaProdottoButton.UseVisualStyleBackColor = true;
             this._cancellaProdottoButton.Click += new System.EventHandler(this._cancellaProdottoButton_Click);
             // 
+            // _utenteGroupBox
+            // 
+            this._utenteGroupBox.Controls.Add(this._usernameLabel);
+            this._utenteGroupBox.Controls.Add(this._usernameTextBox);
+            this._utenteGroupBox.Controls.Add(this._nomeOperatoreLabel);
+            this._utenteGroupBox.Controls.Add(this._nomeOptextBox);
+            this._utenteGroupBox.Controls.Add(this.label3);
+            this._utenteGroupBox.Controls.Add(this._cognomeOpTextBox);
+            this._utenteGroupBox.Location = new System.Drawing.Point(722, 12);
+            this._utenteGroupBox.Name = "_utenteGroupBox";
+            this._utenteGroupBox.Size = new System.Drawing.Size(191, 171);
+            this._utenteGroupBox.TabIndex = 11;
+            this._utenteGroupBox.TabStop = false;
+            this._utenteGroupBox.Text = "Operatore";
+            // 
+            // _usernameLabel
+            // 
+            this._usernameLabel.AutoSize = true;
+            this._usernameLabel.Location = new System.Drawing.Point(6, 43);
+            this._usernameLabel.Name = "_usernameLabel";
+            this._usernameLabel.Size = new System.Drawing.Size(55, 13);
+            this._usernameLabel.TabIndex = 4;
+            this._usernameLabel.Text = "Username";
+            // 
+            // _usernameTextBox
+            // 
+            this._usernameTextBox.BackColor = System.Drawing.Color.LightSkyBlue;
+            this._usernameTextBox.Location = new System.Drawing.Point(69, 40);
+            this._usernameTextBox.Name = "_usernameTextBox";
+            this._usernameTextBox.ReadOnly = true;
+            this._usernameTextBox.Size = new System.Drawing.Size(116, 20);
+            this._usernameTextBox.TabIndex = 5;
+            this._usernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // _nomeOperatoreLabel
+            // 
+            this._nomeOperatoreLabel.AutoSize = true;
+            this._nomeOperatoreLabel.Location = new System.Drawing.Point(6, 78);
+            this._nomeOperatoreLabel.Name = "_nomeOperatoreLabel";
+            this._nomeOperatoreLabel.Size = new System.Drawing.Size(35, 13);
+            this._nomeOperatoreLabel.TabIndex = 0;
+            this._nomeOperatoreLabel.Text = "Nome";
+            // 
+            // _nomeOptextBox
+            // 
+            this._nomeOptextBox.BackColor = System.Drawing.Color.LightSkyBlue;
+            this._nomeOptextBox.Location = new System.Drawing.Point(69, 75);
+            this._nomeOptextBox.Name = "_nomeOptextBox";
+            this._nomeOptextBox.ReadOnly = true;
+            this._nomeOptextBox.Size = new System.Drawing.Size(116, 20);
+            this._nomeOptextBox.TabIndex = 1;
+            this._nomeOptextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Cognome";
+            // 
+            // _cognomeOpTextBox
+            // 
+            this._cognomeOpTextBox.BackColor = System.Drawing.Color.LightSkyBlue;
+            this._cognomeOpTextBox.Location = new System.Drawing.Point(69, 112);
+            this._cognomeOpTextBox.Name = "_cognomeOpTextBox";
+            this._cognomeOpTextBox.ReadOnly = true;
+            this._cognomeOpTextBox.Size = new System.Drawing.Size(116, 20);
+            this._cognomeOpTextBox.TabIndex = 3;
+            this._cognomeOpTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // VenditaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 621);
+            this.Controls.Add(this._utenteGroupBox);
             this.Controls.Add(this._cancellaProdottoButton);
             this.Controls.Add(this._operazioniGroupBox);
             this.Controls.Add(this._notificaGroupBox);
@@ -592,6 +687,8 @@
             this._notificaGroupBox.ResumeLayout(false);
             this._notificaGroupBox.PerformLayout();
             this._operazioniGroupBox.ResumeLayout(false);
+            this._utenteGroupBox.ResumeLayout(false);
+            this._utenteGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,5 +742,14 @@
         private System.Windows.Forms.Button _concludiVenditaButton;
         private System.Windows.Forms.Button _annullaButton;
         private System.Windows.Forms.Button _cancellaProdottoButton;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.GroupBox _utenteGroupBox;
+        private System.Windows.Forms.Label _nomeOperatoreLabel;
+        private System.Windows.Forms.TextBox _nomeOptextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox _cognomeOpTextBox;
+        private System.Windows.Forms.Label _usernameLabel;
+        private System.Windows.Forms.TextBox _usernameTextBox;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

@@ -14,15 +14,14 @@ namespace Prototipo
         private VenditaForm _venditaForm;
         public RicercaProdottoForm()
             : this(null)
-
         {
-            InitializeComponent();
         }
 
         public RicercaProdottoForm(VenditaForm venditaForm)
         {
             InitializeComponent();
-            _venditaForm = venditaForm;
+            if(venditaForm != null)
+                _venditaForm = venditaForm;
             //Se si vuole far apparire tutti i prodotti appena si apre la finestra
             _ricercaGridView.DataSource = Negozio.GetInstance().Magazzini.CercaProdottoByDescrizione("");
         }

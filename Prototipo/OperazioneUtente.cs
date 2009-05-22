@@ -50,6 +50,19 @@ namespace Prototipo
         }
     }
 
+    public class GestioneProdotto : OperazioneUtente
+    {
+        public override bool Operazione(Operatore a)
+        {
+            return true;
+        }
+
+        public override bool Operazione(Amministratore a)
+        {
+            return true;
+        }
+    }
+
 
 }
 

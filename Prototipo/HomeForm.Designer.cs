@@ -92,6 +92,7 @@
             this._gestioneProdottoButton.TabIndex = 2;
             this._gestioneProdottoButton.Text = "Gestione prodotto...";
             this._gestioneProdottoButton.UseVisualStyleBackColor = true;
+            this._gestioneProdottoButton.Click += new System.EventHandler(this._gestioneProdottoButton_Click);
             // 
             // _venditaButton
             // 

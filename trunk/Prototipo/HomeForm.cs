@@ -30,9 +30,14 @@ namespace Prototipo
         {
             foreach (Vendita v in Negozio.GetInstance().Vendite)
             {
-                foreach (Notifica n in v.Notifiche)
+                if (v.Clienti.Count == 0)
+                    continue;
+                if (v.Clienti[0].Privacy)
                 {
-                    bool result = n.AccadeOggi();
+                    foreach (Notifica n in v.Notifiche)
+                    {
+                        bool result = n.AccadeOggi();
+                    }
                 }
             }
         }

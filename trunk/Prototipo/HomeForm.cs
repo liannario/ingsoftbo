@@ -74,6 +74,13 @@ namespace Prototipo
             _loginForm.Show();
         }
 
+        private void _gestioneProdottoButton_Click(object sender, EventArgs e)
+        {
+            GestioneProdottoForm form = new GestioneProdottoForm();
+            GestioneProdotto operazione = new GestioneProdotto();
+            IsUtenteAuthorized(form, operazione); 
+        }
+
         
     }
 }

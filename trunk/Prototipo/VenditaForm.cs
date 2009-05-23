@@ -150,8 +150,8 @@ namespace Prototipo
             }
             StringBuilder messaggio = new StringBuilder("Gentile cliente ");
             messaggio
-                .AppendFormat("{0}, la invitiamo ad effettuare un controllo dei prodotti venduti in data {1}. Distinti saluti, ViaggiateSicuri S.R.L.",
-                _vendita.Clienti[0].Nome, _vendita.Data);
+                .AppendFormat("{0}, la invitiamo ad effettuare un controllo dei prodotti venduti in data {1} ed installati sulla vettura \"{2}\" targata \"{3}\". Distinti saluti, ViaggiateSicuri S.R.L.",
+                _vendita.Clienti[0].Nome, _vendita.Data, ((Vettura)_vettureComboBox.SelectedItem).Modello, ((Vettura)_vettureComboBox.SelectedItem).Targa);
             if (_vendita.Notifiche.
                 FindAll((Notifica n) =>
                     {

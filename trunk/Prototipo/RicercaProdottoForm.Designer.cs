@@ -38,6 +38,8 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodottiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +53,9 @@
             // 
             // _ricercaGridView
             // 
+            this._ricercaGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._ricercaGridView.AutoGenerateColumns = false;
             this._ricercaGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._ricercaGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -71,6 +76,7 @@
             // 
             // _okButton
             // 
+            this._okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._okButton.Location = new System.Drawing.Point(610, 382);
             this._okButton.Name = "_okButton";
             this._okButton.Size = new System.Drawing.Size(75, 23);
@@ -81,6 +87,7 @@
             // 
             // _annullaButton
             // 
+            this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._annullaButton.Location = new System.Drawing.Point(696, 381);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -91,6 +98,8 @@
             // 
             // _cercaTextBox
             // 
+            this._cercaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this._cercaTextBox.Location = new System.Drawing.Point(28, 13);
             this._cercaTextBox.Name = "_cercaTextBox";
             this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
@@ -100,6 +109,7 @@
             // 
             // _cercaButton
             // 
+            this._cercaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._cercaButton.Location = new System.Drawing.Point(695, 13);
             this._cercaButton.Name = "_cercaButton";
             this._cercaButton.Size = new System.Drawing.Size(75, 23);
@@ -137,7 +147,24 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Categoria";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 77;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 77;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 77;
             // 
             // prodottiBindingSource
             // 
@@ -155,22 +182,24 @@
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
-            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
             this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
             this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descrizioneDataGridViewTextBoxColumn.Width = 87;
             // 
             // prezzoAcquistoDataGridViewTextBoxColumn
             // 
+            this.prezzoAcquistoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.prezzoAcquistoDataGridViewTextBoxColumn.DataPropertyName = "PrezzoAcquisto";
             this.prezzoAcquistoDataGridViewTextBoxColumn.HeaderText = "PrezzoAcquisto";
             this.prezzoAcquistoDataGridViewTextBoxColumn.Name = "prezzoAcquistoDataGridViewTextBoxColumn";
             this.prezzoAcquistoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prezzoAcquistoDataGridViewTextBoxColumn.Width = 105;
             // 
             // prezzoVenditaDataGridViewTextBoxColumn
             // 
+            this.prezzoVenditaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.prezzoVenditaDataGridViewTextBoxColumn.DataPropertyName = "PrezzoVendita";
             this.prezzoVenditaDataGridViewTextBoxColumn.HeaderText = "PrezzoVendita";
             this.prezzoVenditaDataGridViewTextBoxColumn.Name = "prezzoVenditaDataGridViewTextBoxColumn";
@@ -178,10 +207,12 @@
             // 
             // giacenzaDataGridViewTextBoxColumn
             // 
+            this.giacenzaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.giacenzaDataGridViewTextBoxColumn.DataPropertyName = "Giacenza";
             this.giacenzaDataGridViewTextBoxColumn.HeaderText = "Giacenza";
             this.giacenzaDataGridViewTextBoxColumn.Name = "giacenzaDataGridViewTextBoxColumn";
             this.giacenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.giacenzaDataGridViewTextBoxColumn.Width = 77;
             // 
             // Categoria
             // 
@@ -223,13 +254,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoAcquistoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezzoVenditaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
 
     }
 }

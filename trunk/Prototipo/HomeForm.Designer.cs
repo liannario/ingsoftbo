@@ -40,9 +40,7 @@
             // 
             // _sceltaGroupBox
             // 
-            this._sceltaGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._sceltaGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._sceltaGroupBox.Controls.Add(this._logoutButton);
             this._sceltaGroupBox.Controls.Add(this._gestioneClienteButton);
             this._sceltaGroupBox.Controls.Add(this._gestioneMagazzinoButton);

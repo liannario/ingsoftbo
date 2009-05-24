@@ -133,6 +133,18 @@ namespace Prototipo
 
         private void _aggiungiNotificaButton_Click(object sender, EventArgs e)
         {
+            if (_vendita.Clienti.Count == 0)
+            {
+                MessageBox.Show("Per inviare delle notifiche occorre aggiungere un cliente alla vendita", "Impossibile aggiungere la notifica");
+                return;
+            }
+
+            if (!_vendita.Clienti[0].Privacy)
+            {
+                MessageBox.Show("Il cliente non ha autorizzato l'invio di notifiche. In caso contrario, spuntare il relativo campo Privacy", "Autorizzazione negata per il rispetto della privacy");
+                return;
+            }
+
             int res = _dataNotifica.CompareTo(DateTime.Now);
             if (_dataNotifica.ToShortDateString() == DateTime.Now.ToShortDateString())
                 res = 0;
@@ -151,7 +163,7 @@ namespace Prototipo
             StringBuilder messaggio = new StringBuilder("Gentile cliente ");
             messaggio
                 .AppendFormat("{0}, la invitiamo ad effettuare un controllo dei prodotti venduti in data {1} ed installati sulla vettura \"{2}\" targata \"{3}\". Distinti saluti, ViaggiateSicuri S.R.L.",
-                _vendita.Clienti[0].Nome, _vendita.Data, ((Vettura)_vettureComboBox.SelectedItem).Modello, ((Vettura)_vettureComboBox.SelectedItem).Targa);
+                _vendita.Clienti[0].Nome, _vendita.Data.ToShortDateString(), ((Vettura)_vettureComboBox.SelectedItem).Modello, ((Vettura)_vettureComboBox.SelectedItem).Targa);
             if (_vendita.Notifiche.
                 FindAll((Notifica n) =>
                     {
@@ -214,6 +226,12 @@ namespace Prototipo
 
             //Aggiorno la giacenza dei prodotti venduti ed eventualmente invio le notifiche
             StringBuilder messaggio = new StringBuilder();
+
+            //Aggiorno il saldo punti della wheelcard
+            int punti = Convert.ToInt32(_totTextBox.Text);
+            punti /= 100;
+            _vendita.Clienti[0].WheelCard.Punti += punti;
+
             bool someToSend = false;
             foreach (Prodotto p in _vendita.Prodotti)
             {
@@ -221,6 +239,8 @@ namespace Prototipo
                 p.AggiornaGiacenza();
                 //Azzero la quantita
                 p.Quantita = 0;
+                //Azzero eventuali sconti
+                p.Sconto = 0;
                 //Invio via email le notifiche per i prodotti che sono sotto la soglia
                 if (!p.ControllaGiacenza())
                 {//Se il prodotto ha una giacenza inferiore alla soglia
@@ -242,6 +262,8 @@ namespace Prototipo
             messaggio.Append("Stampa ");
             messaggio.AppendFormat("{0} in corso...", (_vendita.DocumentoVendita == TipoDocumentoVendita.Scontrino ? "dello scontrino" : "della fattura"));
             MessageBox.Show(messaggio.ToString(), "Stampa documento di vendita");
+            if(punti > 0)
+                MessageBox.Show("Aggiunti " + punti + " punti alla wheelcard", "Aggiornamento saldo punti");
             this.Close();
         }
 

@@ -43,9 +43,7 @@
             // 
             // _loginBox
             // 
-            this._loginBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._loginBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._loginBox.Controls.Add(this._exitButton);
             this._loginBox.Controls.Add(this._radioButtonAmministratore);
             this._loginBox.Controls.Add(this._radioButtonOperatore);

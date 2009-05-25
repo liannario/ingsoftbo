@@ -182,6 +182,7 @@
             this.ClientSize = new System.Drawing.Size(494, 468);
             this.Controls.Add(this._loginBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximumSize = new System.Drawing.Size(500, 500);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

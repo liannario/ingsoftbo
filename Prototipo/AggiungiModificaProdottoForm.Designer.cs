@@ -36,27 +36,28 @@
             this._descrizioneTextBox = new System.Windows.Forms.TextBox();
             this._codiceTextBox = new System.Windows.Forms.TextBox();
             this._categoriaComboBox = new System.Windows.Forms.ComboBox();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaCollectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaCollectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._salvaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
-            this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaCollectionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this._giacenzaTextBox);
             this.groupBox1.Controls.Add(this._prezzoVenTextBox);
             this.groupBox1.Controls.Add(this._prezzoAcqTextBox);
@@ -123,9 +124,13 @@
             this._categoriaComboBox.TabIndex = 6;
             this._categoriaComboBox.ValueMember = "Nome";
             // 
-            // categoriaBindingSource
+            // categoriaBindingSource2
             // 
-            this.categoriaBindingSource.DataSource = typeof(Prototipo.Categoria);
+            this.categoriaBindingSource2.DataSource = typeof(Prototipo.Categoria);
+            // 
+            // categoriaBindingSource1
+            // 
+            this.categoriaBindingSource1.DataSource = typeof(Prototipo.Categoria);
             // 
             // label6
             // 
@@ -181,8 +186,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codice";
             // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(Prototipo.Categoria);
+            // 
             // _salvaButton
             // 
+            this._salvaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._salvaButton.Location = new System.Drawing.Point(79, 291);
             this._salvaButton.Name = "_salvaButton";
             this._salvaButton.Size = new System.Drawing.Size(75, 23);
@@ -193,6 +203,7 @@
             // 
             // _annullaButton
             // 
+            this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._annullaButton.Location = new System.Drawing.Point(184, 291);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -200,14 +211,6 @@
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
             this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
-            // 
-            // categoriaBindingSource1
-            // 
-            this.categoriaBindingSource1.DataSource = typeof(Prototipo.Categoria);
-            // 
-            // categoriaBindingSource2
-            // 
-            this.categoriaBindingSource2.DataSource = typeof(Prototipo.Categoria);
             // 
             // AggiungiModificaProdottoForm
             // 
@@ -217,15 +220,16 @@
             this.Controls.Add(this._annullaButton);
             this.Controls.Add(this._salvaButton);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(360, 360);
             this.Name = "AggiungiModificaProdottoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prodotto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaCollectionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -42,6 +42,7 @@
             this._annullaButton = new System.Windows.Forms.Button();
             this._cercaTextBox = new System.Windows.Forms.TextBox();
             this._cercaButton = new System.Windows.Forms.Button();
+            this._aggiungiCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -166,11 +167,22 @@
             this._cercaButton.UseVisualStyleBackColor = true;
             this._cercaButton.Click += new System.EventHandler(this._cercaButton_Click);
             // 
+            // _aggiungiCliente
+            // 
+            this._aggiungiCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._aggiungiCliente.Location = new System.Drawing.Point(31, 381);
+            this._aggiungiCliente.Name = "_aggiungiCliente";
+            this._aggiungiCliente.Size = new System.Drawing.Size(110, 23);
+            this._aggiungiCliente.TabIndex = 6;
+            this._aggiungiCliente.Text = "Aggiungi Cliente...";
+            this._aggiungiCliente.UseVisualStyleBackColor = true;
+            // 
             // RicercaClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 416);
+            this.Controls.Add(this._aggiungiCliente);
             this.Controls.Add(this._cercaButton);
             this.Controls.Add(this._cercaTextBox);
             this.Controls.Add(this._annullaButton);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cfDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn privacyDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wheelCardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button _aggiungiCliente;
     }
 }

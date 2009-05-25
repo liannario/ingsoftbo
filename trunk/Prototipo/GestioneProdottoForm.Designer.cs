@@ -34,16 +34,16 @@
             this._annullaButton = new System.Windows.Forms.Button();
             this._eliminaButton = new System.Windows.Forms.Button();
             this._ricercaGridView = new System.Windows.Forms.DataGridView();
+            this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this._aggiungiButton = new System.Windows.Forms.Button();
+            this._modificaButton = new System.Windows.Forms.Button();
+            this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoAcquistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giacenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this._aggiungiButton = new System.Windows.Forms.Button();
-            this._modificaButton = new System.Windows.Forms.Button();
-            this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
@@ -116,48 +116,6 @@
             this._ricercaGridView.Size = new System.Drawing.Size(742, 319);
             this._ricercaGridView.TabIndex = 5;
             // 
-            // codiceDataGridViewTextBoxColumn
-            // 
-            this.codiceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
-            this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
-            this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
-            this.codiceDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // descrizioneDataGridViewTextBoxColumn
-            // 
-            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
-            this.descrizioneDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // prezzoAcquistoDataGridViewTextBoxColumn
-            // 
-            this.prezzoAcquistoDataGridViewTextBoxColumn.DataPropertyName = "PrezzoAcquisto";
-            this.prezzoAcquistoDataGridViewTextBoxColumn.HeaderText = "PrezzoAcquisto";
-            this.prezzoAcquistoDataGridViewTextBoxColumn.Name = "prezzoAcquistoDataGridViewTextBoxColumn";
-            // 
-            // prezzoVenditaDataGridViewTextBoxColumn
-            // 
-            this.prezzoVenditaDataGridViewTextBoxColumn.DataPropertyName = "PrezzoVendita";
-            this.prezzoVenditaDataGridViewTextBoxColumn.HeaderText = "PrezzoVendita";
-            this.prezzoVenditaDataGridViewTextBoxColumn.Name = "prezzoVenditaDataGridViewTextBoxColumn";
-            // 
-            // giacenzaDataGridViewTextBoxColumn
-            // 
-            this.giacenzaDataGridViewTextBoxColumn.DataPropertyName = "Giacenza";
-            this.giacenzaDataGridViewTextBoxColumn.HeaderText = "Giacenza";
-            this.giacenzaDataGridViewTextBoxColumn.Name = "giacenzaDataGridViewTextBoxColumn";
-            // 
-            // categoriaDataGridViewTextBoxColumn
-            // 
-            this.categoriaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            this.categoriaDataGridViewTextBoxColumn.Width = 77;
-            // 
             // prodottoBindingSource1
             // 
             this.prodottoBindingSource1.DataSource = typeof(Prototipo.Prodotto);
@@ -187,6 +145,54 @@
             // prodottoBindingSource
             // 
             this.prodottoBindingSource.DataSource = typeof(Prototipo.Prodotto);
+            // 
+            // codiceDataGridViewTextBoxColumn
+            // 
+            this.codiceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
+            this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
+            this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
+            this.codiceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codiceDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // descrizioneDataGridViewTextBoxColumn
+            // 
+            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
+            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descrizioneDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // prezzoAcquistoDataGridViewTextBoxColumn
+            // 
+            this.prezzoAcquistoDataGridViewTextBoxColumn.DataPropertyName = "PrezzoAcquisto";
+            this.prezzoAcquistoDataGridViewTextBoxColumn.HeaderText = "PrezzoAcquisto";
+            this.prezzoAcquistoDataGridViewTextBoxColumn.Name = "prezzoAcquistoDataGridViewTextBoxColumn";
+            this.prezzoAcquistoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prezzoVenditaDataGridViewTextBoxColumn
+            // 
+            this.prezzoVenditaDataGridViewTextBoxColumn.DataPropertyName = "PrezzoVendita";
+            this.prezzoVenditaDataGridViewTextBoxColumn.HeaderText = "PrezzoVendita";
+            this.prezzoVenditaDataGridViewTextBoxColumn.Name = "prezzoVenditaDataGridViewTextBoxColumn";
+            this.prezzoVenditaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // giacenzaDataGridViewTextBoxColumn
+            // 
+            this.giacenzaDataGridViewTextBoxColumn.DataPropertyName = "Giacenza";
+            this.giacenzaDataGridViewTextBoxColumn.HeaderText = "Giacenza";
+            this.giacenzaDataGridViewTextBoxColumn.Name = "giacenzaDataGridViewTextBoxColumn";
+            this.giacenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            this.categoriaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoriaDataGridViewTextBoxColumn.Width = 77;
             // 
             // GestioneProdottoForm
             // 

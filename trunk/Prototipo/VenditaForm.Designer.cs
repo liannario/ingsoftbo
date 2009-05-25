@@ -329,10 +329,12 @@
             // 
             // codiceDataGridViewTextBoxColumn
             // 
+            this.codiceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
             this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
             this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
             this.codiceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codiceDataGridViewTextBoxColumn.Width = 65;
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
@@ -344,6 +346,7 @@
             // 
             // prezzoVenditaDataGridViewTextBoxColumn
             // 
+            this.prezzoVenditaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.prezzoVenditaDataGridViewTextBoxColumn.DataPropertyName = "PrezzoVendita";
             this.prezzoVenditaDataGridViewTextBoxColumn.HeaderText = "PrezzoVendita";
             this.prezzoVenditaDataGridViewTextBoxColumn.Name = "prezzoVenditaDataGridViewTextBoxColumn";
@@ -351,22 +354,28 @@
             // 
             // giacenzaDataGridViewTextBoxColumn
             // 
+            this.giacenzaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.giacenzaDataGridViewTextBoxColumn.DataPropertyName = "Giacenza";
             this.giacenzaDataGridViewTextBoxColumn.HeaderText = "Giacenza";
             this.giacenzaDataGridViewTextBoxColumn.Name = "giacenzaDataGridViewTextBoxColumn";
             this.giacenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.giacenzaDataGridViewTextBoxColumn.Width = 77;
             // 
             // quantitaDataGridViewTextBoxColumn
             // 
+            this.quantitaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.quantitaDataGridViewTextBoxColumn.DataPropertyName = "Quantita";
             this.quantitaDataGridViewTextBoxColumn.HeaderText = "Quantita";
             this.quantitaDataGridViewTextBoxColumn.Name = "quantitaDataGridViewTextBoxColumn";
+            this.quantitaDataGridViewTextBoxColumn.Width = 72;
             // 
             // scontoDataGridViewTextBoxColumn
             // 
+            this.scontoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.scontoDataGridViewTextBoxColumn.DataPropertyName = "Sconto";
             this.scontoDataGridViewTextBoxColumn.HeaderText = "Sconto";
             this.scontoDataGridViewTextBoxColumn.Name = "scontoDataGridViewTextBoxColumn";
+            this.scontoDataGridViewTextBoxColumn.Width = 66;
             // 
             // prodottiBindingSource
             // 
@@ -577,6 +586,7 @@
             // 
             // _utenteGroupBox
             // 
+            this._utenteGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._utenteGroupBox.Controls.Add(this._usernameLabel);
             this._utenteGroupBox.Controls.Add(this._usernameTextBox);
             this._utenteGroupBox.Controls.Add(this._nomeOperatoreLabel);
@@ -720,12 +730,6 @@
         private System.Windows.Forms.BindingSource vettureBindingSource;
         private System.Windows.Forms.BindingSource clientiBindingSource;
         private System.Windows.Forms.Label _vetturaLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codiceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prezzoVenditaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantitaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scontoDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox _puntiTextBox;
         private System.Windows.Forms.Label _puntiLabel;
         private System.Windows.Forms.GroupBox _tipoDocumentoGroupBox;
@@ -751,5 +755,11 @@
         private System.Windows.Forms.Label _usernameLabel;
         private System.Windows.Forms.TextBox _usernameTextBox;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezzoVenditaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantitaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scontoDataGridViewTextBoxColumn;
     }
 }

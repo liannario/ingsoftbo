@@ -118,6 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 466);
             this.Controls.Add(this._sceltaGroupBox);
+            this.MaximumSize = new System.Drawing.Size(500, 500);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home Menu";

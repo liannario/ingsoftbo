@@ -53,7 +53,7 @@
             this._loginBox.Controls.Add(this._usernameLabel);
             this._loginBox.Controls.Add(this._password);
             this._loginBox.Controls.Add(this._username);
-            this._loginBox.Location = new System.Drawing.Point(142, 110);
+            this._loginBox.Location = new System.Drawing.Point(147, 113);
             this._loginBox.Name = "_loginBox";
             this._loginBox.Size = new System.Drawing.Size(200, 242);
             this._loginBox.TabIndex = 0;
@@ -65,7 +65,7 @@
             this._exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this._exitButton.Location = new System.Drawing.Point(61, 208);
+            this._exitButton.Location = new System.Drawing.Point(62, 204);
             this._exitButton.Name = "_exitButton";
             this._exitButton.Size = new System.Drawing.Size(75, 23);
             this._exitButton.TabIndex = 9;
@@ -79,7 +79,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._radioButtonAmministratore.AutoSize = true;
-            this._radioButtonAmministratore.Location = new System.Drawing.Point(61, 145);
+            this._radioButtonAmministratore.Location = new System.Drawing.Point(62, 141);
             this._radioButtonAmministratore.Name = "_radioButtonAmministratore";
             this._radioButtonAmministratore.Size = new System.Drawing.Size(93, 17);
             this._radioButtonAmministratore.TabIndex = 8;
@@ -93,7 +93,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._radioButtonOperatore.AutoSize = true;
-            this._radioButtonOperatore.Location = new System.Drawing.Point(61, 122);
+            this._radioButtonOperatore.Location = new System.Drawing.Point(62, 118);
             this._radioButtonOperatore.Name = "_radioButtonOperatore";
             this._radioButtonOperatore.Size = new System.Drawing.Size(72, 17);
             this._radioButtonOperatore.TabIndex = 7;
@@ -108,7 +108,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._radioButtonGuest.AutoSize = true;
             this._radioButtonGuest.Checked = true;
-            this._radioButtonGuest.Location = new System.Drawing.Point(61, 99);
+            this._radioButtonGuest.Location = new System.Drawing.Point(62, 95);
             this._radioButtonGuest.Name = "_radioButtonGuest";
             this._radioButtonGuest.Size = new System.Drawing.Size(53, 17);
             this._radioButtonGuest.TabIndex = 6;
@@ -122,7 +122,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(61, 179);
+            this.button1.Location = new System.Drawing.Point(62, 175);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -136,7 +136,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._passwordLabel.AutoSize = true;
-            this._passwordLabel.Location = new System.Drawing.Point(6, 62);
+            this._passwordLabel.Location = new System.Drawing.Point(7, 58);
             this._passwordLabel.Name = "_passwordLabel";
             this._passwordLabel.Size = new System.Drawing.Size(56, 13);
             this._passwordLabel.TabIndex = 3;
@@ -146,7 +146,7 @@
             // _usernameLabel
             // 
             this._usernameLabel.AutoSize = true;
-            this._usernameLabel.Location = new System.Drawing.Point(6, 23);
+            this._usernameLabel.Location = new System.Drawing.Point(7, 19);
             this._usernameLabel.Name = "_usernameLabel";
             this._usernameLabel.Size = new System.Drawing.Size(58, 13);
             this._usernameLabel.TabIndex = 2;
@@ -158,7 +158,7 @@
             this._password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this._password.Location = new System.Drawing.Point(70, 59);
+            this._password.Location = new System.Drawing.Point(71, 55);
             this._password.Name = "_password";
             this._password.Size = new System.Drawing.Size(122, 20);
             this._password.TabIndex = 1;
@@ -169,7 +169,7 @@
             this._username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this._username.Location = new System.Drawing.Point(70, 20);
+            this._username.Location = new System.Drawing.Point(71, 16);
             this._username.Name = "_username";
             this._username.Size = new System.Drawing.Size(122, 20);
             this._username.TabIndex = 0;

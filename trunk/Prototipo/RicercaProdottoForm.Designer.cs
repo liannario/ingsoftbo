@@ -67,7 +67,7 @@
             this.giacenzaDataGridViewTextBoxColumn,
             this.Categoria});
             this._ricercaGridView.DataSource = this.prodottiBindingSource;
-            this._ricercaGridView.Location = new System.Drawing.Point(28, 42);
+            this._ricercaGridView.Location = new System.Drawing.Point(28, 41);
             this._ricercaGridView.MultiSelect = false;
             this._ricercaGridView.Name = "_ricercaGridView";
             this._ricercaGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -134,7 +134,7 @@
             // _okButton
             // 
             this._okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._okButton.Location = new System.Drawing.Point(610, 382);
+            this._okButton.Location = new System.Drawing.Point(610, 381);
             this._okButton.Name = "_okButton";
             this._okButton.Size = new System.Drawing.Size(75, 23);
             this._okButton.TabIndex = 1;
@@ -145,7 +145,7 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._annullaButton.Location = new System.Drawing.Point(696, 381);
+            this._annullaButton.Location = new System.Drawing.Point(696, 380);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 2;
@@ -157,7 +157,7 @@
             // 
             this._cercaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this._cercaTextBox.Location = new System.Drawing.Point(28, 13);
+            this._cercaTextBox.Location = new System.Drawing.Point(28, 12);
             this._cercaTextBox.Name = "_cercaTextBox";
             this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
             this._cercaTextBox.TabIndex = 3;
@@ -167,7 +167,7 @@
             // _cercaButton
             // 
             this._cercaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._cercaButton.Location = new System.Drawing.Point(695, 13);
+            this._cercaButton.Location = new System.Drawing.Point(695, 12);
             this._cercaButton.Name = "_cercaButton";
             this._cercaButton.Size = new System.Drawing.Size(75, 23);
             this._cercaButton.TabIndex = 4;

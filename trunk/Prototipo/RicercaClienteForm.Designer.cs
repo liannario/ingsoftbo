@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this._ricercaGridView = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._okButton = new System.Windows.Forms.Button();
+            this._annullaButton = new System.Windows.Forms.Button();
+            this._cercaTextBox = new System.Windows.Forms.TextBox();
+            this._cercaButton = new System.Windows.Forms.Button();
+            this._aggiungiCliente = new System.Windows.Forms.Button();
             this.indirizzoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,11 +43,7 @@
             this.privacyDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.wheelCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._okButton = new System.Windows.Forms.Button();
-            this._annullaButton = new System.Windows.Forms.Button();
-            this._cercaTextBox = new System.Windows.Forms.TextBox();
-            this._cercaButton = new System.Windows.Forms.Button();
-            this._aggiungiCliente = new System.Windows.Forms.Button();
+            this._eliminaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             this.privacyDataGridViewCheckBoxColumn,
             this.wheelCardDataGridViewTextBoxColumn});
             this._ricercaGridView.DataSource = this.clientiBindingSource;
-            this._ricercaGridView.Location = new System.Drawing.Point(31, 52);
+            this._ricercaGridView.Location = new System.Drawing.Point(28, 51);
             this._ricercaGridView.Name = "_ricercaGridView";
             this._ricercaGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._ricercaGridView.Size = new System.Drawing.Size(742, 296);
@@ -77,6 +78,61 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.Width = 60;
+            // 
+            // _okButton
+            // 
+            this._okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._okButton.Location = new System.Drawing.Point(614, 380);
+            this._okButton.Name = "_okButton";
+            this._okButton.Size = new System.Drawing.Size(75, 23);
+            this._okButton.TabIndex = 1;
+            this._okButton.Text = "Ok";
+            this._okButton.UseVisualStyleBackColor = true;
+            this._okButton.Click += new System.EventHandler(this._okButton_Click);
+            // 
+            // _annullaButton
+            // 
+            this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._annullaButton.Location = new System.Drawing.Point(695, 380);
+            this._annullaButton.Name = "_annullaButton";
+            this._annullaButton.Size = new System.Drawing.Size(75, 23);
+            this._annullaButton.TabIndex = 2;
+            this._annullaButton.Text = "Annulla";
+            this._annullaButton.UseVisualStyleBackColor = true;
+            this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
+            // 
+            // _cercaTextBox
+            // 
+            this._cercaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._cercaTextBox.Location = new System.Drawing.Point(28, 14);
+            this._cercaTextBox.Name = "_cercaTextBox";
+            this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
+            this._cercaTextBox.TabIndex = 4;
+            this._cercaTextBox.Text = "Inserisci il nome per la ricerca";
+            this._cercaTextBox.Click += new System.EventHandler(this._cercaTextBox_Click);
+            // 
+            // _cercaButton
+            // 
+            this._cercaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._cercaButton.Location = new System.Drawing.Point(695, 14);
+            this._cercaButton.Name = "_cercaButton";
+            this._cercaButton.Size = new System.Drawing.Size(75, 23);
+            this._cercaButton.TabIndex = 5;
+            this._cercaButton.Text = "Cerca";
+            this._cercaButton.UseVisualStyleBackColor = true;
+            this._cercaButton.Click += new System.EventHandler(this._cercaButton_Click);
+            // 
+            // _aggiungiCliente
+            // 
+            this._aggiungiCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._aggiungiCliente.Location = new System.Drawing.Point(28, 380);
+            this._aggiungiCliente.Name = "_aggiungiCliente";
+            this._aggiungiCliente.Size = new System.Drawing.Size(110, 23);
+            this._aggiungiCliente.TabIndex = 6;
+            this._aggiungiCliente.Text = "Aggiungi Cliente...";
+            this._aggiungiCliente.UseVisualStyleBackColor = true;
+            this._aggiungiCliente.Click += new System.EventHandler(this._aggiungiCliente_Click);
             // 
             // indirizzoDataGridViewTextBoxColumn
             // 
@@ -123,65 +179,23 @@
             // 
             this.clientiBindingSource.DataSource = typeof(Prototipo.Clienti);
             // 
-            // _okButton
+            // _eliminaButton
             // 
-            this._okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._okButton.Location = new System.Drawing.Point(617, 381);
-            this._okButton.Name = "_okButton";
-            this._okButton.Size = new System.Drawing.Size(75, 23);
-            this._okButton.TabIndex = 1;
-            this._okButton.Text = "Ok";
-            this._okButton.UseVisualStyleBackColor = true;
-            this._okButton.Click += new System.EventHandler(this._okButton_Click);
-            // 
-            // _annullaButton
-            // 
-            this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._annullaButton.Location = new System.Drawing.Point(698, 381);
-            this._annullaButton.Name = "_annullaButton";
-            this._annullaButton.Size = new System.Drawing.Size(75, 23);
-            this._annullaButton.TabIndex = 2;
-            this._annullaButton.Text = "Annulla";
-            this._annullaButton.UseVisualStyleBackColor = true;
-            this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
-            // 
-            // _cercaTextBox
-            // 
-            this._cercaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this._cercaTextBox.Location = new System.Drawing.Point(31, 15);
-            this._cercaTextBox.Name = "_cercaTextBox";
-            this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
-            this._cercaTextBox.TabIndex = 4;
-            this._cercaTextBox.Text = "Inserisci il nome per la ricerca";
-            this._cercaTextBox.Click += new System.EventHandler(this._cercaTextBox_Click);
-            // 
-            // _cercaButton
-            // 
-            this._cercaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._cercaButton.Location = new System.Drawing.Point(698, 15);
-            this._cercaButton.Name = "_cercaButton";
-            this._cercaButton.Size = new System.Drawing.Size(75, 23);
-            this._cercaButton.TabIndex = 5;
-            this._cercaButton.Text = "Cerca";
-            this._cercaButton.UseVisualStyleBackColor = true;
-            this._cercaButton.Click += new System.EventHandler(this._cercaButton_Click);
-            // 
-            // _aggiungiCliente
-            // 
-            this._aggiungiCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiCliente.Location = new System.Drawing.Point(31, 381);
-            this._aggiungiCliente.Name = "_aggiungiCliente";
-            this._aggiungiCliente.Size = new System.Drawing.Size(110, 23);
-            this._aggiungiCliente.TabIndex = 6;
-            this._aggiungiCliente.Text = "Aggiungi Cliente...";
-            this._aggiungiCliente.UseVisualStyleBackColor = true;
+            this._eliminaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._eliminaButton.Location = new System.Drawing.Point(144, 380);
+            this._eliminaButton.Name = "_eliminaButton";
+            this._eliminaButton.Size = new System.Drawing.Size(110, 23);
+            this._eliminaButton.TabIndex = 7;
+            this._eliminaButton.Text = "Elimina Cliente";
+            this._eliminaButton.UseVisualStyleBackColor = true;
+            this._eliminaButton.Click += new System.EventHandler(this._eliminaButton_Click);
             // 
             // RicercaClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 416);
+            this.Controls.Add(this._eliminaButton);
             this.Controls.Add(this._aggiungiCliente);
             this.Controls.Add(this._cercaButton);
             this.Controls.Add(this._cercaTextBox);
@@ -214,5 +228,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn privacyDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wheelCardDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button _aggiungiCliente;
+        private System.Windows.Forms.Button _eliminaButton;
     }
 }

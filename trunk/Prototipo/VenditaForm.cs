@@ -228,9 +228,13 @@ namespace Prototipo
             StringBuilder messaggio = new StringBuilder();
 
             //Aggiorno il saldo punti della wheelcard
-            int punti = Convert.ToInt32(_totTextBox.Text);
-            punti /= 100;
-            _vendita.Clienti[0].WheelCard.Punti += punti;
+            int punti = 0;
+            if (_vendita.Clienti.Count > 0)
+            {
+                punti = Convert.ToInt32(_totTextBox.Text);
+                punti /= 100;
+                _vendita.Clienti[0].WheelCard.Punti += punti;
+            }
 
             bool someToSend = false;
             foreach (Prodotto p in _vendita.Prodotti)

@@ -117,7 +117,7 @@
             this._clienteBox.Controls.Add(this._cognomeLabel);
             this._clienteBox.Controls.Add(this._nomeTextBox);
             this._clienteBox.Controls.Add(this._nomeLabel);
-            this._clienteBox.Location = new System.Drawing.Point(12, 12);
+            this._clienteBox.Location = new System.Drawing.Point(15, 12);
             this._clienteBox.Name = "_clienteBox";
             this._clienteBox.Size = new System.Drawing.Size(438, 171);
             this._clienteBox.TabIndex = 0;
@@ -296,7 +296,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this._prodottiBox.AutoSize = true;
             this._prodottiBox.Controls.Add(this._prodottiGridView);
-            this._prodottiBox.Location = new System.Drawing.Point(12, 189);
+            this._prodottiBox.Location = new System.Drawing.Point(15, 189);
             this._prodottiBox.Name = "_prodottiBox";
             this._prodottiBox.Size = new System.Drawing.Size(901, 210);
             this._prodottiBox.TabIndex = 1;
@@ -384,7 +384,7 @@
             // _aggiungiProdottoButton
             // 
             this._aggiungiProdottoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._aggiungiProdottoButton.Location = new System.Drawing.Point(12, 405);
+            this._aggiungiProdottoButton.Location = new System.Drawing.Point(15, 405);
             this._aggiungiProdottoButton.Name = "_aggiungiProdottoButton";
             this._aggiungiProdottoButton.Size = new System.Drawing.Size(128, 23);
             this._aggiungiProdottoButton.TabIndex = 2;
@@ -397,7 +397,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(771, 411);
+            this.label1.Location = new System.Drawing.Point(774, 411);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
@@ -406,7 +406,7 @@
             // _totTextBox
             // 
             this._totTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._totTextBox.Location = new System.Drawing.Point(820, 408);
+            this._totTextBox.Location = new System.Drawing.Point(823, 408);
             this._totTextBox.Name = "_totTextBox";
             this._totTextBox.ReadOnly = true;
             this._totTextBox.Size = new System.Drawing.Size(93, 20);
@@ -417,7 +417,7 @@
             // 
             this._tipoDocumentoGroupBox.Controls.Add(this._scontrinoRadioButton);
             this._tipoDocumentoGroupBox.Controls.Add(this._fatturaRadioButton);
-            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(491, 12);
+            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(494, 12);
             this._tipoDocumentoGroupBox.Name = "_tipoDocumentoGroupBox";
             this._tipoDocumentoGroupBox.Size = new System.Drawing.Size(191, 171);
             this._tipoDocumentoGroupBox.TabIndex = 7;
@@ -456,7 +456,7 @@
             this._notificaGroupBox.Controls.Add(this._emailRadioButton);
             this._notificaGroupBox.Controls.Add(this._smsRadioButton);
             this._notificaGroupBox.Controls.Add(this._calendar);
-            this._notificaGroupBox.Location = new System.Drawing.Point(12, 434);
+            this._notificaGroupBox.Location = new System.Drawing.Point(15, 434);
             this._notificaGroupBox.Name = "_notificaGroupBox";
             this._notificaGroupBox.Size = new System.Drawing.Size(438, 175);
             this._notificaGroupBox.TabIndex = 8;
@@ -536,7 +536,7 @@
             this._operazioniGroupBox.Controls.Add(this._annullaButton);
             this._operazioniGroupBox.Controls.Add(this._salvaPreventivoButton);
             this._operazioniGroupBox.Controls.Add(this._concludiVenditaButton);
-            this._operazioniGroupBox.Location = new System.Drawing.Point(468, 434);
+            this._operazioniGroupBox.Location = new System.Drawing.Point(471, 434);
             this._operazioniGroupBox.Name = "_operazioniGroupBox";
             this._operazioniGroupBox.Size = new System.Drawing.Size(445, 175);
             this._operazioniGroupBox.TabIndex = 9;
@@ -576,7 +576,7 @@
             // _cancellaProdottoButton
             // 
             this._cancellaProdottoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._cancellaProdottoButton.Location = new System.Drawing.Point(156, 405);
+            this._cancellaProdottoButton.Location = new System.Drawing.Point(159, 405);
             this._cancellaProdottoButton.Name = "_cancellaProdottoButton";
             this._cancellaProdottoButton.Size = new System.Drawing.Size(128, 23);
             this._cancellaProdottoButton.TabIndex = 10;
@@ -593,7 +593,7 @@
             this._utenteGroupBox.Controls.Add(this._nomeOptextBox);
             this._utenteGroupBox.Controls.Add(this.label3);
             this._utenteGroupBox.Controls.Add(this._cognomeOpTextBox);
-            this._utenteGroupBox.Location = new System.Drawing.Point(722, 12);
+            this._utenteGroupBox.Location = new System.Drawing.Point(725, 12);
             this._utenteGroupBox.Name = "_utenteGroupBox";
             this._utenteGroupBox.Size = new System.Drawing.Size(191, 171);
             this._utenteGroupBox.TabIndex = 11;

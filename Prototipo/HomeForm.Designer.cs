@@ -47,7 +47,7 @@
             this._sceltaGroupBox.Controls.Add(this._gestioneProdottoButton);
             this._sceltaGroupBox.Controls.Add(this._venditaButton);
             this._sceltaGroupBox.Controls.Add(this._giacenzaButton);
-            this._sceltaGroupBox.Location = new System.Drawing.Point(146, 83);
+            this._sceltaGroupBox.Location = new System.Drawing.Point(146, 109);
             this._sceltaGroupBox.Name = "_sceltaGroupBox";
             this._sceltaGroupBox.Size = new System.Drawing.Size(200, 249);
             this._sceltaGroupBox.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // _logoutButton
             // 
-            this._logoutButton.Location = new System.Drawing.Point(6, 198);
+            this._logoutButton.Location = new System.Drawing.Point(6, 195);
             this._logoutButton.Name = "_logoutButton";
             this._logoutButton.Size = new System.Drawing.Size(188, 23);
             this._logoutButton.TabIndex = 5;
@@ -66,7 +66,7 @@
             // 
             // _gestioneClienteButton
             // 
-            this._gestioneClienteButton.Location = new System.Drawing.Point(6, 122);
+            this._gestioneClienteButton.Location = new System.Drawing.Point(6, 119);
             this._gestioneClienteButton.Name = "_gestioneClienteButton";
             this._gestioneClienteButton.Size = new System.Drawing.Size(188, 23);
             this._gestioneClienteButton.TabIndex = 4;
@@ -75,7 +75,7 @@
             // 
             // _gestioneMagazzinoButton
             // 
-            this._gestioneMagazzinoButton.Location = new System.Drawing.Point(6, 151);
+            this._gestioneMagazzinoButton.Location = new System.Drawing.Point(6, 148);
             this._gestioneMagazzinoButton.Name = "_gestioneMagazzinoButton";
             this._gestioneMagazzinoButton.Size = new System.Drawing.Size(188, 23);
             this._gestioneMagazzinoButton.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             // _gestioneProdottoButton
             // 
-            this._gestioneProdottoButton.Location = new System.Drawing.Point(6, 93);
+            this._gestioneProdottoButton.Location = new System.Drawing.Point(6, 90);
             this._gestioneProdottoButton.Name = "_gestioneProdottoButton";
             this._gestioneProdottoButton.Size = new System.Drawing.Size(188, 23);
             this._gestioneProdottoButton.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             // _venditaButton
             // 
-            this._venditaButton.Location = new System.Drawing.Point(6, 63);
+            this._venditaButton.Location = new System.Drawing.Point(6, 60);
             this._venditaButton.Name = "_venditaButton";
             this._venditaButton.Size = new System.Drawing.Size(188, 23);
             this._venditaButton.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             // _giacenzaButton
             // 
-            this._giacenzaButton.Location = new System.Drawing.Point(6, 34);
+            this._giacenzaButton.Location = new System.Drawing.Point(6, 31);
             this._giacenzaButton.Name = "_giacenzaButton";
             this._giacenzaButton.Size = new System.Drawing.Size(188, 23);
             this._giacenzaButton.TabIndex = 0;

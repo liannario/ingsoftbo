@@ -34,16 +34,16 @@
             this._annullaButton = new System.Windows.Forms.Button();
             this._eliminaButton = new System.Windows.Forms.Button();
             this._ricercaGridView = new System.Windows.Forms.DataGridView();
-            this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this._aggiungiButton = new System.Windows.Forms.Button();
-            this._modificaButton = new System.Windows.Forms.Button();
-            this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoAcquistoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezzoVenditaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giacenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodottoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this._aggiungiButton = new System.Windows.Forms.Button();
+            this._modificaButton = new System.Windows.Forms.Button();
+            this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
@@ -52,7 +52,7 @@
             // _cercaButton
             // 
             this._cercaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._cercaButton.Location = new System.Drawing.Point(692, 9);
+            this._cercaButton.Location = new System.Drawing.Point(695, 11);
             this._cercaButton.Name = "_cercaButton";
             this._cercaButton.Size = new System.Drawing.Size(75, 23);
             this._cercaButton.TabIndex = 9;
@@ -64,7 +64,7 @@
             // 
             this._cercaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this._cercaTextBox.Location = new System.Drawing.Point(25, 11);
+            this._cercaTextBox.Location = new System.Drawing.Point(28, 13);
             this._cercaTextBox.Name = "_cercaTextBox";
             this._cercaTextBox.Size = new System.Drawing.Size(657, 20);
             this._cercaTextBox.TabIndex = 8;
@@ -74,7 +74,7 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._annullaButton.Location = new System.Drawing.Point(693, 380);
+            this._annullaButton.Location = new System.Drawing.Point(696, 382);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 7;
@@ -85,7 +85,7 @@
             // _eliminaButton
             // 
             this._eliminaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._eliminaButton.Location = new System.Drawing.Point(612, 380);
+            this._eliminaButton.Location = new System.Drawing.Point(615, 382);
             this._eliminaButton.Name = "_eliminaButton";
             this._eliminaButton.Size = new System.Drawing.Size(75, 23);
             this._eliminaButton.TabIndex = 6;
@@ -109,42 +109,12 @@
             this.giacenzaDataGridViewTextBoxColumn,
             this.categoriaDataGridViewTextBoxColumn});
             this._ricercaGridView.DataSource = this.prodottoBindingSource1;
-            this._ricercaGridView.Location = new System.Drawing.Point(25, 41);
+            this._ricercaGridView.Location = new System.Drawing.Point(28, 43);
             this._ricercaGridView.MultiSelect = false;
             this._ricercaGridView.Name = "_ricercaGridView";
             this._ricercaGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._ricercaGridView.Size = new System.Drawing.Size(742, 319);
             this._ricercaGridView.TabIndex = 5;
-            // 
-            // prodottoBindingSource1
-            // 
-            this.prodottoBindingSource1.DataSource = typeof(Prototipo.Prodotto);
-            // 
-            // _aggiungiButton
-            // 
-            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiButton.Location = new System.Drawing.Point(450, 380);
-            this._aggiungiButton.Name = "_aggiungiButton";
-            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
-            this._aggiungiButton.TabIndex = 10;
-            this._aggiungiButton.Text = "Aggiungi";
-            this._aggiungiButton.UseVisualStyleBackColor = true;
-            this._aggiungiButton.Click += new System.EventHandler(this._aggiungiButton_Click);
-            // 
-            // _modificaButton
-            // 
-            this._modificaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._modificaButton.Location = new System.Drawing.Point(531, 380);
-            this._modificaButton.Name = "_modificaButton";
-            this._modificaButton.Size = new System.Drawing.Size(75, 23);
-            this._modificaButton.TabIndex = 11;
-            this._modificaButton.Text = "Modifica";
-            this._modificaButton.UseVisualStyleBackColor = true;
-            this._modificaButton.Click += new System.EventHandler(this._modificaButton_Click);
-            // 
-            // prodottoBindingSource
-            // 
-            this.prodottoBindingSource.DataSource = typeof(Prototipo.Prodotto);
             // 
             // codiceDataGridViewTextBoxColumn
             // 
@@ -193,6 +163,36 @@
             this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
             this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
             this.categoriaDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // prodottoBindingSource1
+            // 
+            this.prodottoBindingSource1.DataSource = typeof(Prototipo.Prodotto);
+            // 
+            // _aggiungiButton
+            // 
+            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._aggiungiButton.Location = new System.Drawing.Point(453, 382);
+            this._aggiungiButton.Name = "_aggiungiButton";
+            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
+            this._aggiungiButton.TabIndex = 10;
+            this._aggiungiButton.Text = "Aggiungi";
+            this._aggiungiButton.UseVisualStyleBackColor = true;
+            this._aggiungiButton.Click += new System.EventHandler(this._aggiungiButton_Click);
+            // 
+            // _modificaButton
+            // 
+            this._modificaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._modificaButton.Location = new System.Drawing.Point(534, 382);
+            this._modificaButton.Name = "_modificaButton";
+            this._modificaButton.Size = new System.Drawing.Size(75, 23);
+            this._modificaButton.TabIndex = 11;
+            this._modificaButton.Text = "Modifica";
+            this._modificaButton.UseVisualStyleBackColor = true;
+            this._modificaButton.Click += new System.EventHandler(this._modificaButton_Click);
+            // 
+            // prodottoBindingSource
+            // 
+            this.prodottoBindingSource.DataSource = typeof(Prototipo.Prodotto);
             // 
             // GestioneProdottoForm
             // 

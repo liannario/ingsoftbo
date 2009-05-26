@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(45, 34);
+            this.groupBox1.Location = new System.Drawing.Point(46, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 239);
             this.groupBox1.TabIndex = 0;
@@ -193,7 +193,7 @@
             // _salvaButton
             // 
             this._salvaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._salvaButton.Location = new System.Drawing.Point(79, 291);
+            this._salvaButton.Location = new System.Drawing.Point(80, 280);
             this._salvaButton.Name = "_salvaButton";
             this._salvaButton.Size = new System.Drawing.Size(75, 23);
             this._salvaButton.TabIndex = 1;
@@ -204,7 +204,7 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._annullaButton.Location = new System.Drawing.Point(184, 291);
+            this._annullaButton.Location = new System.Drawing.Point(185, 280);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 2;

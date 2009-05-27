@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AggiungiClienteForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._privacyCheckBox = new System.Windows.Forms.CheckBox();
             this._cfTextBox = new System.Windows.Forms.TextBox();
             this._cfLabel = new System.Windows.Forms.Label();
             this._telTextBox = new System.Windows.Forms.TextBox();
@@ -48,7 +50,6 @@
             this._modelloLabel = new System.Windows.Forms.Label();
             this._okButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
-            this._privacyCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dati";
+            // 
+            // _privacyCheckBox
+            // 
+            this._privacyCheckBox.AutoSize = true;
+            this._privacyCheckBox.Checked = true;
+            this._privacyCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this._privacyCheckBox.Location = new System.Drawing.Point(278, 123);
+            this._privacyCheckBox.Name = "_privacyCheckBox";
+            this._privacyCheckBox.Size = new System.Drawing.Size(61, 17);
+            this._privacyCheckBox.TabIndex = 37;
+            this._privacyCheckBox.Text = "Privacy";
+            this._privacyCheckBox.UseVisualStyleBackColor = true;
             // 
             // _cfTextBox
             // 
@@ -245,18 +258,6 @@
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
             // 
-            // _privacyCheckBox
-            // 
-            this._privacyCheckBox.AutoSize = true;
-            this._privacyCheckBox.Checked = true;
-            this._privacyCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this._privacyCheckBox.Location = new System.Drawing.Point(278, 123);
-            this._privacyCheckBox.Name = "_privacyCheckBox";
-            this._privacyCheckBox.Size = new System.Drawing.Size(61, 17);
-            this._privacyCheckBox.TabIndex = 37;
-            this._privacyCheckBox.Text = "Privacy";
-            this._privacyCheckBox.UseVisualStyleBackColor = true;
-            // 
             // AggiungiClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +267,7 @@
             this.Controls.Add(this._okButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AggiungiClienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi Cliente";

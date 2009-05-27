@@ -68,9 +68,7 @@ namespace Prototipo
             }
             else
             {
-                //StringBuilder error = new StringBuilder();
-                //error.AppendFormat("{0}, non sei autorizzato ad eseguire questa operazione", Negozio.GetInstance().UtenteCorrente.Username);
-                //MessageBox.Show(error.ToString(), "Permesso negato");
+                //Utente non autorizzato ad eseguire l'operazione
                 result = false;
             }
             return result;
@@ -80,54 +78,48 @@ namespace Prototipo
         {
             RicercaProdottoForm form = new RicercaProdottoForm();
             ControlloGiacenza operazione = new ControlloGiacenza();
-            if (!IsUtenteAuthorized(form, operazione))
-                ((Button)sender).Enabled = false;
+            IsUtenteAuthorized(form, operazione);
         }
 
         private void _venditaButton_Click(object sender, EventArgs e)
         {
             VenditaForm form = new VenditaForm();
             EffettuaVendita operazione = new EffettuaVendita();
-            if (!IsUtenteAuthorized(form, operazione))
-                ((Button)sender).Enabled = false;
-        }
-
-        private void _logoutButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            _loginForm.Show();
+            IsUtenteAuthorized(form, operazione);
         }
 
         private void _gestioneProdottoButton_Click(object sender, EventArgs e)
         {
             GestioneProdottoForm form = new GestioneProdottoForm();
             GestioneProdotto operazione = new GestioneProdotto();
-            if (!IsUtenteAuthorized(form, operazione))
-                ((Button)sender).Enabled = false;
+            IsUtenteAuthorized(form, operazione);
         }
 
         private void _gestioneClienteButton_Click(object sender, EventArgs e)
         {
             RicercaClienteForm form = new RicercaClienteForm(new VenditaForm()); //La vendita è solo per far funzionare il tutto ma non sarebbe necessaria
             GestioneCliente operazione = new GestioneCliente();
-            if (!IsUtenteAuthorized(form, operazione))
-                ((Button)sender).Enabled = false;
+            IsUtenteAuthorized(form, operazione);
         }
 
         private void _gestioneCategoriaButton_Click(object sender, EventArgs e)
         {
             Form form = null;
             GestioneCategoria operazione = new GestioneCategoria();
-            if (!IsUtenteAuthorized(form, operazione))
-                ((Button)sender).Enabled = false;
+            IsUtenteAuthorized(form, operazione);
         }
 
         private void _gestioneMagazzinoButton_Click(object sender, EventArgs e)
         {
             Form form = null;
             GestioneMagazzino operazione = new GestioneMagazzino();
-            if (!IsUtenteAuthorized(form, operazione))
-                ((Button)sender).Enabled = false;
+            IsUtenteAuthorized(form, operazione);
+        }
+
+        private void _logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _loginForm.Show();
         }
     }
 }

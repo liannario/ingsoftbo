@@ -75,6 +75,7 @@ namespace Prototipo
                 Cliente _clienteCorrente = _vendita.Clienti[0];
                 if (_clienteCorrente.GetType() == typeof(ClientePrivato))
                 {
+                    _fatturaRadioButton.Enabled = false;
                     _nomeTextBox.Text = ((ClientePrivato)_clienteCorrente).Nome;
                     _cognomeTextBox.Text = ((ClientePrivato)_clienteCorrente).Cognome;
                     _indirizzoTextBox.Text = ((ClientePrivato)_clienteCorrente).Indirizzo;
@@ -85,6 +86,7 @@ namespace Prototipo
                 }
                 if (_clienteCorrente.GetType() == typeof(ClienteAzienda))
                 {
+                    _fatturaRadioButton.Enabled = true;
                     _nomeLabel.Text = "Rag. Soc.";
                     _nomeTextBox.Text = ((ClienteAzienda)_clienteCorrente).Nome;
                     _cognomeLabel.Hide();

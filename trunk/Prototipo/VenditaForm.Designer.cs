@@ -682,6 +682,7 @@
             this.Controls.Add(this._aggiungiProdottoButton);
             this.Controls.Add(this._prodottiBox);
             this.Controls.Add(this._clienteBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VenditaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendita";

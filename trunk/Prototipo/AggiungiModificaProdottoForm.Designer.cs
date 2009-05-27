@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AggiungiModificaProdottoForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._giacenzaTextBox = new System.Windows.Forms.TextBox();
             this._prezzoVenTextBox = new System.Windows.Forms.TextBox();
@@ -220,6 +221,7 @@
             this.Controls.Add(this._annullaButton);
             this.Controls.Add(this._salvaButton);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(360, 360);
             this.Name = "AggiungiModificaProdottoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

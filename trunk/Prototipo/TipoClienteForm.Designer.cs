@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoClienteForm));
             this._okButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this._aziendaRadioButton = new System.Windows.Forms.RadioButton();
@@ -98,6 +99,7 @@
             this.Controls.Add(this._annullaButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this._okButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(300, 300);
             this.Name = "TipoClienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

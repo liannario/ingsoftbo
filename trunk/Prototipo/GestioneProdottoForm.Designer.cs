@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestioneProdottoForm));
             this._cercaButton = new System.Windows.Forms.Button();
             this._cercaTextBox = new System.Windows.Forms.TextBox();
             this._annullaButton = new System.Windows.Forms.Button();
@@ -206,6 +207,7 @@
             this.Controls.Add(this._annullaButton);
             this.Controls.Add(this._eliminaButton);
             this.Controls.Add(this._ricercaGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestioneProdottoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestione Prodotto";

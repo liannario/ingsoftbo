@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this._sceltaGroupBox = new System.Windows.Forms.GroupBox();
+            this._gestioneCategoriaButton = new System.Windows.Forms.Button();
             this._logoutButton = new System.Windows.Forms.Button();
             this._gestioneClienteButton = new System.Windows.Forms.Button();
             this._gestioneMagazzinoButton = new System.Windows.Forms.Button();
             this._gestioneProdottoButton = new System.Windows.Forms.Button();
             this._venditaButton = new System.Windows.Forms.Button();
             this._giacenzaButton = new System.Windows.Forms.Button();
-            this._gestioneCategoriaButton = new System.Windows.Forms.Button();
             this._sceltaGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,16 @@
             this._sceltaGroupBox.TabIndex = 0;
             this._sceltaGroupBox.TabStop = false;
             this._sceltaGroupBox.Text = "Scelta Operazione";
+            // 
+            // _gestioneCategoriaButton
+            // 
+            this._gestioneCategoriaButton.Location = new System.Drawing.Point(6, 143);
+            this._gestioneCategoriaButton.Name = "_gestioneCategoriaButton";
+            this._gestioneCategoriaButton.Size = new System.Drawing.Size(188, 23);
+            this._gestioneCategoriaButton.TabIndex = 6;
+            this._gestioneCategoriaButton.Text = "Gestione categoria...";
+            this._gestioneCategoriaButton.UseVisualStyleBackColor = true;
+            this._gestioneCategoriaButton.Click += new System.EventHandler(this._gestioneCategoriaButton_Click);
             // 
             // _logoutButton
             // 
@@ -116,22 +127,13 @@
             this._giacenzaButton.UseVisualStyleBackColor = true;
             this._giacenzaButton.Click += new System.EventHandler(this._giacenzaButton_Click);
             // 
-            // _gestioneCategoriaButton
-            // 
-            this._gestioneCategoriaButton.Location = new System.Drawing.Point(6, 143);
-            this._gestioneCategoriaButton.Name = "_gestioneCategoriaButton";
-            this._gestioneCategoriaButton.Size = new System.Drawing.Size(188, 23);
-            this._gestioneCategoriaButton.TabIndex = 6;
-            this._gestioneCategoriaButton.Text = "Gestione categoria...";
-            this._gestioneCategoriaButton.UseVisualStyleBackColor = true;
-            this._gestioneCategoriaButton.Click += new System.EventHandler(this._gestioneCategoriaButton_Click);
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 466);
             this.Controls.Add(this._sceltaGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(500, 500);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

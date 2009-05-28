@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RicercaClienteForm));
             this._ricercaGridView = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._okButton = new System.Windows.Forms.Button();
+            this._annullaButton = new System.Windows.Forms.Button();
+            this._cercaTextBox = new System.Windows.Forms.TextBox();
+            this._cercaButton = new System.Windows.Forms.Button();
+            this._aggiungiCliente = new System.Windows.Forms.Button();
+            this._eliminaButton = new System.Windows.Forms.Button();
             this.indirizzoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,12 +45,6 @@
             this.privacyDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.wheelCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._okButton = new System.Windows.Forms.Button();
-            this._annullaButton = new System.Windows.Forms.Button();
-            this._cercaTextBox = new System.Windows.Forms.TextBox();
-            this._cercaButton = new System.Windows.Forms.Button();
-            this._aggiungiCliente = new System.Windows.Forms.Button();
-            this._eliminaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -79,51 +79,6 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.Width = 60;
-            // 
-            // indirizzoDataGridViewTextBoxColumn
-            // 
-            this.indirizzoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.indirizzoDataGridViewTextBoxColumn.DataPropertyName = "Indirizzo";
-            this.indirizzoDataGridViewTextBoxColumn.HeaderText = "Indirizzo";
-            this.indirizzoDataGridViewTextBoxColumn.Name = "indirizzoDataGridViewTextBoxColumn";
-            this.indirizzoDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // cfDataGridViewTextBoxColumn
-            // 
-            this.cfDataGridViewTextBoxColumn.DataPropertyName = "Cf";
-            this.cfDataGridViewTextBoxColumn.HeaderText = "Cf";
-            this.cfDataGridViewTextBoxColumn.Name = "cfDataGridViewTextBoxColumn";
-            // 
-            // privacyDataGridViewCheckBoxColumn
-            // 
-            this.privacyDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.privacyDataGridViewCheckBoxColumn.DataPropertyName = "Privacy";
-            this.privacyDataGridViewCheckBoxColumn.HeaderText = "Privacy";
-            this.privacyDataGridViewCheckBoxColumn.Name = "privacyDataGridViewCheckBoxColumn";
-            this.privacyDataGridViewCheckBoxColumn.Width = 48;
-            // 
-            // wheelCardDataGridViewTextBoxColumn
-            // 
-            this.wheelCardDataGridViewTextBoxColumn.DataPropertyName = "WheelCard";
-            this.wheelCardDataGridViewTextBoxColumn.HeaderText = "WheelCard";
-            this.wheelCardDataGridViewTextBoxColumn.Name = "wheelCardDataGridViewTextBoxColumn";
-            this.wheelCardDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clientiBindingSource
-            // 
-            this.clientiBindingSource.DataSource = typeof(Prototipo.Clienti);
             // 
             // _okButton
             // 
@@ -171,7 +126,7 @@
             // 
             // _aggiungiCliente
             // 
-            this._aggiungiCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._aggiungiCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._aggiungiCliente.Location = new System.Drawing.Point(28, 380);
             this._aggiungiCliente.Name = "_aggiungiCliente";
             this._aggiungiCliente.Size = new System.Drawing.Size(110, 23);
@@ -182,7 +137,7 @@
             // 
             // _eliminaButton
             // 
-            this._eliminaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._eliminaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._eliminaButton.Location = new System.Drawing.Point(144, 380);
             this._eliminaButton.Name = "_eliminaButton";
             this._eliminaButton.Size = new System.Drawing.Size(110, 23);
@@ -190,6 +145,51 @@
             this._eliminaButton.Text = "Elimina Cliente";
             this._eliminaButton.UseVisualStyleBackColor = true;
             this._eliminaButton.Click += new System.EventHandler(this._eliminaButton_Click);
+            // 
+            // indirizzoDataGridViewTextBoxColumn
+            // 
+            this.indirizzoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.indirizzoDataGridViewTextBoxColumn.DataPropertyName = "Indirizzo";
+            this.indirizzoDataGridViewTextBoxColumn.HeaderText = "Indirizzo";
+            this.indirizzoDataGridViewTextBoxColumn.Name = "indirizzoDataGridViewTextBoxColumn";
+            this.indirizzoDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // cfDataGridViewTextBoxColumn
+            // 
+            this.cfDataGridViewTextBoxColumn.DataPropertyName = "Cf";
+            this.cfDataGridViewTextBoxColumn.HeaderText = "Cf";
+            this.cfDataGridViewTextBoxColumn.Name = "cfDataGridViewTextBoxColumn";
+            // 
+            // privacyDataGridViewCheckBoxColumn
+            // 
+            this.privacyDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.privacyDataGridViewCheckBoxColumn.DataPropertyName = "Privacy";
+            this.privacyDataGridViewCheckBoxColumn.HeaderText = "Privacy";
+            this.privacyDataGridViewCheckBoxColumn.Name = "privacyDataGridViewCheckBoxColumn";
+            this.privacyDataGridViewCheckBoxColumn.Width = 48;
+            // 
+            // wheelCardDataGridViewTextBoxColumn
+            // 
+            this.wheelCardDataGridViewTextBoxColumn.DataPropertyName = "WheelCard";
+            this.wheelCardDataGridViewTextBoxColumn.HeaderText = "WheelCard";
+            this.wheelCardDataGridViewTextBoxColumn.Name = "wheelCardDataGridViewTextBoxColumn";
+            this.wheelCardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientiBindingSource
+            // 
+            this.clientiBindingSource.DataSource = typeof(Prototipo.Clienti);
             // 
             // RicercaClienteForm
             // 

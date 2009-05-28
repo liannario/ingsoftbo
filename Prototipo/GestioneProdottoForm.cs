@@ -49,7 +49,7 @@ namespace Prototipo
             }
         }
 
-        private void _annullaButton_Click(object sender, EventArgs e)
+        private void _okButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

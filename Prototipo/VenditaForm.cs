@@ -309,6 +309,7 @@ namespace Prototipo
                     printer.ShowDialog();
                 }
             }
+            this.Close();
         }
     }
 }

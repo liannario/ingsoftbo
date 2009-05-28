@@ -85,7 +85,7 @@ namespace Prototipo
                         _prodotto.Categoria = (Categoria)_categoriaComboBox.SelectedItem;
                         toClose = true;
                     }
-                    catch (FormatException)
+                    catch (Exception)
                     {
                         MessageBox.Show("Rispettare il formato dei dati", "Errore formato dei dati");
                     }

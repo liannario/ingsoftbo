@@ -22,10 +22,12 @@ namespace Prototipo
         {
             InitializeComponent();
             _tipoCliente = tipoCliente;
+            _cfTextBox.Focus();
             switch (_tipoCliente)
             {
                 case "Privato":
                     {
+                        _cfTextBox.MaxLength = 16;
                         break;
                     }
                 case "Azienda":
@@ -36,6 +38,7 @@ namespace Prototipo
                         _cognomeTextBox.Hide();
                         _cognomeTextBox.Text = "blablabla";
                         _cfLabel.Text = "Partita Iva";
+                        _cfTextBox.MaxLength = 11;
                         break;
                     }
                 default: throw new ArgumentException();
@@ -87,10 +90,17 @@ namespace Prototipo
                             MessageBox.Show("Cliente già esistente, aggiunta solo la vettura", "Vettura aggiunta");
                             DialogResult = DialogResult.OK;
                         }
+                        cliente.Cf = _cfTextBox.Text;
+                        cliente.Email = _emailTextBox.Text;
+                        cliente.Indirizzo = _indirizzoTextBox.Text;
+                        cliente.Nome = _nomeTextBox.Text;
+                        cliente.Privacy = _privacyCheckBox.Checked;
+                        cliente.Telefono = _telTextBox.Text;
+                        if (_tipoCliente == "Privato")
+                            ((ClientePrivato)cliente).Cognome = _cognomeTextBox.Text;
                         else
-                        {
-                            MessageBox.Show("Cliente già esistente", "Impossibile aggiungere il cliente");
-                        }
+                            ((ClienteAzienda)cliente).PartitaIva = _cfTextBox.Text;
+                        DialogResult = DialogResult.OK;
                     }
                     else
                     {
@@ -139,6 +149,18 @@ namespace Prototipo
         private void _cfTextBox_TextChanged(object sender, EventArgs e)
         {
             RiempiICampi(_cfTextBox.Text);
+        }
+
+        private void text_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (String.IsNullOrEmpty(textBox.Text) || textBox.Text == " ")
+            {
+                _errorProvider.SetError(textBox, "Campo obbligatorio!");
+                e.Cancel = true;
+            }
+            else
+                _errorProvider.SetError(textBox, null);
         }
     }
 }

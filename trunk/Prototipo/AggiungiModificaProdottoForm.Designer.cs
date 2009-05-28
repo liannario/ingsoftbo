@@ -37,23 +37,23 @@
             this._descrizioneTextBox = new System.Windows.Forms.TextBox();
             this._codiceTextBox = new System.Windows.Forms.TextBox();
             this._categoriaComboBox = new System.Windows.Forms.ComboBox();
-            this.categoriaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaCollectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._salvaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
+            this.categoriaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaCollectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaCollectionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -125,14 +125,6 @@
             this._categoriaComboBox.TabIndex = 6;
             this._categoriaComboBox.ValueMember = "Nome";
             // 
-            // categoriaBindingSource2
-            // 
-            this.categoriaBindingSource2.DataSource = typeof(Prototipo.Categoria);
-            // 
-            // categoriaBindingSource1
-            // 
-            this.categoriaBindingSource1.DataSource = typeof(Prototipo.Categoria);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -187,10 +179,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codice";
             // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataSource = typeof(Prototipo.Categoria);
-            // 
             // _salvaButton
             // 
             this._salvaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -213,6 +201,18 @@
             this._annullaButton.UseVisualStyleBackColor = true;
             this._annullaButton.Click += new System.EventHandler(this._annullaButton_Click);
             // 
+            // categoriaBindingSource2
+            // 
+            this.categoriaBindingSource2.DataSource = typeof(Prototipo.Categoria);
+            // 
+            // categoriaBindingSource1
+            // 
+            this.categoriaBindingSource1.DataSource = typeof(Prototipo.Categoria);
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(Prototipo.Categoria);
+            // 
             // AggiungiModificaProdottoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,10 +228,10 @@
             this.Text = "Prodotto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaCollectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaCollectionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

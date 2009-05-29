@@ -66,6 +66,7 @@ namespace Prototipo
         public Guest(String user, String pw)
         {
             Nome = "Guest";
+            Cognome = "Guest";
             Indirizzo = "Via del guest 1";
             DataNascita = new DateTime(2009, 5, 4);
             Username = user;
@@ -83,6 +84,7 @@ namespace Prototipo
         public Operatore(String user, String pw)
         {
             Nome = "Operatore";
+            Cognome = "Operatore";
             Indirizzo = "Via dell'operatore 1";
             DataNascita = new DateTime(2009, 5, 5);
             Username = user;
@@ -100,6 +102,7 @@ namespace Prototipo
         public Amministratore(String user, String pw)
         {
             Nome = "Amministratore";
+            Cognome = "Amministratore";
             Indirizzo = "Via dell'amministratore 1";
             DataNascita = new DateTime(2009, 5, 3);
             Username = user;

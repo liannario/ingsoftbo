@@ -25,6 +25,7 @@ namespace Prototipo
             InitializeComponent();
             //Inizializzo la vendita e associo l'operatore che la effettua
             _vendita = new Vendita();
+            _dataTextBox.Text = _vendita.Data.ToShortDateString();
             _vendita.DocumentoVendita = TipoDocumentoVendita.Scontrino;
             _vendita.UtenteCheEffettuaLaVendita = Negozio.GetInstance().UtenteCorrente;
             //Riempio la groupBox Operatore
@@ -122,13 +123,14 @@ namespace Prototipo
                     _vendita.DocumentoVendita = TipoDocumentoVendita.Fattura;
 
                 }
-                else if ( _scontrinoRadioButton.Checked == false )
+                else if (_scontrinoRadioButton.Checked == false)
                 {
                     MessageBox.Show("Per stampare una fattura il cliente deve avere una partita iva", "Impossibile stampare una fattura");
                     _scontrinoRadioButton.Checked = true;
                 }
             }
-            catch (ArgumentOutOfRangeException) {
+            catch (ArgumentOutOfRangeException)
+            {
                 _scontrinoRadioButton.Checked = true;
             }
         }
@@ -147,10 +149,13 @@ namespace Prototipo
                 return;
             }
 
-            int res = _dataNotifica.CompareTo(DateTime.Now);
-            if (_dataNotifica.ToShortDateString() == DateTime.Now.ToShortDateString())
-                res = 0;
-            if ( res < 0)
+            if (_dataNotifica.ToShortDateString().CompareTo(_vendita.Data.ToShortDateString()) < 0)
+            {
+                MessageBox.Show("Impossibile aggiungere notifiche prima della data del documento", "Errore notifica");
+                return;
+            }
+
+            if(_dataNotifica.ToShortDateString().CompareTo(DateTime.Now.ToShortDateString()) < 0)
             {
                 MessageBox.Show("Impossibile aggiungere notifiche prima della data odierna", "Errore notifica");
                 return;
@@ -208,7 +213,7 @@ namespace Prototipo
                 bool result = _vendita.Notifiche.Remove(n);
                 StringBuilder message = new StringBuilder();
                 message.AppendFormat("Notifica: {0} a {1} in data {2}", tipoNotifica.ToString(), destinatario, _dataNotifica.ToShortDateString());
-                if(result)
+                if (result)
                     MessageBox.Show(message.ToString(), "Notifica rimossa correttamente");
                 else
                     MessageBox.Show(message.ToString(), "Notifica non rimossa");
@@ -268,7 +273,7 @@ namespace Prototipo
             messaggio.Append("Stampa ");
             messaggio.AppendFormat("{0} in corso...", (_vendita.DocumentoVendita == TipoDocumentoVendita.Scontrino ? "dello scontrino" : "della fattura"));
             MessageBox.Show(messaggio.ToString(), "Stampa documento di vendita");
-            if(punti > 0)
+            if (punti > 0)
                 MessageBox.Show("Aggiunti " + punti + " punti alla wheelcard", "Aggiornamento saldo punti");
             this.Close();
         }
@@ -298,7 +303,7 @@ namespace Prototipo
             {
                 MessageBox.Show("Aggiungere almeno un prodotto", "Impossibile salvare il preventivo");
                 return;
-            }    
+            }
             DateTime scadenza = DateTime.Today.AddMonths(1);
 
             MessageBox.Show("Preventivo salvato con scadenza " + scadenza.ToShortDateString(), "Preventivo salvato");
@@ -310,6 +315,23 @@ namespace Prototipo
                 }
             }
             this.Close();
+        }
+
+        private void _dataTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                string[] tokens = _dataTextBox.Text.Split('/');
+                if (tokens[2].Length != 4)
+                    throw new Exception("DateFormat");
+                _vendita.Data = new DateTime(Convert.ToInt32(tokens[2]), Convert.ToInt32(tokens[1]), Convert.ToInt32(tokens[0]));
+                _errorProvider.SetError((TextBox)sender, null);
+            }
+            catch
+            {
+                _errorProvider.SetError((TextBox)sender, "Formato: gg/mm/aaaa");
+                e.Cancel = true;
+            }
         }
     }
 }

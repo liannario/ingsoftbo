@@ -81,7 +81,9 @@ namespace Prototipo
                 client.QueryString.Add("user", "ingsoftbo");
                 client.QueryString.Add("password", "ingsoftbo1");
                 client.QueryString.Add("api_id", "3172986");
-                if (!Destinatario.StartsWith("+"))
+                if (Destinatario.StartsWith("+"))
+                    Destinatario = Destinatario.Replace("+", "");
+                else
                     Destinatario = "39" + Destinatario;
                 client.QueryString.Add("to", Destinatario);
                 client.QueryString.Add("text", "Prova");

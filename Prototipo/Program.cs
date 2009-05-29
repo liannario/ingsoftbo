@@ -24,9 +24,13 @@ namespace Prototipo
             Categoria pneumatici = new Categoria("Pneumatici");
             Categoria pneumaticiTermici = new Categoria("Pneumatici Termici");
             Categoria pneumaticiNormali = new Categoria("Pneumatici Normali");
+            Categoria cerchi = new Categoria("Cerchi");
+            Categoria accessori = new Categoria("Accessori");
             Negozio.GetInstance().CategoriaRoot = pneumatici;
             pneumatici.CategoriaCollection.Add(pneumaticiTermici);
             pneumatici.CategoriaCollection.Add(pneumaticiNormali);
+            pneumatici.CategoriaCollection.Add(cerchi);
+            pneumatici.CategoriaCollection.Add(accessori);
 
             //Creazione magazzini
             Magazzino m1 = new Magazzino("Magazzino centrale", "Via Saragozza");

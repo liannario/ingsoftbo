@@ -78,6 +78,8 @@
             this._cancellaProdottoButton = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this._utenteGroupBox = new System.Windows.Forms.GroupBox();
+            this._dataLabel = new System.Windows.Forms.Label();
+            this._dataTextBox = new System.Windows.Forms.TextBox();
             this._usernameLabel = new System.Windows.Forms.Label();
             this._usernameTextBox = new System.Windows.Forms.TextBox();
             this._nomeOperatoreLabel = new System.Windows.Forms.Label();
@@ -85,6 +87,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this._cognomeOpTextBox = new System.Windows.Forms.TextBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._clienteBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vettureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
@@ -95,6 +98,7 @@
             this._notificaGroupBox.SuspendLayout();
             this._operazioniGroupBox.SuspendLayout();
             this._utenteGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _clienteBox
@@ -417,7 +421,7 @@
             // 
             this._tipoDocumentoGroupBox.Controls.Add(this._scontrinoRadioButton);
             this._tipoDocumentoGroupBox.Controls.Add(this._fatturaRadioButton);
-            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(494, 12);
+            this._tipoDocumentoGroupBox.Location = new System.Drawing.Point(483, 12);
             this._tipoDocumentoGroupBox.Name = "_tipoDocumentoGroupBox";
             this._tipoDocumentoGroupBox.Size = new System.Drawing.Size(191, 171);
             this._tipoDocumentoGroupBox.TabIndex = 7;
@@ -587,23 +591,44 @@
             // _utenteGroupBox
             // 
             this._utenteGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._utenteGroupBox.Controls.Add(this._dataLabel);
+            this._utenteGroupBox.Controls.Add(this._dataTextBox);
             this._utenteGroupBox.Controls.Add(this._usernameLabel);
             this._utenteGroupBox.Controls.Add(this._usernameTextBox);
             this._utenteGroupBox.Controls.Add(this._nomeOperatoreLabel);
             this._utenteGroupBox.Controls.Add(this._nomeOptextBox);
             this._utenteGroupBox.Controls.Add(this.label3);
             this._utenteGroupBox.Controls.Add(this._cognomeOpTextBox);
-            this._utenteGroupBox.Location = new System.Drawing.Point(725, 12);
+            this._utenteGroupBox.Location = new System.Drawing.Point(703, 12);
             this._utenteGroupBox.Name = "_utenteGroupBox";
-            this._utenteGroupBox.Size = new System.Drawing.Size(191, 171);
+            this._utenteGroupBox.Size = new System.Drawing.Size(213, 171);
             this._utenteGroupBox.TabIndex = 11;
             this._utenteGroupBox.TabStop = false;
             this._utenteGroupBox.Text = "Operatore";
             // 
+            // _dataLabel
+            // 
+            this._dataLabel.AutoSize = true;
+            this._dataLabel.Location = new System.Drawing.Point(6, 131);
+            this._dataLabel.Name = "_dataLabel";
+            this._dataLabel.Size = new System.Drawing.Size(30, 13);
+            this._dataLabel.TabIndex = 6;
+            this._dataLabel.Text = "Data";
+            // 
+            // _dataTextBox
+            // 
+            this._dataTextBox.BackColor = System.Drawing.Color.PowderBlue;
+            this._dataTextBox.Location = new System.Drawing.Point(69, 128);
+            this._dataTextBox.Name = "_dataTextBox";
+            this._dataTextBox.Size = new System.Drawing.Size(116, 20);
+            this._dataTextBox.TabIndex = 7;
+            this._dataTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._dataTextBox.Validating += new System.ComponentModel.CancelEventHandler(this._dataTextBox_Validating);
+            // 
             // _usernameLabel
             // 
             this._usernameLabel.AutoSize = true;
-            this._usernameLabel.Location = new System.Drawing.Point(6, 43);
+            this._usernameLabel.Location = new System.Drawing.Point(6, 26);
             this._usernameLabel.Name = "_usernameLabel";
             this._usernameLabel.Size = new System.Drawing.Size(55, 13);
             this._usernameLabel.TabIndex = 4;
@@ -612,7 +637,7 @@
             // _usernameTextBox
             // 
             this._usernameTextBox.BackColor = System.Drawing.Color.LightSkyBlue;
-            this._usernameTextBox.Location = new System.Drawing.Point(69, 40);
+            this._usernameTextBox.Location = new System.Drawing.Point(69, 23);
             this._usernameTextBox.Name = "_usernameTextBox";
             this._usernameTextBox.ReadOnly = true;
             this._usernameTextBox.Size = new System.Drawing.Size(116, 20);
@@ -622,7 +647,7 @@
             // _nomeOperatoreLabel
             // 
             this._nomeOperatoreLabel.AutoSize = true;
-            this._nomeOperatoreLabel.Location = new System.Drawing.Point(6, 78);
+            this._nomeOperatoreLabel.Location = new System.Drawing.Point(6, 61);
             this._nomeOperatoreLabel.Name = "_nomeOperatoreLabel";
             this._nomeOperatoreLabel.Size = new System.Drawing.Size(35, 13);
             this._nomeOperatoreLabel.TabIndex = 0;
@@ -631,7 +656,7 @@
             // _nomeOptextBox
             // 
             this._nomeOptextBox.BackColor = System.Drawing.Color.LightSkyBlue;
-            this._nomeOptextBox.Location = new System.Drawing.Point(69, 75);
+            this._nomeOptextBox.Location = new System.Drawing.Point(69, 58);
             this._nomeOptextBox.Name = "_nomeOptextBox";
             this._nomeOptextBox.ReadOnly = true;
             this._nomeOptextBox.Size = new System.Drawing.Size(116, 20);
@@ -641,7 +666,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 115);
+            this.label3.Location = new System.Drawing.Point(6, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
@@ -650,7 +675,7 @@
             // _cognomeOpTextBox
             // 
             this._cognomeOpTextBox.BackColor = System.Drawing.Color.LightSkyBlue;
-            this._cognomeOpTextBox.Location = new System.Drawing.Point(69, 112);
+            this._cognomeOpTextBox.Location = new System.Drawing.Point(69, 95);
             this._cognomeOpTextBox.Name = "_cognomeOpTextBox";
             this._cognomeOpTextBox.ReadOnly = true;
             this._cognomeOpTextBox.Size = new System.Drawing.Size(116, 20);
@@ -666,6 +691,10 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
+            // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
             // 
             // VenditaForm
             // 
@@ -700,6 +729,7 @@
             this._operazioniGroupBox.ResumeLayout(false);
             this._utenteGroupBox.ResumeLayout(false);
             this._utenteGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,5 +792,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn giacenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantitaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn scontoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label _dataLabel;
+        private System.Windows.Forms.TextBox _dataTextBox;
+        private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }

@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RicercaClienteForm));
             this._ricercaGridView = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._okButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
             this._cercaTextBox = new System.Windows.Forms.TextBox();
             this._cercaButton = new System.Windows.Forms.Button();
             this._aggiungiCliente = new System.Windows.Forms.Button();
             this._eliminaButton = new System.Windows.Forms.Button();
+            this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.indirizzoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.privacyDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.wheelCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._ricercaGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,14 +71,6 @@
             this._ricercaGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._ricercaGridView.Size = new System.Drawing.Size(742, 296);
             this._ricercaGridView.TabIndex = 0;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 60;
             // 
             // _okButton
             // 
@@ -146,6 +138,18 @@
             this._eliminaButton.UseVisualStyleBackColor = true;
             this._eliminaButton.Click += new System.EventHandler(this._eliminaButton_Click);
             // 
+            // clientiBindingSource
+            // 
+            this.clientiBindingSource.DataSource = typeof(Prototipo.Clienti);
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 60;
+            // 
             // indirizzoDataGridViewTextBoxColumn
             // 
             this.indirizzoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -187,10 +191,6 @@
             this.wheelCardDataGridViewTextBoxColumn.Name = "wheelCardDataGridViewTextBoxColumn";
             this.wheelCardDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // clientiBindingSource
-            // 
-            this.clientiBindingSource.DataSource = typeof(Prototipo.Clienti);
-            // 
             // RicercaClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +222,8 @@
         private System.Windows.Forms.BindingSource clientiBindingSource;
         private System.Windows.Forms.TextBox _cercaTextBox;
         private System.Windows.Forms.Button _cercaButton;
+        private System.Windows.Forms.Button _aggiungiCliente;
+        private System.Windows.Forms.Button _eliminaButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn indirizzoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
@@ -229,7 +231,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cfDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn privacyDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wheelCardDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button _aggiungiCliente;
-        private System.Windows.Forms.Button _eliminaButton;
     }
 }

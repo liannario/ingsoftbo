@@ -49,7 +49,7 @@ namespace Prototipo
                 if (_wheelCard == null)
                 {
                     _wheelCard = new WheelCard();
-                    _wheelCard.Codice = "CL" + Cf;
+                    _wheelCard.Codice = "WC" + Cf;
                     _wheelCard.Punti = 0;
                 }
                 return _wheelCard;

@@ -148,14 +148,14 @@ namespace Prototipo
                 MessageBox.Show("Il cliente non ha autorizzato l'invio di notifiche. In caso contrario, spuntare il relativo campo Privacy", "Autorizzazione negata per il rispetto della privacy");
                 return;
             }
-
-            if (_dataNotifica.ToShortDateString().CompareTo(_vendita.Data.ToShortDateString()) < 0)
+            
+            if (_dataNotifica.Date.CompareTo(_vendita.Data.Date) < 0)
             {
                 MessageBox.Show("Impossibile aggiungere notifiche prima della data del documento", "Errore notifica");
                 return;
             }
 
-            if(_dataNotifica.ToShortDateString().CompareTo(DateTime.Now.ToShortDateString()) < 0)
+            if(_dataNotifica.Date.CompareTo(DateTime.Now.Date) < 0)
             {
                 MessageBox.Show("Impossibile aggiungere notifiche prima della data odierna", "Errore notifica");
                 return;

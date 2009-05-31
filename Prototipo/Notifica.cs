@@ -75,27 +75,35 @@ namespace Prototipo
             }
             else if (_tipo == TipoNotifica.sms)
             {
-                WebClient client = new WebClient ();
-                // Add a user agent header in case the requested URI contains a query.
-                client.Headers.Add ("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR1.0.3705;)");
-                client.QueryString.Add("user", "ingsoftbo");
-                client.QueryString.Add("password", "ingsoftbo1");
-                client.QueryString.Add("api_id", "3172986");
-                if (Destinatario.StartsWith("+"))
-                    Destinatario = Destinatario.Replace("+", "");
-                else
-                    Destinatario = "39" + Destinatario;
-                client.QueryString.Add("to", Destinatario);
-                client.QueryString.Add("text", "Prova");
-                string baseurl ="http://api.clickatell.com/http/sendmsg";
-                Stream data = client.OpenRead(baseurl);
-                StreamReader reader = new StreamReader (data);
-                string s = reader.ReadToEnd();
-                data.Close ();
-                reader.Close ();
-                //return (s);
-                _daNotificare = false;
-                return true;
+                try
+                {
+                    WebClient client = new WebClient();
+                    // Add a user agent header in case the requested URI contains a query.
+                    client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR1.0.3705;)");
+                    client.QueryString.Add("user", "ingsoftbo");
+                    client.QueryString.Add("password", "ingsoftbo1");
+                    client.QueryString.Add("api_id", "3172986");
+                    if (Destinatario.StartsWith("+"))
+                        Destinatario = Destinatario.Replace("+", "");
+                    else
+                        Destinatario = "39" + Destinatario;
+                    client.QueryString.Add("to", Destinatario);
+                    client.QueryString.Add("text", "Prova");
+                    string baseurl = "http://api.clickatell.com/http/sendmsg";
+                    Stream data = client.OpenRead(baseurl);
+                    StreamReader reader = new StreamReader(data);
+                    string s = reader.ReadToEnd();
+                    data.Close();
+                    reader.Close();
+                    //return (s);
+                    _daNotificare = false;
+                    return true;
+                }
+                catch
+                {
+                    _daNotificare = true;
+                    return false;
+                }
             }
             return false;
         }

@@ -55,11 +55,6 @@ namespace Prototipo
             Application.Exit();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);

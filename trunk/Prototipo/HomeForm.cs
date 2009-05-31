@@ -46,16 +46,44 @@ namespace Prototipo
 
         private void CheckButtons()
         {
-            if (!IsUtenteAuthorized(null, new EffettuaVendita()))
-                _venditaButton.Enabled = false;
-            if (!IsUtenteAuthorized(null, new GestioneProdotto()))
-                _gestioneProdottoButton.Enabled = false;
-            if (!IsUtenteAuthorized(null, new GestioneCliente()))
-                _gestioneClienteButton.Enabled = false;
-            if (!IsUtenteAuthorized(null, new GestioneCategoria()))
-                _gestioneCategoriaButton.Enabled = false;
-            if (!IsUtenteAuthorized(null, new GestioneMagazzino()))
-                _gestioneMagazzinoButton.Enabled = false;
+            ToolStripMenuItem toolStripMenuItem;
+            toolStripMenuItem = new ToolStripMenuItem("Controllo Giacenza", null, _giacenzaButton_Click);
+            _contextMenuStrip.Items.Add(toolStripMenuItem);
+
+            if (IsUtenteAuthorized(null, new EffettuaVendita()))
+            {
+                _venditaButton.Enabled = true;
+                toolStripMenuItem = new ToolStripMenuItem("Vendita", null, _venditaButton_Click);
+                _contextMenuStrip.Items.Add(toolStripMenuItem);
+            }
+            if (IsUtenteAuthorized(null, new GestioneProdotto()))
+            {
+                _gestioneProdottoButton.Enabled = true;
+                toolStripMenuItem = new ToolStripMenuItem("Gestione prodotto", null, _gestioneProdottoButton_Click);
+                _contextMenuStrip.Items.Add(toolStripMenuItem);
+            }
+            if (IsUtenteAuthorized(null, new GestioneCliente()))
+            {
+                _gestioneClienteButton.Enabled = true;
+                toolStripMenuItem = new ToolStripMenuItem("Gestione cliente", null, _gestioneClienteButton_Click);
+                _contextMenuStrip.Items.Add(toolStripMenuItem);
+            }
+            if (IsUtenteAuthorized(null, new GestioneCategoria()))
+            {
+                _gestioneCategoriaButton.Enabled = true;
+                toolStripMenuItem = new ToolStripMenuItem("Gestione categoria", null, _gestioneCategoriaButton_Click);
+                _contextMenuStrip.Items.Add(toolStripMenuItem);
+            }
+            if (IsUtenteAuthorized(null, new GestioneMagazzino()))
+            {
+                _gestioneMagazzinoButton.Enabled = true;
+                toolStripMenuItem = new ToolStripMenuItem("Gestione magazzino", null, _gestioneMagazzinoButton_Click);
+                _contextMenuStrip.Items.Add(toolStripMenuItem);
+            }
+
+            _contextMenuStrip.Items.Add(new ToolStripSeparator());
+            toolStripMenuItem = new ToolStripMenuItem("Esci", null, delegate { Application.Exit(); });
+            _contextMenuStrip.Items.Add(toolStripMenuItem);
         }
 
         private bool IsUtenteAuthorized(Form form, OperazioneUtente operazione)

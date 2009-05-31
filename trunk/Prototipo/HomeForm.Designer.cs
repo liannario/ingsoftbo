@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this._sceltaGroupBox = new System.Windows.Forms.GroupBox();
             this._gestioneCategoriaButton = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this._gestioneProdottoButton = new System.Windows.Forms.Button();
             this._venditaButton = new System.Windows.Forms.Button();
             this._giacenzaButton = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this._contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._sceltaGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +62,7 @@
             // 
             // _gestioneCategoriaButton
             // 
+            this._gestioneCategoriaButton.Enabled = false;
             this._gestioneCategoriaButton.Location = new System.Drawing.Point(6, 143);
             this._gestioneCategoriaButton.Name = "_gestioneCategoriaButton";
             this._gestioneCategoriaButton.Size = new System.Drawing.Size(188, 23);
@@ -79,6 +83,7 @@
             // 
             // _gestioneClienteButton
             // 
+            this._gestioneClienteButton.Enabled = false;
             this._gestioneClienteButton.Location = new System.Drawing.Point(6, 114);
             this._gestioneClienteButton.Name = "_gestioneClienteButton";
             this._gestioneClienteButton.Size = new System.Drawing.Size(188, 23);
@@ -89,6 +94,7 @@
             // 
             // _gestioneMagazzinoButton
             // 
+            this._gestioneMagazzinoButton.Enabled = false;
             this._gestioneMagazzinoButton.Location = new System.Drawing.Point(6, 172);
             this._gestioneMagazzinoButton.Name = "_gestioneMagazzinoButton";
             this._gestioneMagazzinoButton.Size = new System.Drawing.Size(188, 23);
@@ -99,6 +105,7 @@
             // 
             // _gestioneProdottoButton
             // 
+            this._gestioneProdottoButton.Enabled = false;
             this._gestioneProdottoButton.Location = new System.Drawing.Point(6, 85);
             this._gestioneProdottoButton.Name = "_gestioneProdottoButton";
             this._gestioneProdottoButton.Size = new System.Drawing.Size(188, 23);
@@ -109,6 +116,7 @@
             // 
             // _venditaButton
             // 
+            this._venditaButton.Enabled = false;
             this._venditaButton.Location = new System.Drawing.Point(6, 55);
             this._venditaButton.Name = "_venditaButton";
             this._venditaButton.Size = new System.Drawing.Size(188, 23);
@@ -126,6 +134,18 @@
             this._giacenzaButton.Text = "Controllo giacenza...";
             this._giacenzaButton.UseVisualStyleBackColor = true;
             this._giacenzaButton.Click += new System.EventHandler(this._giacenzaButton_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this._contextMenuStrip;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "ViaggiateSicuri S.R.L";
+            this.notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this._contextMenuStrip.Name = "contextMenuStrip1";
+            this._contextMenuStrip.Size = new System.Drawing.Size(153, 26);
             // 
             // HomeForm
             // 
@@ -153,5 +173,7 @@
         private System.Windows.Forms.Button _gestioneClienteButton;
         private System.Windows.Forms.Button _logoutButton;
         private System.Windows.Forms.Button _gestioneCategoriaButton;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip _contextMenuStrip;
     }
 }

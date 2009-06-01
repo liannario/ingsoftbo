@@ -54,9 +54,9 @@ namespace Prototipo
             Negozio.GetInstance().Clienti.Add(clienteAzienda1);
 
             ClienteAzienda clienteAzienda2 = new ClienteAzienda("34564567890", "Azienda s.r.l.", "viale aldini, 93", "info@azienda.it", true, "34564567890", "0510934555");
-            clienteAzienda1.Vetture.Add(new Vettura("CA373KS", "Fiat Punto"));
-            clienteAzienda1.Vetture.Add(new Vettura("CS474SQ", "Ducato Maxi"));
-            clienteAzienda1.WheelCard.Punti = 2000;
+            clienteAzienda2.Vetture.Add(new Vettura("CA373KS", "Fiat Punto"));
+            clienteAzienda2.Vetture.Add(new Vettura("CS474SQ", "Ducato Maxi"));
+            clienteAzienda2.WheelCard.Punti = 2000;
             Negozio.GetInstance().Clienti.Add(clienteAzienda2);
 
             ClientePrivato clientePrivato1 = new ClientePrivato("Cliente", "privato", new DateTime(1970, 5, 18), "via saragozza, 2", "cliente@privato.it", true, "CLTPRV70E18G732A", "328435432");
@@ -66,9 +66,9 @@ namespace Prototipo
             Negozio.GetInstance().Clienti.Add(clientePrivato1);
 
             ClientePrivato clientePrivato2 = new ClientePrivato("Cliente2", "privato", new DateTime(1987, 3, 6), "via turati, 23", "cliente2@privato.it", true, "CLTPRV87C06G732A", "3335688421");
-            clientePrivato1.Vetture.Add(new Vettura("BZ463GS", "Mercedes SLK AMG"));
-            clientePrivato1.Vetture.Add(new Vettura("CV878EW", "Lamborghini Gallardo"));
-            clientePrivato1.WheelCard.Punti = 845;
+            clientePrivato2.Vetture.Add(new Vettura("BZ463GS", "Mercedes SLK AMG"));
+            clientePrivato2.Vetture.Add(new Vettura("CV878EW", "Lamborghini Gallardo"));
+            clientePrivato2.WheelCard.Punti = 845;
             Negozio.GetInstance().Clienti.Add(clientePrivato2);
 
             ////Aggiunta vendita che ha impostato una notifica

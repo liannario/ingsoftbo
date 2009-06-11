@@ -1,0 +1,76 @@
+68c68
+< 			relayInfoTimer_( this, relayInfo), relayInfoId_(0), chunksizethrs_(DEF_CHUNKSIZETHRS),
+---
+> 			relayInfoTimer_( this, relayInfo), relayInfoId_(0), firstRelayPassing_(0), chunksizethrs_(DEF_CHUNKSIZETHRS),
+429,430c429,436
+< 		Tcl::instance().evalf("%s log \"Received READYFORNEWREQUESTS from Relay %d, my player status is %d\"", name(), HDR_IP(pkt)->saddr(),  playerStatus_);
+< 		recvReadyForNewRequests(pkt);
+---
+> 		//Tcl::instance().evalf("%s log \"Received READYFORNEWREQUESTS from Relay %d, my player status is %d\"", name(), HDR_IP(pkt)->saddr(),  playerStatus_);
+> 		if ( (playerStatus_ == PLAYER_IDLE) ){
+> 			requestTimer_.data = (double*)(&retryReqFor_);			
+> 			requestTimer_.id = -1;
+> 			requestTimer_.resched(Random::uniform(0.3)); //retry in 0.5 sec
+> 			//sendRelayReq(-1);			
+> 		}
+> 		Packet::free(pkt);
+802,821d807
+< /**********************  CLIENT  ***************************/
+< void MMRAgent::recvReadyForNewRequests(Packet* p){
+< 	if (!iAmRelay_) { //CLIENT
+< 		hdr_mmr_readyfornewrequests* hdr=HDR_MMR_READYFORNEWREQUESTS(p);
+< 		// DEBUG
+< 		Tcl::instance().evalf("%s log \"recvReadyForNewRequests: received the following client RSSI values from relay\"", name());
+< 		for( int i=0; i<hdr->clientNumber; i++){
+< 			Tcl::instance().evalf("%s log \"Client: %d, RSSI: %f\"", name(), hdr->clientAddr[i], hdr->clientRSSI[i]);			
+< 		}
+< 		if ( (playerStatus_ == PLAYER_IDLE) ){
+< 			requestTimer_.data = (double*)(&retryReqFor_);			
+< 			requestTimer_.id = -1;
+< 			requestTimer_.resched(Random::uniform(0.3)); //retry in 0.5 sec
+< 			//sendRelayReq(-1);			
+< 		}
+< 	}
+< 		
+< 	Packet::free(p);	
+< }
+< 
+1035,1049c1021
+< 		hmr->type = MMR_READYFORNEWREQUESTS;
+< 		hmr->clientNumber=0;	
+< 		// DEBUG
+< 		//Tcl::instance().evalf("%s log \"Ready for new requests, my clients - DEBUG\"", name());
+< 
+< 		for (int i=0; i<MAXSTREAMS; i++) {
+< 			if (relayed_[i][0]!=-1) {
+< 				double time;
+< 				// DEBUG
+< 				// Tcl::instance().evalf("%s log \"Client %d, RSSI: %f - DEBUG\"", name(), relayed_[i][0],  peekTail(prBuff_[i], time) );				
+< 				hmr->clientAddr[hmr->clientNumber]=relayed_[i][0];
+< 				hmr->clientRSSI[hmr->clientNumber]= peekTail(prBuff_[i], time);
+< 				hmr->clientNumber++;
+< 			}
+< 		}		
+---
+> 		hmr->type = MMR_READYFORNEWREQUESTS;	
+1050a1023,1024
+> 		// DEBUG
+> 		Tcl::instance().evalf("%s log \"Ready for new requests - DEBUG\"", name());
+1718a1693,1697
+> 		// BAD ACK to trigger the first re-election to chose the most centered relay
+> 		if( firstRelayPassing_ == 0 && localTime <= 16.0 ) {
+> 			triggered = true;
+> 			firstRelayPassing_ = 1;
+> 		} 
+1724,1725c1703
+< 		/* TODO: rivedi queste soglie */
+< 		if (prev < apGreyBoundary_ || prev > -44.0 ) { 
+---
+> 		if (prev < apGreyBoundary_ || prev > -44.0 ) {
+1746,1747c1724
+< 	} else{
+< 		Tcl::instance().evalf("%s log \"reschedule avgSamplingTime %f - DEBUG\"", name(), avgSamplingTime_);
+---
+> 	} else
+1749d1725
+< 	}

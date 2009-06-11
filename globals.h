@@ -1,0 +1,75 @@
+#ifndef _GLOBALS_H_
+#define _GLOBALS_H_
+#define LOCALTIME (Scheduler::instance().clock())
+//Parameters
+#define MAXSTREAMS					8            // was 50
+#define MAXCLIENTSPERSTREAM			2
+#define MAXNBCLIENTSPERRELAY		110
+#define MAXELIGIBLERELAYS			110
+#define MAXRELAYS					5
+#define DEF_STREAMBPS				200000 //bits/s
+#define PKTBUFFERMAXCOUNT			5000 
+#define PRBUFFERMAXCOUNT			100
+#define DEF_CLIENTTIMEOUT			10.0
+#define DEF_RELAYBUFFERMAXSZ		2000000 //bytes
+#define DEF_CLIENTBUFFERMAXSZ		500000 //bytes
+#define DEF_SENDRATE				3000000 //bits/s
+#define DEF_SAMPLINGTIME			0.5
+#define DEF_PREVTIME				10.0
+#define DEF_MAXAVGBUFFSIZE			30
+#define DEF_MAXAPPRBUFFSIZE			30
+#define DEF_GREYMINSAMPLES			15
+#define DEF_MAXPRBUFFSIZE			30  // Foschini was 4
+#define DEF_MINBUFFTOPLAY			200000 //bytes
+#define DEF_STREAMSTARTDELAY		10.0
+#define DEF_CLIENTINFOINTERVAL		0.25
+#define DEF_CHUNKSIZETHRS			30000 //bytes
+#define DEF_RELAYINFOINTERVAL		3.0
+#define DEF_NBCLIENTSTIMEOUT		5.0
+#define DEF_ELIGIBLERELAYSTIMEOUT	5.0
+#define DEF_CLIENTBCTIMEOUT			1.0
+#define DEF_PRMEANMINTHRSH			-50.0
+#define DEF_GREYBOUNDARY			-56.0
+#define DEF_APGREYBOUNDARY			-56.0  // Foschini was -60
+#define DEF_CLIENTGREYBOUNDARY      -56.0
+#define DEF_GREYTHRSH				3
+#define MINONTIME					0.05
+#define MAXONTIME					3.0
+#define MINOFFTIME					1.0 
+#define MAXTIMERLISTCNT				10
+
+
+#define IPUDPOVERHEAD		28 //IP+UDP 
+#define IPUDPRTPOVERHEAD    40 //IT+UDP+RTP (RTP=12+)
+#define MMRPORT 			123
+
+//Message Types
+#define MMR_RELAYREQ			1
+#define MMR_RELAYACK			2
+#define MMR_STREAMSTARTREQ		3
+#define MMR_OFFNOTIFY			4
+#define MMR_CLIENTINFO			5
+#define MMR_MMSTREAM			6
+#define MMR_PKTCHUNK			7
+#define MMR_RELAYSTATE			8
+#define MMR_NEWRELAYNOTIFY		9
+#define MMR_SRVRNOTIFY			10
+#define MMR_EOS					11
+#define MMR_RELAYINFO			12
+#define MMR_RELAYSTATEACK		13
+#define MMR_IAMCLIENT			14
+#define MMR_STREAMSTARTREQACK	15
+#define MMR_NBCLIENTS			16
+#define MMR_NEWRELAYNOTIFYACK 	17
+#define MMR_READYFORNEWREQUESTS 18
+#define MMR_DETACHFROMRELAY 	19
+
+
+//Player Status
+#define PLAYER_IDLE			0
+#define PLAYER_BUFFERING	1
+#define PLAYER_PLAYING		2
+#define PLAYER_ENDING		3
+#define PLAYER_SKIPPING		4
+
+#endif /*GLOBALS_H_*/

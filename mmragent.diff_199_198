@@ -1,0 +1,72 @@
+80c80
+< 			lastReadClientRSSIValue_(-1.0), clientPosPrevCount_(0), clientGreyBoundary_(DEF_CLIENTGREYBOUNDARY) {
+---
+> 			lastReadClientRSSIValue_(-1.0), clientPosPrevCount_(0) {
+241,243d240
+< 		} else if (strcmp(argv[1], "client_grey_boundary") == 0) {
+< 			this->clientGreyBoundary_ = atof(argv[2]);
+< 			return (TCL_OK);
+751c748
+< 		if ( prev <= clientGreyBoundary_ ) {
+---
+> 		if ( prev <= -58.0 /* greyBoundary_ */ ) {
+788c785
+< 		/*if( onOffTimer_.status() == TIMER_PENDING )
+---
+> 		if( onOffTimer_.status() == TIMER_PENDING )
+791c788
+< 			clientInfoTimer_.cancel();*/		
+---
+> 			clientInfoTimer_.cancel();		
+1859c1856
+< 		//Tcl::instance().evalf("%s log \" expired rssiDistTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired rssiDistTimer\"", a_->name());
+1864c1861
+< 		//Tcl::instance().evalf("%s log \" expired passingTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired passingTimer\"", a_->name());
+1869c1866
+< 		//Tcl::instance().evalf("%s log \" expired relayInfoTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired relayInfoTimer\"", a_->name());
+1874c1871
+< 		//Tcl::instance().evalf("%s log \" expired delegNewRelayTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired delegNewRelayTimer\"", a_->name());
+1879c1876
+< 		//Tcl::instance().evalf("%s log \" expired sendIAmClientTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired sendIAmClientTimer\"", a_->name());
+1884c1881
+< 		//Tcl::instance().evalf("%s log \" expired scheduleStreamTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired scheduleStreamTimer\"", a_->name());
+1889c1886
+< 		//Tcl::instance().evalf("%s log \" expired recvStartReqTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired recvStartReqTimer\"", a_->name());
+1894c1891
+< 		//Tcl::instance().evalf("%s log \" expired clientBCTimeoutTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired clientBCTimeoutTimer\"", a_->name());
+1899c1896
+< 		//Tcl::instance().evalf("%s log \" expired sendRelayReqTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired sendRelayReqTimer\"", a_->name());
+1904c1901
+< 		//Tcl::instance().evalf("%s log \" expired sendStreamStartReqTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired sendStreamStartReqTimer\"", a_->name());
+1909c1906
+< 		//Tcl::instance().evalf("%s log \" expired sendNewrelayNotifyTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired sendNewrelayNotifyTimer\"", a_->name());
+1914c1911
+< 		//Tcl::instance().evalf("%s log \" expired clientAliveTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired clientAliveTimer\"", a_->name());
+1920c1917
+< 		//Tcl::instance().evalf("%s log \" expired clientEvuateLocallyGreyTimer\"", a_->name());
+---
+> 		Tcl::instance().evalf("%s log \" expired clientEvuateLocallyGreyTimer\"", a_->name());

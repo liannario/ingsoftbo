@@ -1,0 +1,120 @@
+554a555,562
+> 	// If not opened (it should be not), we open the output file
+> 	if (openfile_ == 1){
+>   	  Tcl::instance().evalf("%s log \"rcvd relayAck from %d for strm %d, while I had the last rd file open. I open a new one. -> WARNING \"", name(), HDR_IP(p)->saddr(), rcvdStreamId_);
+> 	  fclose(tFile_);
+> 	}
+> 	sprintf(tbuf, "rd%d_%d", node_->address(), HDR_IP(p)->saddr());
+> 	tFile_ = fopen(tbuf, "w");
+> 	openfile_ = 1;
+796,845c804,815
+< 	double tempRSSI;
+< 	nsaddr_t tempAddr;
+< 	tempRSSI = 10*log10(p->txinfo_.RxPr*1000);
+< 	if( tempRSSI > -56.0 &&
+<     	tempRSSI < -44.0 ){
+< 		if (!iAmRelay_) { //CLIENT
+< 	    	hdr_mmr_readyfornewrequests* hdr=HDR_MMR_READYFORNEWREQUESTS(p);
+< 	        // DEBUG
+< 	        /*Tcl::instance().evalf("%s log \"recvReadyForNewRequests: received the following client RSSI values from relay\"", name());
+< 	        for( int i=0; i<hdr->clientNumber; i++){
+< 	            Tcl::instance().evalf("%s log \"Client: %d, RSSI: %f\"", name(), hdr->clientAddr[i], hdr->clientRSSI[i]);
+< 	        }*/
+< 			
+< 			//Bubble sort
+< 			for (int i=0; i<hdr->clientNumber-1; i++) {
+< 				for (int j=0; j<hdr->clientNumber-1-i; j++) {
+< 					if (hdr->clientRSSI[j] >= hdr->clientRSSI[j+1] ) {
+< 						tempRSSI = hdr->clientRSSI[j+1];
+< 						tempAddr = hdr->clientAddr[j+1];
+< 						hdr->clientRSSI[j+1] = hdr->clientRSSI[j];
+< 						hdr->clientAddr[j+1] = hdr->clientAddr[j];
+< 						hdr->clientRSSI[j] = tempRSSI;
+< 						hdr->clientAddr[j] = tempAddr;
+< 					}
+< 				}
+< 			}
+< 			
+< 			// DEBUG
+< 	        /*for( int i=0; i<hdr->clientNumber; i++){
+< 	            Tcl::instance().evalf("%s log \"Client: %d, RSSI: %f\"", name(), hdr->clientAddr[i], hdr->clientRSSI[i]);
+< 	        }*/
+< 			
+< 			/* If no node is attached:
+< 			 * I assume that I'm the first node, and I try to attach myself 
+< 			 */
+< 			if( hdr->clientNumber == 0 ){
+< 				
+< 			}
+< 			
+< 					
+< 	        // 1. seleziona i 2 peggiori
+< 	        // 2. invia un ping e vedi se sono lontani almeno quanto il nodo dal relay
+< 	        // 3. se si', invia la richiesta al relay
+< 	        // 4. se il relay non risponde, invia un broadcast
+< 	        if ( (playerStatus_ == PLAYER_IDLE) ){
+< 	            requestTimer_.data = (double*)(&retryReqFor_);
+< 	            requestTimer_.id = -1;
+< 	            requestTimer_.resched(Random::uniform(0.3)); //retry in 0.5 sec
+< 	            //sendRelayReq(-1);
+< 	        }
+---
+> 	if (!iAmRelay_) { //CLIENT
+> 		hdr_mmr_readyfornewrequests* hdr=HDR_MMR_READYFORNEWREQUESTS(p);
+> 		// DEBUG
+> 		Tcl::instance().evalf("%s log \"recvReadyForNewRequests: received the following client RSSI values from relay\"", name());
+> 		for( int i=0; i<hdr->clientNumber; i++){
+> 			Tcl::instance().evalf("%s log \"Client: %d, RSSI: %f\"", name(), hdr->clientAddr[i], hdr->clientRSSI[i]);			
+> 		}
+> 		if ( (playerStatus_ == PLAYER_IDLE) ){
+> 			requestTimer_.data = (double*)(&retryReqFor_);			
+> 			requestTimer_.id = -1;
+> 			requestTimer_.resched(Random::uniform(0.3)); //retry in 0.5 sec
+> 			//sendRelayReq(-1);			
+847,848c817,819
+< 		Packet::free(p);
+<     }
+---
+> 	}
+> 		
+> 	Packet::free(p);	
+852,856d822
+< /* For the client-side part of this function, please note that 
+<  * currPlayTime_, used here to drop (and not write to the rd file)
+<  * late packets. currPlayTime_ is updated by cosumeVideo which is
+<  * periodically called.
+<  */ 
+889c855
+< 			if ( openfile_ == 0 /*pkt_received_ == 0*/ )
+---
+> 			if (pkt_received_ == 0)
+892,897d857
+< 			// If opened (from another transmission), we close the old output file
+< 			if (openfile_ == 0){	
+< 				sprintf(tbuf, "rd%d_%d", node_->address(), HDR_IP(p)->saddr());
+< 				tFile_ = fopen(tbuf, "w");
+< 				openfile_ = 1;
+< 			}
+994,998d953
+< /* Updates the curPlayTime variable which is used within
+<  * recvMMStream to drop late packets! Hence, recvStream
+<  * only writes useful packets as a real MM player 
+<  * implementation would do.
+<  */
+1037,1045d991
+< 		if(openfile_ == 1) {
+< 			fclose(tFile_);
+< 			openfile_ = 0;
+< 			Tcl::instance().evalf("%s log \"File for stream %d reproduction closed at %f\"", name(), rcvdStreamId_, LOCALTIME);
+< 		}
+< 		else{
+< 			 Tcl::instance().evalf("%s log \"File close for stream %d reproduction at %f was not successful -> WARNING\"", name(),
+< 			 rcvdStreamId_, LOCALTIME);
+< 		} 
+1442d1387
+< 			/* TODO ricolorare il relay di grigio, rendendolo nuovamente disponibile per nuove richieste... */
+1788,1789c1733
+< 		// Tcl::instance().evalf("%s log \"ap grey prev %f - DEBUG\"", name(), prev);
+< 
+---
+> 		Tcl::instance().evalf("%s log \"ap grey prev %f - DEBUG\"", name(), prev);
